@@ -96,3 +96,10 @@ def test_pending_submission_fails_and_stop_requires_explicit_state(tmp_path):
     assert not stopped({'state': 'RUNNING', 'message': 'STOPPED was requested'})
     assert not stopped({'state': 'STOPPING'})
     assert not stopped({'state': 'RUNNING', 'previous': {'state': 'STOPPED'}})
+
+
+def test_vast_stop_evidence_requires_actual_stopped_state():
+    from scripts.verify_submission import stopped
+    assert stopped({"actual_status": "stopped"})
+    assert not stopped({"actual_status": "running", "intended_status": "stopped"})
+    assert not stopped({"actual_status": "exited"})

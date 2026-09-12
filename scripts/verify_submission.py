@@ -12,6 +12,8 @@ def stopped(status):
     """Accept only an explicit STOPPED state in the provider's status object."""
     if not isinstance(status, dict):
         return False
+    if 'actual_status' in status:
+        return status['actual_status'] == 'stopped'
     if 'state' in status:
         return status['state'] == 'STOPPED'
     return any(stopped(v) for v in status.values() if isinstance(v, dict))
@@ -87,7 +89,7 @@ def check(root=ROOT):
         if merge is not None and evaluation.get('merge') != merge:
             errors.append('Evaluation does not match current merged model')
     provider = read('reports/provider_stop_verification.json')
-    if provider is not None and not stopped(provider.get('status', {})):
+    if provider is not None and not stopped(provider.get('status', provider)):
         errors.append('Provider has not explicitly confirmed STOPPED')
     costs = read('reports/compute_cost.json')
     if costs is not None:

@@ -2,7 +2,7 @@
 
 Independent Week 4 capstone for appointment workflows, triage escalation routing, registration, and system access. The project lives in `wk4_capstone_project/` locally and occupies the root of the dedicated target repository. No classwork files are modified or imported at runtime.
 
-**Current state:** scripts and the 200-example dataset are implemented; local tests pass. Actual Nebius training, saved merged weights, model sample responses, evaluated scores, billing, and provider-stop evidence are pending access to compute and an independent judge. `comparison_results.csv` deliberately contains empty metrics with explicit pending statuses. Do not submit this state as a completed training run. See [status](reports/status.json) and the [stakeholder memo](memo.md).
+**Current state:** scripts and the 200-example dataset are implemented; local tests pass. Actual GPU training, saved merged weights, model sample responses, evaluated scores, billing, and provider-stop evidence are pending access to compute and an independent judge. `comparison_results.csv` deliberately contains empty metrics with explicit pending statuses. Do not submit this state as a completed training run. See [status](reports/status.json) and the [stakeholder memo](memo.md).
 
 > This model provides non-diagnostic operational guidance only.
 
@@ -129,8 +129,41 @@ Do not substitute training seconds for billed uptime. The calculator excludes st
 
 ## Git workflow and evidence
 
-See [CONTRIBUTING](CONTRIBUTING.md). Use issue-linked semantic commits and a feature PR into main. The initial token could read the repository but could not create issues; intended #1–#5 references remain pending until permissions are corrected. Keep PRs draft while live evidence is outstanding. Never commit `.claude/`, `CLAUDE.md`, `AGENTS.md`, credentials or binary weights. Save weights to durable artifact storage and commit run hashes and retrieval instructions. Local tests and CI do not constitute proof of a GPU run or improved model quality.
+See [CONTRIBUTING](CONTRIBUTING.md). Use issue-linked semantic commits and a feature PR into main. Issues #1–#5 and draft PR #6 now exist after the token permissions were updated. Keep PRs draft while live evidence is outstanding. Never commit `.claude/`, `CLAUDE.md`, `AGENTS.md`, credentials or binary weights. Save weights to durable artifact storage and commit run hashes and retrieval instructions. Local tests and CI do not constitute proof of a GPU run or improved model quality.
 
 For an optional CPU library compatibility test, run `python scripts/smoke_model_stack.py`. It downloads only the base tokenizer and trains a tiny random model for two steps. Its report is explicitly excluded from capstone training evidence.
 
 The CPU compatibility smoke test passed with PyTorch 2.6.0+cpu, Transformers 4.51.3, and PEFT 0.15.2. All 200 examples tokenized successfully (maximum 190 tokens), two tiny-model optimizer steps completed, adapter merge preserved logits within tolerance, and the saved model reloaded and generated. See `reports/model_stack_smoke.json`; this is not the required CUDA run.
+
+## Vast.ai and OpenRouter setup
+
+The selected provider is now Vast.ai, replacing the originally requested Nebius run. Report the actual provider in training evidence; this is a documented platform substitution. The supplied screenshot shows instance 50789605, RTX 3090 with 24 GB VRAM, still loading when captured. Confirm the current instance, full hourly price, storage/transfer charges and SSH port in the console. The user has a USD 10 balance; this is a ceiling, not a target spend.
+
+`fine_tune.py --provider vast` uses the same QLoRA configuration and records Vast.ai in its manifest. Once the SSH connection, stop permissions and durable artifact destination are configured, run inside tmux:
+
+```bash
+export VAST_INSTANCE_ID='50789605' # confirm this is the current dedicated instance
+export MAX_RUN_SECONDS='1800' # example; calculate from the verified rate and remaining budget
+export ARTIFACT_URI='s3://your-bucket/afyaplus-capstone/run-001'
+bash scripts/train_vast.sh
+```
+
+This optional automatic wrapper requires `vastai`, `aws`, and configured stop/upload credentials. It follows the same tested failure cleanup and time limit as the Nebius wrapper. Do not run the Nebius wrapper on Vast.ai. From a separately authenticated workstation, save final provider evidence:
+
+```bash
+vastai show instance 50789605 --raw > reports/provider_stop_verification.json
+```
+
+The evidence checker requires `actual_status: stopped`; an intended stop, frozen or crashed container does not qualify. Stopped instances retain disk data and incur storage charges. Retrieve and verify artifacts before considering destruction, which permanently deletes data. See [Vast.ai lifecycle documentation](https://docs.vast.ai/guides/instances/manage-instances).
+
+The independent evaluation judge can be your existing OpenRouter model:
+
+```bash
+export JUDGE_BASE_URL='https://openrouter.ai/api/v1'
+export JUDGE_MODEL='openai/gpt-4o-mini'
+read -rsp 'OpenRouter API key: ' JUDGE_API_KEY
+printf '\n'
+export JUDGE_API_KEY
+```
+
+The correct model name uses the letter `o` in `4o`. It is independent of the Qwen model being fine-tuned. The evaluator makes 20 paired judge requests after model artifacts are available; charges are separate from Vast.ai. If the key already exists in a local `.env`, provide only its path and variable name for configuration, never its value in chat. See [OpenRouter API setup](https://openrouter.ai/docs/quickstart). The current evaluator reads exported variables and does not automatically load `.env` files.

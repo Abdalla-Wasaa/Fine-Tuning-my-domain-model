@@ -10,7 +10,7 @@ Use semantic commit messages with issue references:
 - `feat(eval): compare paired model outputs (#4)`
 - `docs: document reproduction and stakeholder evidence (#5)`
 
-Issue numbers #1–#5 are reserved in the planned workflow but must be created when repository token permissions allow. References alone do not prove the issues exist. Do not close training/evaluation issues without actual artifacts and verified results.
+Issues #1–#5 and draft PR #6 exist in the target repository. Do not close training/evaluation issues without actual artifacts and verified results.
 
 Run `python data_prep.py`, `python -m pytest -q`, and `bash -n scripts/train_nebius.sh` before proposing changes. Run `python scripts/verify_submission.py` before claiming the full capstone is complete. CI checks source/data; it does not certify GPU training.
 

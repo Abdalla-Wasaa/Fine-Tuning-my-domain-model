@@ -1,4 +1,4 @@
-"""Train QLoRA on a CUDA-equipped Nebius instance; never silently substitute CPU training."""
+"""Train QLoRA on a CUDA-equipped cloud instance; never silently substitute CPU training."""
 import argparse
 import importlib.metadata
 import json
@@ -11,10 +11,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', default=str(ROOT / 'artifacts/adapter'))
     parser.add_argument('--resume', default=None)
+    parser.add_argument('--provider', choices=['nebius', 'vast'], default='nebius')
     args = parser.parse_args()
     import torch
     if not torch.cuda.is_available():
-        raise SystemExit('QLoRA requires a CUDA GPU. Run this script on your Nebius GPU instance.')
+        raise SystemExit('QLoRA requires a CUDA GPU. Run this script on your GPU instance.')
     from pathlib import Path
     from huggingface_hub import model_info
     from transformers import (AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig,
@@ -40,7 +41,7 @@ def main():
         lora_dropout=cfg['lora_dropout'], target_modules=cfg['target_modules'], bias='none', task_type='CAUSAL_LM'))
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
-    manifest = {'status': 'started', 'config': cfg, 'base_revision': revision,
+    manifest = {'status': 'started', 'provider': args.provider, 'config': cfg, 'base_revision': revision,
                 'gpu': torch.cuda.get_device_name(0),
                 'packages': {p: importlib.metadata.version(p) for p in ['torch', 'transformers', 'peft', 'bitsandbytes']},
                 'data_sha256': {s: sha256(ROOT / f'data/{s}.jsonl') for s in ('train', 'val', 'test')}}
