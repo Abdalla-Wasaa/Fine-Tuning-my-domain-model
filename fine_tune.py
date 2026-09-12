@@ -54,7 +54,7 @@ def main():
         gradient_checkpointing=True, gradient_checkpointing_kwargs={'use_reentrant': False},
         eval_strategy='epoch', save_strategy='epoch', logging_steps=1, save_total_limit=2,
         load_best_model_at_end=True, metric_for_best_model='eval_loss', greater_is_better=False,
-        optim='paged_adamw_8bit', report_to='none', seed=cfg['seed'], data_seed=cfg['seed']),
+        optim='paged_adamw_8bit', report_to='none', label_names=['labels'], seed=cfg['seed'], data_seed=cfg['seed']),
         train_dataset=encoded['train'], eval_dataset=encoded['val'],
         data_collator=DataCollatorForSeq2Seq(tokenizer=tokenizer, padding=True, label_pad_token_id=-100))
     started = time.monotonic()

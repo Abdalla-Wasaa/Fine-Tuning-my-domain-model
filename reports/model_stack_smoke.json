@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "CPU random tiny Qwen architecture + LoRA only. NOT Nebius QLoRA, domain training, or evaluation evidence.",
+  "tokenizer_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "torch": "2.6.0+cpu",
+  "transformers": "4.51.3",
+  "peft": "0.15.2",
+  "validated_tokenized_examples": 200,
+  "max_tokens": 190,
+  "optimizer_steps": 2,
+  "merge_logits_close": true,
+  "reload_generation": true
+}

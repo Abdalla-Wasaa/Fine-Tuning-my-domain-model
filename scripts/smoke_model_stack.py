@@ -31,7 +31,7 @@ def main():
         trainer = Trainer(model=model, args=TrainingArguments(output_dir=str(directory / 'adapter'),
             max_steps=2, per_device_train_batch_size=1, per_device_eval_batch_size=1,
             eval_strategy='steps', eval_steps=1, save_strategy='steps', save_steps=1,
-            logging_steps=1, report_to='none', use_cpu=True, seed=42),
+            logging_steps=1, report_to='none', label_names=['labels'], use_cpu=True, seed=42),
             train_dataset=encoded[:2], eval_dataset=encoded[2:3],
             data_collator=DataCollatorForSeq2Seq(tokenizer, padding=True, label_pad_token_id=-100))
         trainer.train(); trainer.save_model(); trainer.save_state()
@@ -50,6 +50,7 @@ def main():
             generated = reloaded.generate(inputs, attention_mask=torch.ones_like(inputs), max_new_tokens=3, do_sample=False)
         assert generated.shape[1] > inputs.shape[1]
         report = {'status': 'passed', 'scope': 'CPU random tiny Qwen architecture + LoRA only. NOT Nebius QLoRA, domain training, or evaluation evidence.',
+                  'tokenizer_model': cfg['base_model'], 'tokenizer_revision': cfg['revision'],
                   'torch': torch.__version__, 'transformers': transformers.__version__, 'peft': peft.__version__,
                   'validated_tokenized_examples': len(encoded), 'max_tokens': max(len(r['input_ids']) for r in encoded),
                   'optimizer_steps': trainer.state.global_step, 'merge_logits_close': True, 'reload_generation': True}

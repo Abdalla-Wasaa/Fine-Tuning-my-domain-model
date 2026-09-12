@@ -1,7 +1,7 @@
 # Training design and rationale
 
 - Base: Qwen/Qwen2.5-0.5B-Instruct, an Apache-2.0 instruct model small enough for CPU merging and inference. It is a teaching baseline, not a clinical model. See its [model card](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct).
-- The configured Hub revision is resolved to an immutable commit before training and saved in run_manifest.json. Merging and baseline inference use that exact revision. For reruns set configs/train.json revision to the recorded SHA.
+- The configured Hub revision is pinned to an immutable commit and verified before training and saved in run_manifest.json. Merging and baseline inference use that exact revision. For reruns set configs/train.json revision to the recorded SHA.
 - QLoRA: NF4 four-bit weights, double quantization, BF16 compute when supported (FP16 otherwise), paged AdamW. This reduces trainable-memory needs while retaining a frozen base. See [PEFT quantization guidance](https://huggingface.co/docs/peft/developer_guides/quantization).
 - Rank 16, alpha 32, dropout 0.05, attention and MLP projection targets: modest adapter capacity with regularization on a small dataset.
 - Three epochs, learning rate 1e-4, cosine schedule, warmup 10%, weight decay 0.01: conservative initial settings, selected before looking at test results. They are a reasoned starting point, not empirically optimized settings.
