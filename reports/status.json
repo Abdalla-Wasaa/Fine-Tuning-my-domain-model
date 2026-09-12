@@ -1,0 +1,12 @@
+{
+  "dataset": "validated: 200 records, 160/20/20, zero errors",
+  "unit_tests": "passed; see reports/local_checks.txt",
+  "nebius_training": "blocked: no instance details, access, or budget supplied",
+  "merged_model": "pending completed capstone adapter",
+  "model_sample_responses": "pending merged model",
+  "paired_evaluation": "pending trained model and independent judge configuration",
+  "billing_and_stop_verification": "pending actual Nebius run",
+  "github_issues": "blocked: configured token returns HTTP 403 for issue creation",
+  "submission_complete": false,
+  "github_publishing": "main pushed using existing SSH key; feature publication follows local validation"
+}

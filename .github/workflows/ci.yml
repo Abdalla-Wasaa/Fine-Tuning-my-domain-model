@@ -1,0 +1,23 @@
+name: Validate capstone
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  offline-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pytest==8.3.5 rouge-score==0.1.2
+      - run: python data_prep.py
+      - run: python -m pytest -q
+      - run: git diff --exit-code -- data/ reports/validation_report.json
+      - name: Reject local-only files in history
+        run: |
+          if git rev-list --objects --all | grep -E ' (.*\/)?(AGENTS\.md|CLAUDE\.md|\.claude/.*|\.env)$'; then
+            exit 1
+          fi
