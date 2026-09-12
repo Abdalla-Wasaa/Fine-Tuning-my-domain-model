@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.claude/
+CLAUDE.md
+AGENTS.md
+artifacts/
+*.safetensors
+*.bin
+*.pt
+*.log
