@@ -8,10 +8,7 @@ set -Eeuo pipefail
 [[ "$ARTIFACT_URI" == s3://* ]] || { echo 'ARTIFACT_URI must use s3://'; exit 2; }
 cd "$(dirname "$0")/.."
 mkdir -p reports artifacts
-for executable in nebius aws timeout python; do command -v "$executable" >/dev/null; done
-# Confirm authenticated access and persistence before spending on training.
-nebius compute instance get --id "$NEBIUS_INSTANCE_ID" --format json > artifacts/instance_before.json
-aws s3 ls "$ARTIFACT_URI" >/dev/null
+command -v nebius >/dev/null || { echo "Nebius CLI missing: stop the instance in the console." >&2; exit 2; }
 cleanup() {
   result=$?
   trap - EXIT INT TERM
@@ -28,6 +25,10 @@ cleanup() {
 trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
+for executable in aws timeout python; do command -v "$executable" >/dev/null; done
+# Preflight failures also trigger the provider-stop cleanup.
+nebius compute instance get --id "$NEBIUS_INSTANCE_ID" --format json > artifacts/instance_before.json
+aws s3 ls "$ARTIFACT_URI" >/dev/null
 # Also arm a separate process so loss of the training shell still requests stop.
 nohup bash -c 'sleep "$1"; nebius compute instance stop --id "$2"' _ "$MAX_RUN_SECONDS" "$NEBIUS_INSTANCE_ID" > artifacts/watchdog.log 2>&1 &
 # The run limit includes artifact upload. Download models before starting this wrapper.

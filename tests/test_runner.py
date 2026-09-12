@@ -6,7 +6,7 @@ import subprocess
 import pytest
 
 
-@pytest.mark.parametrize('failure', ['', 'training', 'upload'])
+@pytest.mark.parametrize('failure', ['', 'training', 'upload', 'storage_preflight'])
 def test_runner_stops_after_success_or_failure(tmp_path, failure):
     project = tmp_path / 'project'
     (project / 'scripts').mkdir(parents=True)
@@ -16,7 +16,7 @@ def test_runner_stops_after_success_or_failure(tmp_path, failure):
     commands = tmp_path / 'commands'; commands.mkdir()
     fixtures = {
         'nebius': 'echo "nebius $*" >> "$TRACE"\necho \'{"status":{"state":"STOPPED"}}\'\n',
-        'aws': 'echo "aws $*" >> "$TRACE"\nif [[ "$1 $2" == "s3 cp" && "$FAILURE" == upload ]]; then exit 23; fi\n',
+        'aws': 'echo "aws $*" >> "$TRACE"\nif [[ "$1 $2" == "s3 ls" && "$FAILURE" == storage_preflight ]]; then exit 25; fi\nif [[ "$1 $2" == "s3 cp" && "$FAILURE" == upload ]]; then exit 23; fi\n',
         'python': 'echo "training" >> "$TRACE"\nif [[ "$FAILURE" == training ]]; then exit 24; fi\n',
         'nohup': 'echo "watchdog armed" >> "$TRACE"\n',
     }
@@ -29,7 +29,8 @@ def test_runner_stops_after_success_or_failure(tmp_path, failure):
            'FAILURE': failure, 'NEBIUS_INSTANCE_ID': 'test-instance', 'MAX_RUN_SECONDS': '30',
            'ARTIFACT_URI': 's3://fixture-bucket/run'}
     result = subprocess.run(['bash', str(project / 'scripts/train_nebius.sh')], env=env, capture_output=True, timeout=10)
-    assert result.returncode == {'': 0, 'training': 24, 'upload': 23}[failure]
+    assert result.returncode == {'': 0, 'training': 24, 'upload': 23, 'storage_preflight': 25}[failure]
     log = trace.read_text()
     assert 'nebius compute instance stop --id test-instance' in log
-    assert log.index('training') < log.index('nebius compute instance stop')
+    if failure != 'storage_preflight':
+        assert log.index('training') < log.index('nebius compute instance stop')
