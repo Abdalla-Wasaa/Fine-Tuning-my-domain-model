@@ -8,5 +8,7 @@
   "billing_and_stop_verification": "pending actual Nebius run",
   "github_issues": "blocked: configured token returns HTTP 403 for issue creation",
   "submission_complete": false,
-  "github_publishing": "main pushed using existing SSH key; feature publication follows local validation"
+  "github_publishing": "main and feat/afyaplus-capstone pushed over SSH",
+  "github_pull_request": "blocked: configured token rejects createPullRequest",
+  "model_stack_smoke": "passed: CPU tiny random model only; 200 tokenized examples, 2 optimizer steps, adapter merge equivalence and saved-model generation"
 }

@@ -12,7 +12,9 @@ def stopped(status):
     """Accept only an explicit STOPPED state in the provider's status object."""
     if not isinstance(status, dict):
         return False
-    return status.get('state') == 'STOPPED' or any(stopped(v) for v in status.values() if isinstance(v, dict))
+    if 'state' in status:
+        return status['state'] == 'STOPPED'
+    return any(stopped(v) for v in status.values() if isinstance(v, dict))
 
 
 def check(root=ROOT):

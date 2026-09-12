@@ -95,3 +95,4 @@ def test_pending_submission_fails_and_stop_requires_explicit_state(tmp_path):
     assert stopped({'state': 'STOPPED'})
     assert not stopped({'state': 'RUNNING', 'message': 'STOPPED was requested'})
     assert not stopped({'state': 'STOPPING'})
+    assert not stopped({'state': 'RUNNING', 'previous': {'state': 'STOPPED'}})

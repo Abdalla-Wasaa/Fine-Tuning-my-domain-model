@@ -51,7 +51,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-The base is [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct), selected for manageable local inference and an openly downloadable instruct baseline. The first run resolves and saves an immutable Hub revision. Set the recorded SHA in `configs/train.json` to reproduce it. The entire pinned GPU environment still needs verification on the actual Nebius instance.
+The base is [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct), selected for manageable local inference and an openly downloadable instruct baseline. The configuration pins an immutable Hub revision, which the training run verifies and records. The entire pinned GPU environment still needs verification on the actual Nebius instance.
 
 ### 2. Data preparation
 
@@ -132,3 +132,5 @@ Do not substitute training seconds for billed uptime. The calculator excludes st
 See [CONTRIBUTING](CONTRIBUTING.md). Use issue-linked semantic commits and a feature PR into main. The initial token could read the repository but could not create issues; intended #1–#5 references remain pending until permissions are corrected. Keep PRs draft while live evidence is outstanding. Never commit `.claude/`, `CLAUDE.md`, `AGENTS.md`, credentials or binary weights. Save weights to durable artifact storage and commit run hashes and retrieval instructions. Local tests and CI do not constitute proof of a GPU run or improved model quality.
 
 For an optional CPU library compatibility test, run `python scripts/smoke_model_stack.py`. It downloads only the base tokenizer and trains a tiny random model for two steps. Its report is explicitly excluded from capstone training evidence.
+
+The CPU compatibility smoke test passed with PyTorch 2.6.0+cpu, Transformers 4.51.3, and PEFT 0.15.2. All 200 examples tokenized successfully (maximum 190 tokens), two tiny-model optimizer steps completed, adapter merge preserved logits within tolerance, and the saved model reloaded and generated. See `reports/model_stack_smoke.json`; this is not the required CUDA run.
