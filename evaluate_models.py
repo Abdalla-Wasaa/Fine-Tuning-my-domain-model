@@ -70,7 +70,7 @@ def pending():
 
 def write_csv(rows):
     with (ROOT / 'comparison_results.csv').open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=FIELDS)
+        writer = csv.DictWriter(stream, fieldnames=FIELDS, lineterminator='\n')
         writer.writeheader(); writer.writerows(rows)
 
 

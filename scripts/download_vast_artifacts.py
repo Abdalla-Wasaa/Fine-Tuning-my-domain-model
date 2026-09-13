@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--ssh-port', type=int, required=True)
     parser.add_argument('--https-port', type=int, required=True)
     parser.add_argument('--instance-id', type=int, required=True)
+    parser.add_argument('--workers', type=int, default=32, choices=range(1,65))
     parser.add_argument('--include-base', action='store_true')
     parser.add_argument('--output', type=Path, default=Path(__file__).resolve().parents[1] / 'artifacts')
     args = parser.parse_args()
@@ -107,7 +108,7 @@ def main():
                                     raise
                                 time.sleep(attempt + 1)
                     completed = item['size'] - sum(end-offset+1 for offset,end in ranges)
-                    with partial.open('r+b' if partial.exists() else 'w+b') as stream, ThreadPoolExecutor(max_workers=8) as workers:
+                    with partial.open('r+b' if partial.exists() else 'w+b') as stream, ThreadPoolExecutor(max_workers=args.workers) as workers:
                         jobs = [workers.submit(fetch, bounds) for bounds in ranges]
                         for job in as_completed(jobs):
                             offset, payload = job.result()
