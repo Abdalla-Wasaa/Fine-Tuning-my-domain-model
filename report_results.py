@@ -45,6 +45,13 @@ def generate_report():
     cost_text = (f"Recorded compute cost: USD {cost['compute_usd']:.2f}, based on {cost['billed_seconds']/3600:.2f} billed hours at USD {cost['hourly_rate_usd']:.2f}/hour. "
                  'Storage, network and judge API charges are separate.' if cost else
                  'Compute cost is unverified: enter actual billed duration and contracted hourly price with scripts/record_cost.py. No zero-cost assumption is made.')
+    estimate_path = ROOT / 'reports/training_cost_estimate.json'
+    if cost is None and estimate_path.exists():
+        estimate = json.loads(estimate_path.read_text())
+        cost_text = (f"Training-only GPU cost is estimated at USD {estimate['estimated_training_gpu_usd']:.4f} "
+                     f"({estimate['training_seconds']:.2f} seconds at USD {estimate['gpu_hourly_rate_usd']:.4f}/hour). "
+                     'The total bill is unverified; setup, idle time, artifact retrieval, storage, network and judge charges are excluded. '
+                     'The USD 10 deposit is a spending limit, not measured cost.')
     base, tuned = averages['llm_judge']
     recommendation = 'Proceed only to a supervised operational pilot' if tuned > base and averages['groundedness'][1] >= 0.9 else 'Hold deployment and improve the prototype'
     (ROOT / 'memo.md').write_text(f'''# Stakeholder recommendation

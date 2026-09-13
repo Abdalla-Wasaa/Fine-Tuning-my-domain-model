@@ -1,13 +1,15 @@
 ## Problem and behavior
 
-Add an independent AfyaPlus Week 4 fine-tuning capstone covering operational workflows. The pipeline validates 200 synthetic SOP-grounded examples into group-disjoint 160/20/20 splits, trains completion-only QLoRA, merges the exact base revision, filters local responses, and evaluates 20 paired outputs with an independent judge.
+Implement the independent AfyaPlus Week 4 capstone with 200 synthetic operational examples, scenario-disjoint 160/20/20 splits, completion-only QLoRA, exact-base merging, conservative inference safety, and a 20-question paired benchmark.
 
-Relates to #1, #2, #3, #4, #5. The issues exist; these references do not imply closure.
+Actual Vast.ai RTX 3090 training completed 30 steps in 95.04 seconds. CPU merging and 40 comparison generations completed on the instance; five pipeline samples and all 20 OpenRouter judge results are saved. Judge quality increased from 2.15 to 5.00/5 and raw ROUGE-L from 0.1465 to 1.0000. Both models received reference SOP context; this measures instruction following on ten synthetic scenarios, not clinical validation.
+
+Relates to #1, #2, #3, #4, #5.
 
 ## Validation
 
-Offline tests cover data errors and leakage, safety routing, mandatory disclaimer, completion masking, judge result validation, metric handling, loss diagnosis, and evidence checks. Vast.ai is the selected training provider; provider-specific stop wrappers share failure-path tests. Python compilation and shell syntax checks pass. See reports/local_checks.txt for the recorded run.
+30 offline tests pass. Real trainer state, loss curve, dataset hashes, merge provenance, per-question results and judge receipts accompany the report. Training-only GPU cost is estimated at USD 0.0049; the total bill is not verified.
 
-## Outstanding evidence
+## Remaining work
 
-Keep this PR draft until a Vast.ai CUDA run, actual adapter/merged weights, five model samples, complete evaluation, billing and explicit provider STOPPED verification are attached. Pending CSV cells are intentionally blank. The SOP is synthetic teaching material requiring facility-owner review.
+Keep draft while adapter retrieval/local merged-weight verification, durable artifact publication, final billed cost and explicit provider-stop evidence remain outstanding. The teaching SOP needs facility-owner approval before use. Model weights are excluded from Git.

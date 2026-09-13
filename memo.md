@@ -1,15 +1,13 @@
 # Stakeholder recommendation
 
-**Recommendation: hold deployment until the training and comparison are verified.** The prototype addresses appointment workflows, registration, escalation routing, and system access. It does not make clinical decisions.
+**Recommendation: Proceed only to a supervised operational pilot.** This assistant covers appointment handling, registration, escalation routing and account access. It cannot make clinical decisions.
 
-The curated teaching dataset contains 200 examples, with 160 for training, 20 for validation, and 20 for testing. Automated preparation currently reports zero validation errors. The test questions represent ten independent scenarios, so the eventual results will describe a small educational benchmark.
+Across 20 held-out questions (10 scenarios), average answer quality changed from 2.15/5 to 5.00/5: +132.6% relative change. Reference wording overlap changed by +582.6%; supported-claim scoring changed by +194.1%. These percentages describe this small, synthetic, context-supplied benchmark, not patient outcomes. The independent automated reviewer can make mistakes.
 
-**Quality improvement:** not yet measured. There is no completed Vast.ai training run or paired model evaluation in this submission state. Percentage improvements cannot responsibly be supplied before those runs. The evaluation script will replace this memo with measured relative changes and clearly identify a zero baseline when percentages are undefined.
+Training-only GPU cost is estimated at USD 0.0049 (95.04 seconds at USD 0.1867/hour). The total bill is unverified; setup, idle time, artifact retrieval, storage, network and judge charges are excluded. The USD 10 deposit is a spending limit, not measured cost.
 
-**Compute cost:** not yet verified. No instance was started by this implementation. Record the actual billed instance duration and contracted hourly rate; training duration alone excludes setup and idle time. Storage and reviewer API charges must be tracked separately.
+**Next actions:** (1) Have facility workflow owners review and approve the teaching SOP and answers, because the current policy is synthetic. (2) Run a staff-reviewed shadow trial with unseen scenarios and measure blocked answers, because the strict safety filter can reject useful paraphrases and the benchmark is small.
 
-**Next actions:** (1) Supply a dedicated Vast.ai instance and a spending limit, run training with durable artifact upload and verified provider shutdown, then compare both models on the fixed test set. This establishes actual benefit and cost. (2) Ask facility workflow owners to approve the synthetic teaching SOP and review a supervised shadow trial. This addresses the gap between classroom assumptions and real operations.
-
-**Risk and mitigation:** unsupported guidance could misdirect staff. The prototype releases only sentences found in its supplied SOP, redirects clinical requests, and otherwise asks users to contact the responsible team. This conservative control may block useful paraphrases; measure that rate before operational use.
+**Risk and mitigation:** Unsupported instructions could misdirect staff. Limit released responses to supplied SOP sentences, redirect clinical requests, keep a human escalation route, and audit the shadow trial before enabling operational use.
 
 This model provides non-diagnostic operational guidance only.

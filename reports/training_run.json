@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "provider": "vast",
+  "config": {
+    "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "seed": 42,
+    "max_length": 1024,
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "base_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "peft": "0.15.2",
+    "bitsandbytes": "0.45.5"
+  },
+  "data_sha256": {
+    "train": "effbdd2895c69a5b42c2427a2f27b227d5dcba90083c8e97b6030ecdeda8237d",
+    "val": "e7c914185a5a57298c0673d6dab4a14db72de33e9fdf0837e3a380ff9b3b1a67",
+    "test": "f4e55db550b7da67f1ec57601934f49ab9635957eb76efcf7c860b8e0649ef08"
+  },
+  "training_seconds": 95.0449804100208,
+  "best_checkpoint": "/workspace/wk4_capstone_project/artifacts/adapter/checkpoint-30",
+  "diagnosis": "Healthy loss trend: validation loss improved by at least 2% without the overfit trigger; this does not prove operational safety."
+}

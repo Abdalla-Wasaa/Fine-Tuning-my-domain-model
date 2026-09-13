@@ -4,6 +4,7 @@ No Cloudflare tunnel is used. Session credentials remain in memory and are sent
 only to the direct HTTPS endpoint of the same SSH-authenticated instance.
 """
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import json
 from pathlib import Path
@@ -11,6 +12,7 @@ import shlex
 import ssl
 import subprocess
 import tempfile
+import time
 
 
 def remote_python(ssh, code):
@@ -42,6 +44,9 @@ def main():
             f'files=[{{"name":n,"size":Path("/tmp",n).stat().st_size,"sha256":subprocess.check_output(["sha256sum",str(Path("/tmp",n))],text=True).split()[0]}} for n in {names!r}]; '
             'print(json.dumps({"files":files,"jupyter":d["jupyter_token"],"edge":os.getenv("OPEN_BUTTON_TOKEN") or os.getenv("WEB_PASSWORD")}))')
     credentials = json.loads(remote_python(ssh, code))
+    for item in credentials['files']:
+        code = 'import hashlib,json; f=open(' + repr('/tmp/' + item['name']) + ',"rb"); print(json.dumps([hashlib.sha256(b).hexdigest() for b in iter(lambda:f.read(65536),b"")]))'
+        item['chunks'] = json.loads(remote_python(ssh, code))
     args.output.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='afyaplus-tls-') as directory:
         cert = Path(directory) / 'server.pem'
@@ -67,17 +72,51 @@ def main():
                 path = args.output / item['name']
                 partial = path.with_name(path.name + '.part')
                 try:
-                    with session.get(base + '/files/tmp/' + item['name'],
-                        headers={'Authorization': 'Bearer ' + credentials['edge']},
-                        params={'token': credentials['jupyter']}, stream=True,
-                        allow_redirects=False, timeout=(20, 60)) as response:
-                        if response.status_code != 200:
-                            raise RuntimeError(f'Download returned HTTP {response.status_code}')
-                        digest = hashlib.sha256()
-                        with partial.open('wb') as stream:
-                            for chunk in response.iter_content(1024 * 1024):
-                                stream.write(chunk)
-                                digest.update(chunk)
+                    # Small parallel ranges avoid the stalled long streams observed on this host.
+                    chunk_size = 64 * 1024
+                    ranges = [(offset, min(offset + chunk_size, item['size']) - 1)
+                              for offset in range(0, item['size'], chunk_size)]
+                    if partial.exists():
+                        with partial.open('rb') as existing:
+                            remaining = []
+                            for offset, end in ranges:
+                                existing.seek(offset)
+                                if hashlib.sha256(existing.read(end-offset+1)).hexdigest() != item['chunks'][offset//chunk_size]:
+                                    remaining.append((offset,end))
+                            ranges = remaining
+                    print(f'Retrieving {len(ranges)} missing or invalid chunks', flush=True)
+                    def fetch_once(bounds):
+                        offset, end = bounds
+                        with session.get(base + '/files/tmp/' + item['name'],
+                            headers={'Authorization': 'Bearer ' + credentials['edge'],
+                                     'Range': f'bytes={offset}-{end}', 'Connection': 'close'},
+                            params={'token': credentials['jupyter']}, allow_redirects=False,
+                            timeout=(15, 30)) as response:
+                            if response.status_code != 206 or response.headers.get('Content-Range') != f'bytes {offset}-{end}/{item["size"]}':
+                                raise RuntimeError(f'Expected exact byte range; HTTP {response.status_code}')
+                            payload = response.content
+                            if len(payload) != end - offset + 1:
+                                raise RuntimeError('Incomplete byte range')
+                            return offset, payload
+                    def fetch(bounds):
+                        for attempt in range(4):
+                            try:
+                                return fetch_once(bounds)
+                            except requests.RequestException:
+                                if attempt == 3:
+                                    raise
+                                time.sleep(attempt + 1)
+                    completed = item['size'] - sum(end-offset+1 for offset,end in ranges)
+                    with partial.open('r+b' if partial.exists() else 'w+b') as stream, ThreadPoolExecutor(max_workers=8) as workers:
+                        jobs = [workers.submit(fetch, bounds) for bounds in ranges]
+                        for job in as_completed(jobs):
+                            offset, payload = job.result()
+                            stream.seek(offset); stream.write(payload)
+                            completed += len(payload)
+                            if completed // (1024 * 1024) > (completed - len(payload)) // (1024 * 1024):
+                                print(f"Retrieved {completed // (1024 * 1024)} MiB of {item['name']}", flush=True)
+                    with partial.open('rb') as stream:
+                        digest = hashlib.file_digest(stream, 'sha256')
                     if partial.stat().st_size != item['size'] or digest.hexdigest() != item['sha256']:
                         raise RuntimeError('Downloaded artifact does not match remote size/hash')
                     partial.replace(path)

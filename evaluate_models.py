@@ -88,7 +88,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--merged', type=Path, default=ROOT / 'artifacts/merged')
     parser.add_argument('--reuse-generations', action='store_true', help='Reuse matching cached local outputs after a judge/API failure')
+    parser.add_argument('--judge-env', type=Path, help='Explicit local dotenv file; only the selected judge key is read')
+    parser.add_argument('--judge-key-var', default='OPENROUTER_API_KEY')
     args = parser.parse_args()
+    if args.judge_env:
+        from dotenv import dotenv_values
+        key = dotenv_values(args.judge_env).get(args.judge_key_var)
+        if not key or not key.strip():
+            raise SystemExit('The selected judge credential is missing or empty')
+        os.environ['JUDGE_API_KEY'] = key.strip()
+        os.environ.setdefault('JUDGE_BASE_URL', 'https://openrouter.ai/api/v1')
+        os.environ.setdefault('JUDGE_MODEL', 'openai/gpt-4o-mini')
     if not all(os.environ.get(k) for k in ('JUDGE_BASE_URL', 'JUDGE_API_KEY', 'JUDGE_MODEL')):
         raise SystemExit('Independent judge credentials are required; no synthetic scores will be emitted.')
     from local_inference import Generator
