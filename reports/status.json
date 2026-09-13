@@ -3,12 +3,14 @@
   "unit_tests": "passed; see reports/local_checks.txt",
   "merged_model": "pending completed capstone adapter",
   "model_sample_responses": "pending merged model",
-  "paired_evaluation": "pending trained model and independent judge configuration",
+  "paired_evaluation": "OpenRouter connectivity verified; pending retrieval and merge of trained model",
   "billing_and_stop_verification": "pending actual Nebius run",
   "github_issues": "created: #1 through #5",
   "submission_complete": false,
   "github_publishing": "main and feat/afyaplus-capstone pushed over SSH",
   "github_pull_request": "draft PR #6 created",
   "model_stack_smoke": "passed: CPU tiny random model only; 200 tokenized examples, 2 optimizer steps, adapter merge equivalence and saved-model generation",
-  "gpu_training": "pending Vast.ai SSH connection details and verified rate; user reports USD 10 balance"
+  "gpu_training": "completed remotely on Vast.ai RTX 3090: 30 optimizer steps, 95.0449804100208 seconds; training.exit was 0",
+  "artifact_retrieval": "blocked: incomplete local archive; remote archives at /tmp/afyaplus-trained-adapter.tar.gz and /tmp/afyaplus-base.tar",
+  "provider_state": "SSH connection refused on resumption; watchdog had been armed, but console/API confirmation of stopped state remains required"
 }

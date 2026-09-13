@@ -52,7 +52,7 @@ def judge(question, context, reference, a, b):
     payload = {'question': question, 'SOP': context, 'reference': strip_disclaimer(reference),
                'A': strip_disclaimer(a), 'B': strip_disclaimer(b)}
     response = requests.post(url.rstrip('/') + '/chat/completions', headers={'Authorization': f'Bearer {key}'},
-        json={'model': model, 'temperature': 0, 'messages': [{'role': 'system', 'content': instructions},
+        json={'model': model, 'temperature': 0, 'max_tokens': 768, 'messages': [{'role': 'system', 'content': instructions},
              {'role': 'user', 'content': json.dumps(payload)}], 'response_format': {'type': 'json_object'}}, timeout=120)
     response.raise_for_status()
     body = response.json()
@@ -74,9 +74,20 @@ def write_csv(rows):
         writer.writeheader(); writer.writerows(rows)
 
 
+def validate_generation_cache(cached, identity, count):
+    if cached.get('identity') != identity:
+        raise ValueError('Generation cache does not match model, prompts or test data')
+    raw = cached.get('raw', {})
+    if any(not isinstance(raw.get(name), list) or len(raw[name]) != count
+           or any(not isinstance(answer, str) for answer in raw[name]) for name in ('base', 'tuned')):
+        raise ValueError('Generation cache is incomplete or malformed')
+    return raw
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--merged', type=Path, default=ROOT / 'artifacts/merged')
+    parser.add_argument('--reuse-generations', action='store_true', help='Reuse matching cached local outputs after a judge/API failure')
     args = parser.parse_args()
     if not all(os.environ.get(k) for k in ('JUDGE_BASE_URL', 'JUDGE_API_KEY', 'JUDGE_MODEL')):
         raise SystemExit('Independent judge credentials are required; no synthetic scores will be emitted.')
@@ -86,13 +97,26 @@ def main():
     if len(rows) != 20:
         raise ValueError('The benchmark must contain exactly 20 test rows')
     started = time.monotonic()
-    raw = {}
-    for name, path, revision in [('base', merge['base_model'], merge['base_revision']), ('tuned', str(args.merged), None)]:
-        generator = Generator(path, revision)
-        raw[name] = [generator.generate(r['question'], r['context']) for r in rows]
-        del generator
-        import gc
-        gc.collect()
+    identity = {'test_sha256': sha256(ROOT / 'data/test.jsonl'), 'merge': merge,
+                'prompt_code_sha256': sha256(ROOT / 'common.py'),
+                'generation_code_sha256': sha256(ROOT / 'local_inference.py')}
+    cache_path = ROOT / 'artifacts/evaluation_generations.json'
+    if args.reuse_generations:
+        cached = json.loads(cache_path.read_text())
+        raw = validate_generation_cache(cached, identity, len(rows))
+        print('Reusing verified local generations; judge scores will be newly requested.', flush=True)
+    else:
+        raw = {}
+        for name, path, revision in [('base', merge['base_model'], merge['base_revision']), ('tuned', str(args.merged), None)]:
+            generator = Generator(path, revision)
+            raw[name] = []
+            for i, row in enumerate(rows, 1):
+                raw[name].append(generator.generate(row['question'], row['context']))
+                print(f'{name}: generated {i}/{len(rows)}', flush=True)
+            del generator
+            import gc
+            gc.collect()
+            write_json(cache_path, {'identity': identity, 'raw': raw})
     results, details = [], []
     for i, row in enumerate(rows):
         reference = row['messages'][-1]['content']
@@ -115,6 +139,7 @@ def main():
             'reference': reference, 'base_raw': base, 'tuned_raw': tuned, 'guarded': guarded,
             'judge': scores, 'judge_receipt': receipt, 'presentation_order': order})
         write_json(ROOT / 'reports/evaluation_progress.json', details)
+        print(f'Judged {i+1}/{len(rows)} paired answers', flush=True)
     write_csv(results)
     write_json(ROOT / 'reports/evaluation_details.json', details)
     write_json(ROOT / 'reports/evaluation_run.json', {'status': 'completed', 'examples': len(rows),

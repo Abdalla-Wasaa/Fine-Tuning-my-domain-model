@@ -103,3 +103,20 @@ def test_vast_stop_evidence_requires_actual_stopped_state():
     assert stopped({"actual_status": "stopped"})
     assert not stopped({"actual_status": "running", "intended_status": "stopped"})
     assert not stopped({"actual_status": "exited"})
+
+
+def test_provider_evidence_excludes_credentials():
+    from scripts.sanitize_provider import sanitize
+    result = sanitize({'instances': {'id': 1, 'actual_status': 'stopped',
+        'jupyter_token': 'secret', 'extra_env': {'API_KEY': 'secret'}, 'dph_total': 0.2}})
+    assert result['actual_status'] == 'stopped'
+    assert 'secret' not in json.dumps(result)
+
+
+def test_generation_cache_rejects_stale_or_partial_evidence():
+    from evaluate_models import validate_generation_cache
+    identity = {'test_sha256': 'fixture-hash'}
+    valid = {'identity': identity, 'raw': {'base': ['A'], 'tuned': ['B']}}
+    assert validate_generation_cache(valid, identity, 1) == valid['raw']
+    with pytest.raises(ValueError): validate_generation_cache(valid, {'test_sha256': 'different'}, 1)
+    with pytest.raises(ValueError): validate_generation_cache(valid, identity, 20)

@@ -82,7 +82,7 @@ The wrapper executes `python fine_tune.py`, archives the adapter plus reports to
 From a separate authenticated workstation after the stop request:
 
 ```bash
-nebius compute instance get --id "$NEBIUS_INSTANCE_ID" --format json > reports/provider_stop_verification.json
+nebius compute instance get --id "$NEBIUS_INSTANCE_ID" --format json | python scripts/sanitize_provider.py > reports/provider_stop_verification.json
 ```
 
 Check that the returned state is STOPPED; if it is still running, immediately run `nebius compute instance stop --id "$NEBIUS_INSTANCE_ID"` or stop it in the console. Do not rely on guest shutdown alone. Storage may still be billed. No infrastructure is provisioned by these scripts.
@@ -151,7 +151,7 @@ bash scripts/train_vast.sh
 This optional automatic wrapper requires `vastai`, `aws`, and configured stop/upload credentials. It follows the same tested failure cleanup and time limit as the Nebius wrapper. Do not run the Nebius wrapper on Vast.ai. From a separately authenticated workstation, save final provider evidence:
 
 ```bash
-vastai show instance 50789605 --raw > reports/provider_stop_verification.json
+vastai show instance 50789605 --raw | python scripts/sanitize_provider.py > reports/provider_stop_verification.json
 ```
 
 The evidence checker requires `actual_status: stopped`; an intended stop, frozen or crashed container does not qualify. Stopped instances retain disk data and incur storage charges. Retrieve and verify artifacts before considering destruction, which permanently deletes data. See [Vast.ai lifecycle documentation](https://docs.vast.ai/guides/instances/manage-instances).
@@ -167,3 +167,15 @@ export JUDGE_API_KEY
 ```
 
 The correct model name uses the letter `o` in `4o`. It is independent of the Qwen model being fine-tuned. The evaluator makes 20 paired judge requests after model artifacts are available; charges are separate from Vast.ai. If the key already exists in a local `.env`, provide only its path and variable name for configuration, never its value in chat. See [OpenRouter API setup](https://openrouter.ai/docs/quickstart). The current evaluator reads exported variables and does not automatically load `.env` files.
+
+### Recovering the completed Vast.ai run
+
+The initial SSH transfer was incomplete. Do not extract a partial archive. When the same instance is running and its ports have been confirmed, this direct-TLS helper downloads and verifies the adapter against its remote SHA256:
+
+```bash
+python scripts/download_vast_artifacts.py --host 188.116.34.4 --ssh-port 21147 --https-port 30553 --instance-id 50789605
+```
+
+It trusts only the server certificate obtained through the existing verified SSH connection, sends credentials only to the direct instance IP, refuses redirects, and verifies both size and SHA256 before replacing the destination. It has not yet been exercised against the stopped instance. The adapter is the priority; `--include-base` optionally retrieves the cached public base model too. Stop GPU compute after verified retrieval; merge and evaluate locally. Port assignments must be rechecked after a restart.
+
+If the judge API fails after local generation, `python evaluate_models.py --reuse-generations` can reuse the saved generations only when the model manifest, test hash and prompt/generation code hashes still match. It requests fresh judge scores and does not reuse partial score results.
