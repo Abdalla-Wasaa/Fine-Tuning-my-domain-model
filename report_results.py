@@ -52,6 +52,10 @@ def generate_report():
                      f"({estimate['training_seconds']:.2f} seconds at USD {estimate['gpu_hourly_rate_usd']:.4f}/hour). "
                      'The total bill is unverified; setup, idle time, artifact retrieval, storage, network and judge charges are excluded. '
                      'The USD 10 deposit is a spending limit, not measured cost.')
+    judge_usage = ROOT / 'reports/judge_usage.json'
+    if judge_usage.exists():
+        usage = json.loads(judge_usage.read_text())
+        cost_text += f" The 20-pair review API receipts report USD {usage['reported_cost_usd']:.5f}."
     base, tuned = averages['llm_judge']
     recommendation = 'Proceed only to a supervised operational pilot' if tuned > base and averages['groundedness'][1] >= 0.9 else 'Hold deployment and improve the prototype'
     (ROOT / 'memo.md').write_text(f'''# Stakeholder recommendation

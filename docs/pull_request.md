@@ -12,4 +12,4 @@ Relates to #1, #2, #3, #4, #5.
 
 ## Remaining work
 
-Keep draft while adapter retrieval/local merged-weight verification, durable artifact publication, final billed cost and explicit provider-stop evidence remain outstanding. The teaching SOP needs facility-owner approval before use. Model weights are excluded from Git.
+Keep draft while local merged-weight verification, final billed cost and explicit provider-stop evidence remain outstanding. The teaching SOP needs facility-owner approval before use. Model weights are excluded from Git.

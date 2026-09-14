@@ -1,0 +1,11 @@
+{
+  "id": 50789605,
+  "actual_status": "running",
+  "intended_status": "running",
+  "dph_base": 0.18666666666666668,
+  "dph_total": 0.1969843029723985,
+  "start_date": 1789241005.0155504,
+  "duration": 29688.48603630066,
+  "storage_total_cost": 0.01031763630573182,
+  "uptime": null
+}

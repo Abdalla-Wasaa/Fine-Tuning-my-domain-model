@@ -1,0 +1,10 @@
+{
+  "adapter_sha256": "a37875f9b294ae26428d7039d54ba0591710b98361f0daf976011c7df6b121f3",
+  "archive": "afyaplus-adapter-v0.1.0.tar.gz",
+  "archive_sha256": "2e77ff02989a764896ffff039ef2ae59824991e824197fcf4e3b88977158f6ca",
+  "archive_bytes": 36476975,
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "base_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "remote_merged_weights_sha256": "86521d9825e3f6f22f030f5e16e0af911392f93bb5a4bbeab9e47892b036abe5",
+  "local_merged_weights_verified": false
+}

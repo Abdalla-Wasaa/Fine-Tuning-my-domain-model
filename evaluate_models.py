@@ -87,6 +87,7 @@ def validate_generation_cache(cached, identity, count):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--merged', type=Path, default=ROOT / 'artifacts/merged')
+    parser.add_argument('--generate-only', action='store_true', help='Save base/tuned outputs without sending requests or requiring a judge key')
     parser.add_argument('--reuse-generations', action='store_true', help='Reuse matching cached local outputs after a judge/API failure')
     parser.add_argument('--judge-env', type=Path, help='Explicit local dotenv file; only the selected judge key is read')
     parser.add_argument('--judge-key-var', default='OPENROUTER_API_KEY')
@@ -99,7 +100,7 @@ def main():
         os.environ['JUDGE_API_KEY'] = key.strip()
         os.environ.setdefault('JUDGE_BASE_URL', 'https://openrouter.ai/api/v1')
         os.environ.setdefault('JUDGE_MODEL', 'openai/gpt-4o-mini')
-    if not all(os.environ.get(k) for k in ('JUDGE_BASE_URL', 'JUDGE_API_KEY', 'JUDGE_MODEL')):
+    if not args.generate_only and not all(os.environ.get(k) for k in ('JUDGE_BASE_URL', 'JUDGE_API_KEY', 'JUDGE_MODEL')):
         raise SystemExit('Independent judge credentials are required; no synthetic scores will be emitted.')
     from local_inference import Generator
     merge = json.loads((args.merged / 'merge_manifest.json').read_text())
@@ -127,6 +128,9 @@ def main():
             import gc
             gc.collect()
             write_json(cache_path, {'identity': identity, 'raw': raw})
+    if args.generate_only:
+        print('Saved 40 raw generations; no judge requests sent.')
+        return
     results, details = [], []
     for i, row in enumerate(rows):
         reference = row['messages'][-1]['content']

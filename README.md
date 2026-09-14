@@ -2,7 +2,7 @@
 
 Independent Week 4 capstone for appointment workflows, triage escalation routing, registration, and system access. The project lives in `wk4_capstone_project/` locally and occupies the root of the dedicated target repository. No classwork files are modified or imported at runtime.
 
-**Current state:** real QLoRA training completed on a Vast.ai RTX 3090 (30 steps, 95.04 seconds). The adapter was merged on the instance; five inference samples and 20 paired OpenRouter-judged evaluations are saved. Raw ROUGE-L increased from 0.1465 to 1.0000 and judge quality from 2.15 to 5.00/5 on this synthetic, SOP-supplied benchmark. Artifact retrieval, local merged-weight verification, final billing and provider-stop confirmation remain outstanding. See [status](reports/status.json), [training diagnosis](reports/training_diagnosis.md), [evaluation](reports/evaluation_report.md), and [memo](memo.md).
+**Current state:** real QLoRA training completed on a Vast.ai RTX 3090 (30 steps, 95.04 seconds). The adapter was merged on the instance; five inference samples and 20 paired OpenRouter-judged evaluations are saved. Raw ROUGE-L increased from 0.1465 to 1.0000 and judge quality from 2.15 to 5.00/5 on this synthetic, SOP-supplied benchmark. The trained adapter is retrieved and SHA256-verified. Local merged-weight verification, final billing and provider-stop confirmation remain outstanding. See [status](reports/status.json), [training diagnosis](reports/training_diagnosis.md), [evaluation](reports/evaluation_report.md), and [memo](memo.md).
 
 > This model provides non-diagnostic operational guidance only.
 
@@ -183,3 +183,19 @@ If the judge API fails after local generation, `python evaluate_models.py --reus
 ### Recorded execution
 
 The actual run used an isolated `/workspace/capstone-env`, the pinned requirements, and `timeout 1200 python fine_tune.py --provider vast` inside tmux. A separate provider-stop watchdog bounded the instance lifetime. Because no S3 destination was configured, artifacts were retained on the instance disk and retrieved over authenticated SSH/direct pinned HTTPS. CPU merging and all 40 generations completed on that instance while the public base-model download on the workstation was stalled. Only the resulting text comparisons were sent from the workstation to OpenRouter; the credential remained local. `--reuse-generations` checks the model manifest, dataset and source-code hashes before scoring these saved responses.
+
+For the same split-compute workflow without putting judge credentials on the instance, run `OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python evaluate_models.py --generate-only` after merging, followed by `python local_inference.py`. Retrieve `artifacts/evaluation_generations.json`, `artifacts/merged/merge_manifest.json`, and `reports/sample_responses.json`. Then run `python evaluate_models.py --reuse-generations --judge-env /path/to/local/.env` on the workstation. The cache validates the exact model, test data, and generation source hashes.
+
+### Download the preserved trained adapter
+
+The verified adapter is preserved as a [GitHub prerelease](https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/tag/v0.1.0-capstone). Binary weights remain outside Git history.
+
+```bash
+gh release download v0.1.0-capstone --repo Abdalla-Wasaa/Fine-Tuning-my-domain-model --pattern 'afyaplus-adapter-v0.1.0.tar.gz' --pattern SHA256SUMS
+sha256sum -c SHA256SUMS
+tar -xzf afyaplus-adapter-v0.1.0.tar.gz
+python merge_model.py
+python local_inference.py
+```
+
+Merging downloads the pinned public base model and needs a working Hugging Face connection. The original remote merge is evidenced by the hashes in `reports/evaluation_run.json`; the workstation copy is not yet verified.
