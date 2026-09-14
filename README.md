@@ -2,7 +2,7 @@
 
 Independent Week 4 capstone for appointment workflows, triage escalation routing, registration, and system access. The project lives in `wk4_capstone_project/` locally and occupies the root of the dedicated target repository. No classwork files are modified or imported at runtime.
 
-**Current state:** real QLoRA training completed on a Vast.ai RTX 3090 (30 steps, 95.04 seconds). The adapter was merged on the instance; five inference samples and 20 paired OpenRouter-judged evaluations are saved. Raw ROUGE-L increased from 0.1465 to 1.0000 and judge quality from 2.15 to 5.00/5 on this synthetic, SOP-supplied benchmark. The trained adapter is retrieved and SHA256-verified. Local merged-weight verification, final billing and provider-stop confirmation remain outstanding. See [status](reports/status.json), [training diagnosis](reports/training_diagnosis.md), [evaluation](reports/evaluation_report.md), and [memo](memo.md).
+**Current state:** real QLoRA training completed on a Vast.ai RTX 3090 (30 steps, 95.04 seconds). The adapter was merged on the instance; five inference samples and 20 paired OpenRouter-judged evaluations are saved. Raw ROUGE-L increased from 0.1465 to 1.0000 and judge quality from 2.15 to 5.00/5 on this synthetic, SOP-supplied benchmark. Both the adapter and full merged weights are retrieved and SHA256-verified. All five offline local inference samples exactly match the remote samples. Final billing and explicit provider-stop confirmation remain outstanding. See [status](reports/status.json), [training diagnosis](reports/training_diagnosis.md), [evaluation](reports/evaluation_report.md), and [memo](memo.md).
 
 > This model provides non-diagnostic operational guidance only.
 
@@ -198,4 +198,6 @@ python merge_model.py
 python local_inference.py
 ```
 
-Merging downloads the pinned public base model and needs a working Hugging Face connection. The original remote merge is evidenced by the hashes in `reports/evaluation_run.json`; the workstation copy is not yet verified.
+Merging downloads the pinned public base model and needs a working Hugging Face connection. The original remote merge is evidenced by the hashes in `reports/evaluation_run.json`; the workstation copy now matches that checksum and passes offline inference; see `reports/local_model_verification.json`.
+
+For interrupted direct SSH recovery of existing merged weights, use `rsync -z --append-verify --inplace` to a `.part` destination. Check the complete file against `artifacts/merged/merge_manifest.json` before renaming it to `model.safetensors`. Retrieve the tokenizer/configuration files from the same merged directory. Partial files are not valid model artifacts.

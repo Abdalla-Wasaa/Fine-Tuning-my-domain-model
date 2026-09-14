@@ -1,0 +1,8 @@
+{
+  "instance_id": 50789605,
+  "observed_at_utc": "2026-09-14T10:46:08.383813+00:00",
+  "method": "Vast CLI show invoices using existing instance-scoped credential",
+  "result": "CLI reported unauthorized/401 and permission error; no billing amounts retrieved",
+  "next_evidence_required": "Account billing usage record supplied by owner",
+  "total_cost_verified": false
+}

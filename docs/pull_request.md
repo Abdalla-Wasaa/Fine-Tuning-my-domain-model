@@ -8,8 +8,8 @@ Relates to #1, #2, #3, #4, #5.
 
 ## Validation
 
-30 offline tests pass. Real trainer state, loss curve, dataset hashes, merge provenance, per-question results and judge receipts accompany the report. Training-only GPU cost is estimated at USD 0.0049; the total bill is not verified.
+30 offline tests pass. The complete merged model was recovered through resumable SSH transfer and SHA256-verified; all five offline local samples exactly match the remote outputs. The provider stop CLI completed successfully and subsequent SSH connections were refused; this is not an explicit provider STOPPED response. Real trainer state, loss curve, dataset hashes, merge provenance, per-question results and judge receipts accompany the report. Training-only GPU cost is estimated at USD 0.0049; the total bill is not verified.
 
 ## Remaining work
 
-Keep draft while local merged-weight verification, final billed cost and explicit provider-stop evidence remain outstanding. The teaching SOP needs facility-owner approval before use. Model weights are excluded from Git.
+Keep draft while final billed cost and explicit provider-stop evidence remain outstanding. The teaching SOP needs facility-owner approval before use. Model weights are excluded from Git.
