@@ -12,5 +12,5 @@
   "model_stack_smoke": "passed: CPU tiny random model only; 200 tokenized examples, 2 optimizer steps, adapter merge equivalence and saved-model generation",
   "gpu_training": "completed remotely on Vast.ai RTX 3090: 30 optimizer steps, 95.0449804100208 seconds; training.exit was 0",
   "artifact_retrieval": "completed: local archive and adapter weight SHA256 verified against authenticated remote evidence",
-  "provider_state": "SSH connection refused on latest continuation; explicit stopped state remains unverified"
+  "provider_state": "User console screenshot confirms Current Status Exited and Intended Status Stopped for 50789605; explicit current Stopped state and billing remain unverified"
 }
