@@ -18,8 +18,8 @@ def test_report_ranks_real_deltas_and_labels_missing_cost(tmp_path, monkeypatch)
                         f'{name}_groundedness': 0.9, f'{name}_guarded_rouge_l': 0.5,
                         f'{name}_safety_action': 'supported_verbatim'})
         rows.append(row)
-        details.append({'id': str(i), 'question': f'Fixture {i}', 'base_raw': 'Reference.', 'tuned_raw': 'Reference.',
-                        'judge': {'base': {'reason': 'Fixture base'}, 'tuned': {'reason': 'Fixture tuned'}}})
+        details.append({'id': str(i), 'question': f'Fixture {i}', 'context': 'Reference.', 'base_raw': 'Reference.', 'tuned_raw': 'Reference.',
+                        'judge': {'base': {'reason': 'Fixture base'}, 'tuned': {'reason': 'Fixture tuned', 'groundedness': 0.9}}})
     with (tmp_path / 'comparison_results.csv').open('w') as f:
         writer = csv.DictWriter(f, fieldnames=FIELDS); writer.writeheader(); writer.writerows(rows)
     (tmp_path / 'reports/evaluation_details.json').write_text(json.dumps(details))
@@ -27,6 +27,8 @@ def test_report_ranks_real_deltas_and_labels_missing_cost(tmp_path, monkeypatch)
     report = (tmp_path / 'reports/evaluation_report.md').read_text()
     assert report.index('### 19:') < report.index('### 18:')
     assert 'including regressions' in report
+    assert 'Judge consistency limitation' in report
+    assert '|---|---:|---:|---:|\n| rouge_l' in report
     memo = (tmp_path / 'memo.md').read_text()
     assert 'unverified' in memo and DISCLAIMER in memo
 

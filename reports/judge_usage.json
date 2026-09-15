@@ -1,0 +1,7 @@
+{
+  "requests": 20,
+  "reported_cost_usd": 0.00203655,
+  "prompt_tokens": 7097,
+  "completion_tokens": 1620,
+  "source": "OpenRouter response usage receipts in evaluation_details.json"
+}

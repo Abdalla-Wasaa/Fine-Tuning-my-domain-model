@@ -1,0 +1,14 @@
+{
+  "billed_seconds": 16632.0,
+  "hourly_rate_usd": 0.26666666666666666,
+  "compute_usd": 1.232,
+  "billing_reference": "reports/provider_charges.json: GPU line item for instance-51088316",
+  "measurement_basis": "Actual provider GPU charge. Equivalent billed seconds calculated from charge / contracted hourly rate; total elapsed instance age is not billed GPU time.",
+  "excludes": [
+    "storage",
+    "network",
+    "judge API",
+    "short interval between observation and completed shutdown"
+  ],
+  "provider_total_usd": 2.884
+}

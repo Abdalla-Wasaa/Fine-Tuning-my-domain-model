@@ -161,6 +161,7 @@ def main():
     write_json(ROOT / 'reports/evaluation_run.json', {'status': 'completed', 'examples': len(rows),
         'independent_scenario_groups': len({r['scenario_id'] for r in rows}),
         'test_sha256': sha256(ROOT / 'data/test.jsonl'), 'merge': merge,
+        'inference_profile': {'precision': args.precision, 'device': args.device},
         'seconds': time.monotonic() - started, 'judge_model': os.environ['JUDGE_MODEL'],
         'method': 'Oracle SOP context supplied identically to both models. This measures context-following, not retrieval or memorized policy knowledge.'})
     from report_results import generate_report

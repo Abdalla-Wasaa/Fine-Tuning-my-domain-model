@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "provider": "vast",
+  "config": {
+    "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "seed": 42,
+    "max_length": 1024,
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "base_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "source_manifest_sha256": "aa50be08750f3a7a2c98f68964146c87e881cc8bcd3d0138a5aa5cca6961efe9",
+  "human_review_sha256": "0c1cd02ded6b7693a558e8e39dfd9f6bf854d6b776b8d545d56bfc501d787b72",
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "peft": "0.15.2",
+    "bitsandbytes": "0.45.5"
+  },
+  "data_sha256": {
+    "train": "f195b43be695cd6dc160dfe54189859be14832314c26d0b0267ec38eb275b531",
+    "val": "f41ba0a6a226a15a66182bbce40c0b4b2e72872ec9caec4c6d92f18a914b6430",
+    "test": "3847bda4547f5b1bbc8521ff946c00d0a59992f787d28fd9f3fc5d0ef21a9172"
+  },
+  "training_seconds": 311.44707919936627,
+  "best_checkpoint": "/workspace/wk4_capstone_project/artifacts/adapter/checkpoint-30",
+  "diagnosis": "Healthy loss trend: validation loss improved by at least 2% without the overfit trigger; this does not prove operational safety."
+}

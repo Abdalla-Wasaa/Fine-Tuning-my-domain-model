@@ -2,7 +2,7 @@
 
 Week 4 capstone for Kenyan health operations: appointment access, registration, system access, and administrative escalation. Clinical decisions remain with qualified healthcare providers.
 
-**Submission status: not yet complete.** The replacement corpus contains 200 source-derived examples with 160/20/20 splits, zero structural/citation errors, and 100 clause/page references to official Kenyan sources. Wasaa Abdalla confirmed review and approval of all 100 cases, recorded on 2026-09-15. LLaMA training, merging and evaluation have not run on this corpus. The existing HF_TOKEN successfully accessed the pinned Meta model configuration (HTTP 200 on 2026-09-14), and the current workstation lacks sufficient RAM for the unquantized 8B merge/inference stage. No replacement scores are invented. See `reports/status.json` and `reports/preflight_report.json`.
+**Execution status:** LLaMA 3.1 8B training, BF16 merging, five inference samples, and the 20-question independent evaluation are complete. The 200 source-derived examples have reviewed provenance and 160/20/20 splits. ROUGE-L improved from 0.3257 to 1.0000; judge quality declined from 4.55 to 3.85, with inconsistent groundedness rationales documented in the report. The stakeholder recommendation is to hold deployment. Artifact publication and final provider-stop evidence are being finalized; see `reports/status.json`.
 
 The earlier completed Qwen experiment is preserved under `experiments/qwen-teaching-v1/`; its metrics and release assets do not qualify as LLaMA results. Its source code is reproducible at commit `3619102f79b0c5fbe33ce5daa067c158a65dc184`.
 
@@ -19,7 +19,7 @@ The earlier completed Qwen experiment is preserved under `experiments/qwen-teach
 - `merge_model.py`: float32 CPU merge into weight shards; rejects mismatched historical adapters.
 - `local_inference.py`, `safety.py`: local generation and conservative operational safety filter.
 - `evaluate_models.py`: 20 paired comparisons with ROUGE-L, independent judge and groundedness.
-- `comparison_results.csv`: explicit pending rows until the replacement evaluation completes.
+- `comparison_results.csv`: completed paired metrics for all 20 test questions.
 - `report_results.py`, `memo.md`: measured recommendation generated only from a completed comparison.
 - `scripts/`: preflight, provider-stop wrappers, billing recording and final verification.
 - `experiments/qwen-teaching-v1/`: clearly separated historical evidence.
@@ -36,7 +36,7 @@ Each example links to a clause, physical PDF page and exact anchor. The answers 
 
 ### 1. Environment setup
 
-Use Linux and Python 3.11/3.12. Training targets a CUDA GPU with at least 24 GiB VRAM. For the current float32 merge and CPU inference, use at least 40 GiB **available** RAM (a 64 GiB machine is recommended) and 80 GiB free disk. The 7.6 GiB workstation used for the earlier Qwen run is insufficient for this path. These are planning requirements, not a measured LLaMA benchmark.
+Use Linux and Python 3.11/3.12. The recorded training run used a 16 GiB CUDA GPU with batch size one and gradient checkpointing. For the current float32 merge and CPU inference, use at least 40 GiB **available** RAM (a 64 GiB machine is recommended) and 80 GiB free disk. The 7.6 GiB workstation used for the earlier Qwen run is insufficient for this path. Use the recorded BF16/NF4 profile below for a 32 GiB host instead.
 
 ```bash
 git clone https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model.git wk4_capstone_project
@@ -121,8 +121,40 @@ The cost calculator excludes storage, network and judge charges; identify those 
 
 ## Submission and Git workflow
 
-Use issue-linked semantic commits and PR review as documented in `CONTRIBUTING.md`. PR #6 remains draft while the replacement run is blocked. When all rubric evidence is complete, merge into `main` so the submitted root repository link exposes the deliverables. Publish trained artifacts separately with checksums; never commit model weights, `.env`, `.claude/`, `CLAUDE.md` or `AGENTS.md`.
+Use issue-linked semantic commits and PR review as documented in `CONTRIBUTING.md`. PR #6 integrates the completed submission into `main`; the default branch is the submission entry point. Publish trained artifacts separately with checksums; never commit model weights, `.env`, `.claude/`, `CLAUDE.md` or `AGENTS.md`.
 
 This model provides non-diagnostic operational guidance only.
 
 Dataset reviewer: Wasaa Abdalla. Read [the review pack](curation/REVIEW_PACK.md) and enter actual decisions and dates in [the review ledger](curation/review.csv). Assignment does not establish completed review.
+
+## Recorded 16 GB GPU run
+
+The actual replacement run used a Vast.ai RTX 4070 Ti SUPER (16 GB VRAM), 32 GB host RAM, and 84 GB disk. The provider substitution was verbally approved in class as reported by Wasaa Abdalla. The default float32 CPU path requires more RAM; reproduce the recorded run with:
+
+```bash
+python fine_tune.py --provider vast
+python merge_model.py --precision bfloat16
+python local_inference.py --precision bfloat16 --device cuda4bit
+python evaluate_models.py --precision bfloat16 --device cuda4bit --judge-env /absolute/path/to/local/.env
+```
+
+Use the existing tmux and provider-stop instructions above. Never commit the credential file. The base and tuned models are both loaded with NF4 double quantization and BF16 compute for this benchmark; merged release weights remain BF16. `--generate-only` saves model outputs without judge credentials. Run the same evaluation command with `--reuse-generations` to judge matching cached outputs on a separate CPU machine. This avoids repeating GPU generation after API failures.
+
+The canonical model name is **Llama-3.1-AfyaPlus-Operations**. See [MODEL_CARD.md](MODEL_CARD.md), the upstream license and acceptable-use notices in the model release, and the full measured [evaluation report](reports/evaluation_report.md).
+
+## Download the recorded artifacts
+
+The [v0.2.0-capstone release](https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/tag/v0.2.0-capstone) contains the adapter archive, all nine BF16 model shards, tokenizer/config files, upstream license notices and SHA256SUMS. Model binaries are deliberately stored outside Git history.
+
+To download the saved merged model into a fresh directory:
+
+```bash
+mkdir -p artifacts/merged
+gh release download v0.2.0-capstone --dir artifacts/merged
+(cd artifacts/merged && sha256sum -c SHA256SUMS)
+python local_inference.py --precision bfloat16 --device cuda4bit
+```
+
+To reproduce merging from the downloaded adapter instead, extract `afyaplus-llama-adapter-v0.2.0.tar.gz` into `artifacts/` and run `merge_model.py` with a new, empty output directory. The adapter's manifest pins the exact base revision. A reviewer can run `scripts/verify_submission.py` using the published GitHub asset digests when large weights are not downloaded; if local weight files are present, their bytes must match the merge checksums.
+
+Measured instance billing is USD 2.884 at the saved snapshot, plus USD 0.00203655 for the judge. Provider API state confirms stopped; retained storage remains billable. See `reports/provider_charges.json` and `reports/provider_stop_verification.json`.

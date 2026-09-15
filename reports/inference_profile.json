@@ -1,0 +1,9 @@
+{
+  "saved_model_precision": "bfloat16",
+  "load_quantization": "NF4, double quantization",
+  "compute_dtype": "bfloat16",
+  "device": "cuda4bit",
+  "sample_count": 5,
+  "evaluation_models_share_profile": true,
+  "generation_code_sha256": "5ce43d3d120ed68fe59d85f634336bfb078ec0aa9679d0cbedc960e5d15575c3"
+}

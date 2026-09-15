@@ -1,0 +1,16 @@
+{
+  "id": 51088316,
+  "actual_status": "exited",
+  "intended_status": "stopped",
+  "cur_state": "stopped",
+  "dph_base": 0.26666666666666666,
+  "dph_total": 0.29794389121832043,
+  "storage_total_cost": 0.03127722455165375,
+  "start_date": 1789451995.4592257,
+  "duration": 1993781.2797088623,
+  "gpu_name": "RTX 4070S Ti",
+  "gpu_ram": 16376,
+  "internet_down_cost_per_tb": 40.0,
+  "internet_up_cost_per_tb": 40.0,
+  "observed_at_utc": "2026-09-15T12:50:18.879575+00:00"
+}

@@ -9,6 +9,8 @@ set -Eeuo pipefail
 [[ "$VAST_INSTANCE_ID" =~ ^[0-9]+$ ]] || { echo "Invalid Vast.ai instance ID"; exit 2; }
 cd "$(dirname "$0")/.."
 mkdir -p reports artifacts
+export VAST_API_KEY="${VAST_API_KEY:-${CONTAINER_API_KEY:-}}"
+: "${VAST_API_KEY:?Set VAST_API_KEY or use an instance with CONTAINER_API_KEY}"
 command -v vastai >/dev/null || { echo "Vast.ai CLI missing: stop the instance in the console." >&2; exit 2; }
 cleanup() {
   result=$?
@@ -16,7 +18,7 @@ cleanup() {
   set +e
   # All paths, including failed training/upload, request a provider-level stop.
   for attempt in 1 2 3; do
-    vastai stop instance "$VAST_INSTANCE_ID" --raw > reports/stop_receipt.json 2> artifacts/stop_error.log
+    vastai stop instance "$VAST_INSTANCE_ID" --api-key "$VAST_API_KEY" --raw > reports/stop_receipt.json 2> artifacts/stop_error.log
     if [[ $? == 0 ]]; then exit "$result"; fi
     sleep 5
   done
@@ -28,10 +30,10 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 for executable in aws timeout python; do command -v "$executable" >/dev/null; done
 # Preflight failures also trigger the provider-stop cleanup.
-vastai show instance "$VAST_INSTANCE_ID" --raw > artifacts/instance_before.json
+vastai show instance "$VAST_INSTANCE_ID" --api-key "$VAST_API_KEY" --raw > artifacts/instance_before.json
 aws s3 ls "$ARTIFACT_URI" >/dev/null
 # Also arm a separate process so loss of the training shell still requests stop.
-nohup bash -c 'sleep "$1"; vastai stop instance "$2"' _ "$MAX_RUN_SECONDS" "$VAST_INSTANCE_ID" > artifacts/watchdog.log 2>&1 &
+nohup bash -c 'sleep "$1"; vastai stop instance "$2" --api-key "$VAST_API_KEY"' _ "$MAX_RUN_SECONDS" "$VAST_INSTANCE_ID" > artifacts/watchdog.log 2>&1 &
 # The run limit includes artifact upload. Download models before starting this wrapper.
 export ARTIFACT_URI
 timeout --signal=TERM --kill-after=30 "$MAX_RUN_SECONDS" bash -c '

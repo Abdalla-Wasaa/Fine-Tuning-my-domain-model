@@ -1,15 +1,13 @@
-## Problem and behavior
+## Problem and result
 
-Align the AfyaPlus capstone with the required LLaMA 3.1 8B model and authoritative Kenyan sources. Replace the synthetic teaching corpus with 200 source-derived examples and scenario-disjoint 160/20/20 splits. Wasaa Abdalla explicitly confirmed review and approval of all 100 underlying cases; the dated, hash-bound ledger records that approval.
+Complete the independent AfyaPlus Week 4 capstone using the required LLaMA 3.1 8B model and 200 reviewed, source-derived Kenyan operational examples. Wasaa Abdalla approved all 100 underlying cases; deterministic 160/20/20 splits have zero validation errors and no scenario overlap. The verbally approved Vast.ai provider substitution is documented as student-reported approval.
 
-Implement citation validation, training provenance and exact-token checks, merge resource checks, safety-filtered inference, and paired evaluation scripts. Record the student-reported verbal instructor approval for Vast.ai. Preserve earlier Qwen results under experiments/qwen-teaching-v1 rather than presenting them as results for the replacement model or corpus.
+Actual QLoRA training completed three epochs and 30 optimizer steps. BF16 merging and five safety-filtered samples completed. The 20-question comparison uses identical NF4/BF16 inference for base and tuned models and an independent OpenRouter GPT-4o-mini judge. ROUGE-L improves from 0.3257 to 1.0000, but judge quality declines from 4.55 to 3.85 and groundedness from 0.980 to 0.775. The report preserves these results, flags inconsistent judge rationales, and recommends holding deployment.
 
-Relates to #1, #2, #3, #4, #5.
+## Evidence and validation
 
-## Validation
+Trainer state, loss curve, token/data hashes, sample responses, per-question analysis, comparison CSV, and stakeholder memo are included. Checksummed adapter and merged model assets are stored in release v0.2.0-capstone, with upstream license notices. Provider API confirms stopped. Itemized instance charges are USD 2.884 at the recorded snapshot; judge receipts total USD 0.00203655. Retained storage can continue accruing charges.
 
-Dataset validation: 200 examples, zero errors, no scenario overlap, 100 verified clause/page anchors. All 36 offline tests pass. Training shell scripts pass syntax checks. Hugging Face access to the pinned LLaMA configuration was verified (HTTP 200).
+39 offline tests pass; data validation and shell syntax checks pass. Full submission verification checks published artifact digests, recorded reviewer approval, actual run evidence, evaluation, and provider state. Historical Qwen results remain clearly separated under experiments/qwen-teaching-v1.
 
-## Remaining work
-
-Keep this PR draft. Required LLaMA training, merged weights, sample outputs, paired evaluation, final measured stakeholder memo, and billed-cost/stop evidence are not complete. The current Vast instance has insufficient free storage margin and the local workstation lacks RAM for the configured float32 merge. CSV rows explicitly remain pending. Do not use historical Qwen metrics as replacement-run evidence.
+Closes #1, closes #2, closes #3, closes #4, closes #5.
