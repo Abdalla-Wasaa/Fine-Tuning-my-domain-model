@@ -24,12 +24,17 @@ def retrieve(question):
 class Generator:
     def __init__(self, model_path, revision=None, precision="float32", device="cpu"):
         from runtime_resources import require_llama_memory
-        require_llama_memory(precision)
+        require_llama_memory(precision, minimum_gib=8 if device == "cuda4bit" else (12 if device == "auto" and precision == "bfloat16" else None))
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, revision=revision)
         placement = {'device_map': 'cpu'} if device == 'cpu' else {
             'device_map': 'auto', 'max_memory': {0: '12GiB', 'cpu': '20GiB'}}
+        if device == 'cuda4bit':
+            from transformers import BitsAndBytesConfig
+            placement = {'device_map': {'': 0}, 'quantization_config': BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_quant_type='nf4', bnb_4bit_use_double_quant=True,
+                bnb_4bit_compute_dtype=getattr(torch, precision))}
         self.model = AutoModelForCausalLM.from_pretrained(model_path, revision=revision,
             torch_dtype=getattr(torch, precision), low_cpu_mem_usage=True, **placement)
         self.model.eval()
@@ -59,7 +64,7 @@ def main():
     parser.add_argument('--model', default=str(ROOT / 'artifacts/merged'))
     parser.add_argument('--question')
     parser.add_argument('--precision', choices=['float32', 'bfloat16'], default='float32')
-    parser.add_argument('--device', choices=['cpu', 'auto'], default='cpu')
+    parser.add_argument('--device', choices=['cpu', 'auto', 'cuda4bit'], default='cpu')
     args = parser.parse_args()
     generator = Generator(args.model, precision=args.precision, device=args.device)
     results = [ask(generator, q) for q in ([args.question] if args.question else SAMPLES)]

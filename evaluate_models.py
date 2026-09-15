@@ -92,7 +92,7 @@ def main():
     parser.add_argument('--judge-env', type=Path, help='Explicit local dotenv file; only the selected judge key is read')
     parser.add_argument('--judge-key-var', default='OPENROUTER_API_KEY')
     parser.add_argument('--precision', choices=['float32', 'bfloat16'], default='float32')
-    parser.add_argument('--device', choices=['cpu', 'auto'], default='cpu')
+    parser.add_argument('--device', choices=['cpu', 'auto', 'cuda4bit'], default='cpu')
     args = parser.parse_args()
     if args.judge_env:
         from dotenv import dotenv_values
