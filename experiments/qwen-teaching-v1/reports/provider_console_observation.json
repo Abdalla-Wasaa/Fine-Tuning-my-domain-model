@@ -1,0 +1,10 @@
+{
+  "instance_id": 50789605,
+  "source": "user-supplied Vast.ai console screenshot in conversation",
+  "current_status": "Exited",
+  "intended_status": "Stopped",
+  "displayed_hourly_price": "$0.010/hr",
+  "total_usage_charge": null,
+  "explicit_current_stopped_state_confirmed": false,
+  "note": "Screenshot transcription, not an API response. The displayed hourly price is not a total usage bill."
+}

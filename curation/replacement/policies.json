@@ -1,0 +1,1506 @@
+{
+  "version": "2.0",
+  "status": "Source-derived operational interpretations; human review pending; not facility-approved SOPs",
+  "rules": [
+    {
+      "id": "appointments-01",
+      "category": "appointments",
+      "scenario": "patients ask which services are available",
+      "guidance": "Use the facility's published service information to explain availability and any stated charges; do not invent prices.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "10(a)",
+        "pdf_page": 12,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "the types, availability and cost",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-02",
+      "category": "appointments",
+      "scenario": "patients ask how services are organized",
+      "guidance": "Use the published organization of services to direct patients to the appropriate administrative service point.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "10(b)",
+        "pdf_page": 12,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "the organization of health services",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-03",
+      "category": "appointments",
+      "scenario": "a patient asks when to attend",
+      "guidance": "Check the facility's published operating schedule and visiting timetable before communicating attendance information.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "10(c)",
+        "pdf_page": 12,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "operating schedules and timetables of visits",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-04",
+      "category": "appointments",
+      "scenario": "a patient asks how to access a clinic",
+      "guidance": "Explain the facility's published access procedure rather than inventing a booking route or promising an unavailable slot.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "10(d)",
+        "pdf_page": 12,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "procedures for access to the health services",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-05",
+      "category": "appointments",
+      "scenario": "patients ask about their responsibilities at a visit",
+      "guidance": "Direct patients to the applicable service charter and published rights and duties for the facility.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "10(f)",
+        "pdf_page": 12,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "the rights and duties of users and healthcare providers",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-06",
+      "category": "appointments",
+      "scenario": "a waiting-area interaction becomes disrespectful",
+      "guidance": "Handle the interaction respectfully and protect the patient's privacy while arranging administrative assistance.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "5(2)",
+        "pdf_page": 10,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "treated with dignity, respect and have their privacy respected",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-07",
+      "category": "appointments",
+      "scenario": "a patient cannot understand information about a planned visit",
+      "guidance": "Arrange for the healthcare provider to explain the information in an understandable language and manner appropriate to the patient's literacy.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "8(2)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "in a language that the user understands",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-08",
+      "category": "appointments",
+      "scenario": "patients ask reception to explain treatment options before booking",
+      "guidance": "Connect the patient with the healthcare provider for the benefits, risks, costs and consequences of the options; reception must not make clinical recommendations.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "8(1)(c)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "benefits, risks, costs and consequences",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-09",
+      "category": "appointments",
+      "scenario": "a patient asks which facility rules apply during attendance",
+      "guidance": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "13(a)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "adhere to the rules of a health facility",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-10",
+      "category": "appointments",
+      "scenario": "a scheduling consent notice does not identify the organization",
+      "guidance": "Have the responsible data team identify the controller or processor in the notice before seeking consent for the scheduling-data use.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(1)(a)",
+        "pdf_page": 6,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the identity of the data controller or data processor",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-11",
+      "category": "appointments",
+      "scenario": "one consent form covers several appointment-data uses",
+      "guidance": "Explain each processing purpose separately when consent is the basis for using appointment information.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(1)(b)",
+        "pdf_page": 6,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the purpose of each of the processing operations",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-12",
+      "category": "appointments",
+      "scenario": "a patient asks what appointment data consent covers",
+      "guidance": "Explain the types of personal data collected and used for the consent-based appointment process.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(1)(c)",
+        "pdf_page": 6,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the type of personal data that is collected and used",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-13",
+      "category": "appointments",
+      "scenario": "a scheduling consent notice omits third-party sharing",
+      "guidance": "Include whether personal data will be shared with third parties before seeking consent for that processing.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(1)(f)",
+        "pdf_page": 6,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "whether the personal data processed shall be shared with third parties",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-14",
+      "category": "appointments",
+      "scenario": "a patient asks whether appointment-data consent can be withdrawn",
+      "guidance": "Explain the right to withdraw consent and route a withdrawal request to the team responsible for the relevant processing.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(1)(g)",
+        "pdf_page": 6,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the right to withdraw consent",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-15",
+      "category": "appointments",
+      "scenario": "a patient is uncertain about giving optional scheduling-data consent",
+      "guidance": "Explain the implications of giving, withholding or withdrawing that consent without pressuring the patient.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(1)(h)",
+        "pdf_page": 6,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the implications of providing, withholding or withdrawing consent",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-16",
+      "category": "appointments",
+      "scenario": "the team is choosing how to communicate a consent notice",
+      "guidance": "Use an accessible notice format; the regulations allow written, oral, audio or video communication of consent information.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(2)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "written notice, oral statement, audio or video message",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-17",
+      "category": "appointments",
+      "scenario": "a scheduler is unsure whether a person can give data-processing consent",
+      "guidance": "Refer the capacity question to the responsible team before relying on consent; do not make a clinical capacity assessment at reception.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(3)(a)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "data subject has capacity to give consent",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-18",
+      "category": "appointments",
+      "scenario": "patients feel pressured to agree to optional appointment-data use",
+      "guidance": "Ensure consent is voluntary; refer pressure or coercion concerns to the responsible privacy team.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(3)(b)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "data subject voluntarily gives consent",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-19",
+      "category": "appointments",
+      "scenario": "a scheduler wants to reuse general consent for a new task",
+      "guidance": "Confirm that consent specifically covers the proposed processing purpose before relying on it.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(3)(c)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "consent is specific to the purpose of processing",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-20",
+      "category": "appointments",
+      "scenario": "a scheduler treats silence as agreement to optional messaging",
+      "guidance": "Do not presume consent merely because the patient did not object to the proposed processing.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(4)(a)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "it is presumed on the basis that the data subject did not object",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-21",
+      "category": "appointments",
+      "scenario": "a form makes optional data consent non-negotiable",
+      "guidance": "Refer the form for correction; presenting consent as non-negotiable undermines freely given consent.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(4)(b)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "it is presented as a non-negotiable part",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-22",
+      "category": "appointments",
+      "scenario": "a patient fears a penalty for refusing optional data use",
+      "guidance": "Escalate the consent design for review when refusal or withdrawal would cause detriment.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(4)(c)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the data subject is unable to refuse or withdraw their consent without detriment",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-23",
+      "category": "appointments",
+      "scenario": "scheduling and promotional purposes are bundled together",
+      "guidance": "Separate the processing purposes and seek specific consent for each purpose when relying on consent.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(4)(d)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "merges several purposes for processing without seeking",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-24",
+      "category": "appointments",
+      "scenario": "a patient's reply about optional messages is unclear",
+      "guidance": "Clarify the patient's intention before treating an ambiguous reply as consent.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(4)(e)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the intention of the data subject is ambiguous",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "appointments-25",
+      "category": "appointments",
+      "scenario": "a patient withdraws consent to one optional appointment-data use",
+      "guidance": "Route the withdrawal for restriction of the affected processing, subject to the applicable statutory exceptions; do not assume all healthcare records must be deleted.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "4(5)",
+        "pdf_page": 7,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "restrict the part of the processing in respect of which consent is withdrawn",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-01",
+      "category": "registration",
+      "scenario": "a registration process exposes personal details unnecessarily",
+      "guidance": "Arrange registration in a way that respects the patient's privacy and refer the exposure for correction.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(a)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "processed in accordance with the right to privacy",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-02",
+      "category": "registration",
+      "scenario": "a registration practice is unclear to patients",
+      "guidance": "Have the responsible team ensure that the processing is lawful, fair and transparent to patients.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(b)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "processed lawfully, fairly and in a transparent manner",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-03",
+      "category": "registration",
+      "scenario": "a new registration field has no defined purpose",
+      "guidance": "Ask the data owner to define a specific legitimate purpose before collecting the additional information.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(c)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "collected for explicit, specified and legitimate purposes",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-04",
+      "category": "registration",
+      "scenario": "a registration form requests excessive information",
+      "guidance": "Limit collection to information necessary and relevant to the stated registration purpose.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(d)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "adequate, relevant, limited to what is necessary",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-05",
+      "category": "registration",
+      "scenario": "a form asks about private family affairs",
+      "guidance": "Provide a valid explanation for requiring family or private information and refer unnecessary questions for removal.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(e)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "valid explanation is provided whenever information relating to family",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-06",
+      "category": "registration",
+      "scenario": "a patient reports outdated registration details",
+      "guidance": "Route the correction promptly so the responsible records team keeps personal information accurate and up to date.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(f)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "accurate and, where necessary, kept up to date",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-07",
+      "category": "registration",
+      "scenario": "the team proposes keeping identifiable registration data forever",
+      "guidance": "Apply the approved purpose-based retention process rather than indefinite retention by default.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "25(g)",
+        "pdf_page": 14,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "no longer than is necessary for the purposes",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-08",
+      "category": "registration",
+      "scenario": "a patient asks why registration information is used",
+      "guidance": "Explain the intended uses of the patient's personal data or connect them with the responsible data team.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "26(a)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "to be informed of the use to which their personal data",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-09",
+      "category": "registration",
+      "scenario": "a patient wants access to their registration record",
+      "guidance": "Route the request through the facility's data-access process rather than dismissing the patient's access right.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "26(b)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "to access their personal data in custody",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-10",
+      "category": "registration",
+      "scenario": "a patient objects to a registration-data use",
+      "guidance": "Record and route the objection to the responsible data team for assessment under the applicable process.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "26(c)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "to object to the processing of all or part",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-11",
+      "category": "registration",
+      "scenario": "a patient identifies misleading information in their record",
+      "guidance": "Help the patient submit a correction request to the responsible records team.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "26(d)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "to correction of false or misleading data",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-12",
+      "category": "registration",
+      "scenario": "a patient asks to delete false information",
+      "guidance": "Route the deletion request to the responsible data team; do not promise unrestricted deletion of the entire health record.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "26(e)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "to deletion of false or misleading data about them",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-13",
+      "category": "registration",
+      "scenario": "a guardian seeks to exercise a child's data rights",
+      "guidance": "Use the representative-rights process to establish parental authority or guardianship before handling the child's request.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "27(a)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "where the data subject is a minor",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-14",
+      "category": "registration",
+      "scenario": "a representative requests records for a person with a disability",
+      "guidance": "Establish the representative's authority as guardian or administrator through the responsible team; do not assume disability alone removes the person's rights.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "27(b)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "person duly authorised to act as their guardian or administrator",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-15",
+      "category": "registration",
+      "scenario": "a patient appoints someone to make a data-rights request",
+      "guidance": "Verify the representative's authorization through the facility's process before handling the request on the patient's behalf.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "27(c)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "person duly authorised by the data subject",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-16",
+      "category": "registration",
+      "scenario": "a registrar chooses where to obtain patient information",
+      "guidance": "Collect information directly from the patient as the default; refer proposed exceptions for assessment rather than assuming indirect collection is always permitted.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "28(1)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "collect personal data directly from the data subject",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-17",
+      "category": "registration",
+      "scenario": "a registrar proposes obtaining information from another source with consent",
+      "guidance": "Confirm the patient's consent covers collection from that source and use the approved collection process.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "28(2)(c)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "consented to the collection from another source",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-18",
+      "category": "registration",
+      "scenario": "a registration notice omits patient data rights",
+      "guidance": "Include information about the patient's data rights in the pre-collection notice where practicable.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(a)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the rights of data subject specified under section 26",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-19",
+      "category": "registration",
+      "scenario": "a registration process silently collects personal information",
+      "guidance": "Make the collection apparent to the patient before collecting the information where practicable.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(b)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the fact that personal data is being collected",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-20",
+      "category": "registration",
+      "scenario": "a patient asks the purpose of a registration request",
+      "guidance": "Explain the collection purpose before collecting the requested information where practicable.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(c)",
+        "pdf_page": 15,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the purpose for which the personal data is being collected",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-21",
+      "category": "registration",
+      "scenario": "a registration notice leaves out recipients and safeguards",
+      "guidance": "Have the responsible team include the relevant third-party transfer information and safeguards in the notice.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(d)",
+        "pdf_page": 16,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the third parties whose personal data has been or will be transferred",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-22",
+      "category": "registration",
+      "scenario": "a patient cannot identify whom to contact about registration data",
+      "guidance": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(e)",
+        "pdf_page": 16,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the contacts of the data controller or data processor",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-23",
+      "category": "registration",
+      "scenario": "a patient asks how collected registration information is protected",
+      "guidance": "Provide the approved description of organizational and technical safeguards rather than inventing security guarantees.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(f)",
+        "pdf_page": 16,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "a description of the technical and organizational security measures",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-24",
+      "category": "registration",
+      "scenario": "a patient asks whether a registration field is compulsory",
+      "guidance": "Explain the applicable basis and whether collection is voluntary or mandatory; refer uncertain requirements to the responsible team.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(g)",
+        "pdf_page": 16,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "whether such collection is voluntary or mandatory",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "registration-25",
+      "category": "registration",
+      "scenario": "a patient asks what happens if information is not supplied",
+      "guidance": "Explain the documented consequences of not supplying the requested information rather than inventing penalties or denying care automatically.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "29(h)",
+        "pdf_page": 16,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the consequences if any, where the data subject fails to provide",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-01",
+      "category": "access",
+      "scenario": "a system is being designed to handle patient information",
+      "guidance": "Include effective data-protection measures in the system design and refer the design to the responsible data team.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(1)(a)",
+        "pdf_page": 20,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "implement the data protection principles in an effective manner",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-02",
+      "category": "access",
+      "scenario": "a workflow adds a new patient-data processing step",
+      "guidance": "Integrate the necessary safeguards into the processing step rather than adding them only after deployment.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(1)(b)",
+        "pdf_page": 20,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "integrate necessary safeguards for that purpose into the processing",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-03",
+      "category": "access",
+      "scenario": "a team plans to review privacy only after launch",
+      "guidance": "Review safeguards when choosing how to process data and while the processing operates.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(2)",
+        "pdf_page": 20,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "both at the time of the determination of the means",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-04",
+      "category": "access",
+      "scenario": "a system enables every registration field by default",
+      "guidance": "Review default collection settings so only data necessary for the specific purpose is processed.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(3)(a)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the amount of personal data collected",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-05",
+      "category": "access",
+      "scenario": "a system enables broad secondary processing by default",
+      "guidance": "Limit default processing to what is necessary for each specified purpose.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(3)(b)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the extent of its processing",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-06",
+      "category": "access",
+      "scenario": "a system has no default retention setting",
+      "guidance": "Have the data owner configure purpose-appropriate storage periods within the approved retention process.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(3)(c)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the period of its storage",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-07",
+      "category": "access",
+      "scenario": "a patient-data system grants broad access by default",
+      "guidance": "Have the access owner limit default accessibility to what is necessary for the specified processing purpose.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(3)(d)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "its accessibility",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-08",
+      "category": "access",
+      "scenario": "a system access review begins",
+      "guidance": "Identify reasonably foreseeable internal and external risks to the patient information under the facility's control.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(4)(a)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "identify reasonably foreseeable internal and external risks",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-09",
+      "category": "access",
+      "scenario": "a security review identifies a patient-data risk",
+      "guidance": "Have the responsible team establish and maintain safeguards proportionate to the identified risk.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(4)(b)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "establish and maintain appropriate safeguards",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-10",
+      "category": "access",
+      "scenario": "a team chooses safeguards for patient information",
+      "guidance": "Consider pseudonymisation and encryption as part of the responsible team's security assessment; do not claim they remove every risk.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(4)(c)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "pseudonymisation and encryption of personal data",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-11",
+      "category": "access",
+      "scenario": "a technical incident interrupts record access",
+      "guidance": "Escalate to the recovery team to restore availability and access in a timely manner under the approved recovery process.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(4)(d)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "restore the availability and access to personal data",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-12",
+      "category": "access",
+      "scenario": "a security control has been documented but not checked",
+      "guidance": "Verify that the safeguards are actually implemented effectively rather than relying only on a written policy.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(4)(e)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "verify that the safeguards are effectively implemented",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-13",
+      "category": "access",
+      "scenario": "a new weakness affects a patient-data system",
+      "guidance": "Refer the weakness for assessment and update safeguards in response to the new risk or deficiency.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "41(4)(f)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "continually updated in response to new risks",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-14",
+      "category": "access",
+      "scenario": "a team selects network security measures",
+      "guidance": "Have the responsible team consider available technology when selecting appropriate security measures.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(1)(a)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the state of technological development available",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-15",
+      "category": "access",
+      "scenario": "a team compares security implementation options",
+      "guidance": "Include implementation cost in the security assessment alongside data sensitivity and processing risks; cost alone does not determine suitability.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(1)(b)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the cost of implementing any of the security measures",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-16",
+      "category": "access",
+      "scenario": "a data-transfer workflow is assessed for security",
+      "guidance": "Assess the specific risks of the processing when choosing organizational and technical measures.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(1)(c)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the special risks that exist in the processing",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-17",
+      "category": "access",
+      "scenario": "a generic security configuration is proposed for health records",
+      "guidance": "Consider the nature of the patient data rather than assuming a generic configuration is suitable.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(1)(d)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the nature of the data being processed",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-18",
+      "category": "access",
+      "scenario": "a vendor is proposed to process patient information",
+      "guidance": "Have the controller assess whether the processor provides sufficient organizational safeguards before engagement.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(2)(a)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "processor who provides sufficient guarantees",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-19",
+      "category": "access",
+      "scenario": "a vendor asks to start processing without written terms",
+      "guidance": "Refer the engagement for a written controller-processor contract that limits processing to the controller's instructions and obligations.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(2)(b)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the data controller and the data processor shall enter into a written contract",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-20",
+      "category": "access",
+      "scenario": "a processor proposes using patient data outside instructions",
+      "guidance": "Stop and escalate the proposed deviation to the controller; the Act changes the processor's role for processing beyond instructions.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(3)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "processes personal data other than as instructed",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-21",
+      "category": "access",
+      "scenario": "a contractor handles patient information",
+      "guidance": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "42(4)",
+        "pdf_page": 21,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "any person employed by or acting under the authority",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-22",
+      "category": "access",
+      "scenario": "a patient-access request asks why records are processed",
+      "guidance": "Include the processing purposes in the response prepared by the responsible data-access team.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "9(1)(a)",
+        "pdf_page": 9,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the purposes of the processing",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-23",
+      "category": "access",
+      "scenario": "a patient-access request asks which data categories are held",
+      "guidance": "Have the responsible team provide the categories of personal information concerned.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "9(1)(b)",
+        "pdf_page": 9,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the categories of personal data concerned",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-24",
+      "category": "access",
+      "scenario": "a patient asks who receives their information",
+      "guidance": "Have the responsible team identify recipients or recipient categories, including those in other countries or territories.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "9(1)(c)",
+        "pdf_page": 9,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the recipients or categories of recipient",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "access-25",
+      "category": "access",
+      "scenario": "a patient asks how long their information is retained",
+      "guidance": "Provide the envisaged storage period where possible, or the criteria used to determine it, through the responsible data team.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "9(1)(d)",
+        "pdf_page": 9,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "the envisaged period for which the personal data may be stored",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-01",
+      "category": "escalation",
+      "scenario": "a person needs emergency help at the facility",
+      "guidance": "Alert the qualified emergency-care team promptly and facilitate access to emergency treatment; administrative staff must not diagnose or assign clinical priority.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "7(1)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "Every person has the right to emergency medical treatment",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-02",
+      "category": "escalation",
+      "scenario": "the first provider lacks capacity to stabilize a patient",
+      "guidance": "Escalate to the healthcare provider to arrange the necessary referral; administrative staff support coordination and do not decide clinical suitability.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "7(2)(c)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "arranging for referral in cases where the health provider",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-03",
+      "category": "escalation",
+      "scenario": "staff are uncertain about consent paperwork during an emergency",
+      "guidance": "Escalate the consent question immediately to the treating healthcare provider; reception must not independently delay emergency care or decide a consent exception.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "9(1)(d)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "the patient is being treated in an emergency situation",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-04",
+      "category": "escalation",
+      "scenario": "a receptionist is asked to make a clinical decision",
+      "guidance": "Refer the decision to an appropriately qualified healthcare provider and remain within the administrative role.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "12(2)(a)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "within their scope of practice and ability",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-05",
+      "category": "escalation",
+      "scenario": "a patient wants to complain about treatment at the facility",
+      "guidance": "Explain the facility's complaint route and facilitate appropriate investigation rather than dismissing the complaint.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "14(1)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "right to file a complaint about the manner",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-06",
+      "category": "escalation",
+      "scenario": "staff cannot locate the applicable complaints procedure",
+      "guidance": "Obtain the published national or county complaints procedure applicable to the facility through its responsible management team.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "14(2)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "establish and publish the procedure for the laying of complaints",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-07",
+      "category": "escalation",
+      "scenario": "a patient cannot find complaint instructions",
+      "guidance": "Ensure the complaints procedure is visibly displayed and communicated to service users.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "14(3)(a)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "be displayed by all health facilities",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-08",
+      "category": "escalation",
+      "scenario": "a complaint reaches reception",
+      "guidance": "Route the complaint to the facility head or the person designated to handle user complaints.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "14(3)(b)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "primarily handled by the head of the relevant facility",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-09",
+      "category": "escalation",
+      "scenario": "a complainant asks when a written outcome is due",
+      "guidance": "Route the complaint for the statutory written update within three months of lodging; do not promise a shorter unapproved deadline.",
+      "citation": {
+        "document_id": "health_act",
+        "clause": "14(4)",
+        "pdf_page": 13,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+        "anchor": "within a period of three months from the date",
+        "document_sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-10",
+      "category": "escalation",
+      "scenario": "a suspected harmful unauthorized disclosure is discovered",
+      "guidance": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(1)(a)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "notify the Data Commissioner without delay",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-11",
+      "category": "escalation",
+      "scenario": "a harmful breach may require informing affected patients",
+      "guidance": "Have the controller assess written communication to affected patients within a reasonably practical period, including the statutory exceptions.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(1)(b)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "communicate to the data subject in writing",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-12",
+      "category": "escalation",
+      "scenario": "a required breach notification is late",
+      "guidance": "Escalate the late notification to the responsible controller and include reasons for the delay in the notification.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(2)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the notification shall be accompanied by reasons for the delay",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-13",
+      "category": "escalation",
+      "scenario": "a processor discovers a patient-data breach",
+      "guidance": "Escalate for notification to the controller without delay and, where reasonably practicable, within forty-eight hours of awareness.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(3)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "within forty-eight hours of becoming aware",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-14",
+      "category": "escalation",
+      "scenario": "a breach communication is being prepared",
+      "guidance": "Include a description of the nature of the breach in the communication prepared by the responsible incident team.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(5)(a)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "description of the nature of the data breach",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-15",
+      "category": "escalation",
+      "scenario": "a breach communication omits response measures",
+      "guidance": "Include the measures already taken or intended to address the breach.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(5)(b)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "intends to take or has taken to address the data breach",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-16",
+      "category": "escalation",
+      "scenario": "a breach communication needs patient-protection information",
+      "guidance": "Have the responsible team include recommended protective measures appropriate to the security compromise.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(5)(c)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "mitigate the adverse effects of the security compromise",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-17",
+      "category": "escalation",
+      "scenario": "a breach investigation identifies an unauthorized recipient",
+      "guidance": "Where applicable, include the unauthorized recipient's identity in the communication prepared by the responsible incident team.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(5)(d)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the identity of the unauthorised person",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-18",
+      "category": "escalation",
+      "scenario": "a breach notice lacks a contact for questions",
+      "guidance": "Include the data protection officer's details where applicable, or another contact point for further information.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(5)(e)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "name and contact details of the data protection officer",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-19",
+      "category": "escalation",
+      "scenario": "a breach investigation has incomplete information",
+      "guidance": "Have the responsible team provide information in phases without undue delay when it cannot all be provided at once.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(7)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the information may be provided in phases",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-20",
+      "category": "escalation",
+      "scenario": "an incident is being documented",
+      "guidance": "Record the facts relating to the breach in the controller's incident record.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(8)(a)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the facts relating to the breach",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-21",
+      "category": "escalation",
+      "scenario": "a breach record omits the impact",
+      "guidance": "Record the effects of the breach as part of the controller's incident documentation.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(8)(b)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "its effects",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-22",
+      "category": "escalation",
+      "scenario": "a resolved incident lacks a corrective-action record",
+      "guidance": "Record the remedial action taken as part of the controller's breach documentation.",
+      "citation": {
+        "document_id": "data_protection_act",
+        "clause": "43(8)(c)",
+        "pdf_page": 22,
+        "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+        "anchor": "the remedial action taken",
+        "document_sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-23",
+      "category": "escalation",
+      "scenario": "an unidentified person requests a child's data",
+      "guidance": "Route the request for appropriate identification of the person exercising the child's rights before disclosing data.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "13(2)(a)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "a person exercising the right is appropriately identified",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-24",
+      "category": "escalation",
+      "scenario": "a proposal profiles children for promotional messaging",
+      "guidance": "Escalate and reject the proposed child profiling for direct marketing.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "13(2)(b)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "profiling of a child that is related to direct marketing is prohibited",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    },
+    {
+      "id": "escalation-25",
+      "category": "escalation",
+      "scenario": "a representative's authority to exercise data rights is unclear",
+      "guidance": "Refer the request for verification; the responsible team may restrict it until evidence of the relationship is provided.",
+      "citation": {
+        "document_id": "data_protection_general_regulations",
+        "clause": "13(3)",
+        "pdf_page": 11,
+        "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+        "anchor": "uncertain as to the existence of a relationship",
+        "document_sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122"
+      },
+      "review_status": "pending_human_review"
+    }
+  ]
+}

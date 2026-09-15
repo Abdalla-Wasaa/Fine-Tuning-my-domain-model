@@ -1,0 +1,14 @@
+# Python 3.11/3.12; install a compatible NVIDIA driver on the training VM.
+torch==2.6.0
+transformers==4.51.3
+peft==0.15.2
+accelerate==1.6.0
+bitsandbytes==0.45.5
+huggingface-hub==0.30.2
+safetensors==0.5.3
+numpy==2.2.5
+matplotlib==3.10.1
+rouge-score==0.1.2
+requests==2.32.3
+pytest==8.3.5
+python-dotenv==1.1.0

@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "examples": 20,
+  "independent_scenario_groups": 10,
+  "test_sha256": "f4e55db550b7da67f1ec57601934f49ab9635957eb76efcf7c860b8e0649ef08",
+  "merge": {
+    "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "base_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "training_manifest_sha256": "def8e9f9602bce158c41d91beab33ece86c650f89dde049bea8ff99a2a7a282b",
+    "adapter_sha256": "a37875f9b294ae26428d7039d54ba0591710b98361f0daf976011c7df6b121f3",
+    "weights": {
+      "model.safetensors": "86521d9825e3f6f22f030f5e16e0af911392f93bb5a4bbeab9e47892b036abe5"
+    }
+  },
+  "seconds": 42.64411064499291,
+  "judge_model": "openai/gpt-4o-mini",
+  "method": "Oracle SOP context supplied identically to both models. This measures context-following, not retrieval or memorized policy knowledge."
+}

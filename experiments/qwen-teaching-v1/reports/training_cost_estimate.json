@@ -1,0 +1,16 @@
+{
+  "scope": "training execution only; not the total instance bill",
+  "training_seconds": 95.0449804100208,
+  "gpu_hourly_rate_usd": 0.18666666666666668,
+  "estimated_training_gpu_usd": 0.00492825824348256,
+  "source": "Vast instance 50789605 API dph_base and recorded training duration",
+  "excludes": [
+    "setup",
+    "idle time",
+    "artifact retrieval",
+    "storage",
+    "network",
+    "OpenRouter judge"
+  ],
+  "total_billed_cost_verified": false
+}

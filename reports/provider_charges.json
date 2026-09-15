@@ -1,0 +1,53 @@
+{
+  "instance_id": 51088316,
+  "observed_at_utc": "2026-09-15T13:05:41.769553+00:00",
+  "source": "Vast /api/v0/charges",
+  "records": [
+    {
+      "start": 1789430400,
+      "end": 1789430400,
+      "type": "instance",
+      "source": "instance-51088316",
+      "amount": 2.884,
+      "description": "Instance 51088316 Charges - 1 day",
+      "items": [
+        {
+          "start": 1789430400,
+          "end": 1789430400,
+          "type": "gpu",
+          "source": null,
+          "amount": 1.232,
+          "description": "GPU",
+          "items": []
+        },
+        {
+          "start": 1789430400,
+          "end": 1789430400,
+          "type": "disk",
+          "source": null,
+          "amount": 0.222,
+          "description": "Storage",
+          "items": []
+        },
+        {
+          "start": 1789430400,
+          "end": 1789430400,
+          "type": "bwd",
+          "source": null,
+          "amount": 0.79,
+          "description": "20.2 GB Downloaded at $0.039/GB",
+          "items": []
+        },
+        {
+          "start": 1789430400,
+          "end": 1789430400,
+          "type": "bwu",
+          "source": null,
+          "amount": 0.64,
+          "description": "16.4 GB Uploaded at $0.039/GB",
+          "items": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "source": "authenticated SSH verification of retained instance artifact",
+  "instance_id": 50789605,
+  "path": "artifacts/merged/model.safetensors",
+  "bytes": 1976163472,
+  "sha256": "86521d9825e3f6f22f030f5e16e0af911392f93bb5a4bbeab9e47892b036abe5",
+  "matches_merge_manifest": true
+}

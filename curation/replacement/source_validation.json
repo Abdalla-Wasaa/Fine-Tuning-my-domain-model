@@ -1,0 +1,8 @@
+{
+  "records": 200,
+  "scenario_groups": 100,
+  "source_anchor_checks": 100,
+  "error_count": 0,
+  "human_review_complete": false,
+  "scope": "Exact anchors found in cited sections/pages of hash-verified source snapshots; this does not verify every interpretation or current legal applicability."
+}

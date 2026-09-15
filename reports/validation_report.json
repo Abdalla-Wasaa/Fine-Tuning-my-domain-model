@@ -1,0 +1,45 @@
+{
+  "records": 200,
+  "errors": [],
+  "error_count": 0,
+  "source_sha256": "895b105190e64888a0333e0c5e52c5ab3d7f1695786903b0d86929b7314cdf62",
+  "policy_sha256": "6edc5abc9e969c3873afdbffc2c0ffb4b792106acdf0b032382c29878fa5758c",
+  "manual_review_complete": true,
+  "source_documents": 3,
+  "source_anchor_checks": 100,
+  "seed": 42,
+  "token_check": "Exact tokenizer length enforced before training; no truncation permitted.",
+  "splits": {
+    "train": {
+      "count": 160,
+      "categories": {
+        "access": 40,
+        "appointments": 40,
+        "escalation": 40,
+        "registration": 40
+      },
+      "sha256": "f195b43be695cd6dc160dfe54189859be14832314c26d0b0267ec38eb275b531"
+    },
+    "val": {
+      "count": 20,
+      "categories": {
+        "access": 4,
+        "appointments": 6,
+        "escalation": 4,
+        "registration": 6
+      },
+      "sha256": "f41ba0a6a226a15a66182bbce40c0b4b2e72872ec9caec4c6d92f18a914b6430"
+    },
+    "test": {
+      "count": 20,
+      "categories": {
+        "access": 6,
+        "appointments": 4,
+        "escalation": 6,
+        "registration": 4
+      },
+      "sha256": "3847bda4547f5b1bbc8521ff946c00d0a59992f787d28fd9f3fc5d0ef21a9172"
+    }
+  },
+  "group_overlap": 0
+}

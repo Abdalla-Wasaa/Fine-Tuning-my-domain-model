@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "examples": 20,
+  "independent_scenario_groups": 10,
+  "test_sha256": "3847bda4547f5b1bbc8521ff946c00d0a59992f787d28fd9f3fc5d0ef21a9172",
+  "merge": {
+    "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "precision": "bfloat16",
+    "base_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "training_manifest_sha256": "8b1f0c0d014a193c6c6a3c1baeccd6429902a9e42068bc2c3e52d4c7b5568047",
+    "adapter_sha256": "f0f18705ef54737d7ea76f7b6ec5d001402fb4907ef8e335a0cdb4c9b61554c8",
+    "weights": {
+      "model-00001-of-00009.safetensors": "5cd00ae23909c03dafcb23779b2d5118405aa99eebbaa007db6cdeadcf97bca8",
+      "model-00002-of-00009.safetensors": "39fc0be324b5583330cc0d50672325471766a1701360d7afe3a6fc1b0329b02a",
+      "model-00003-of-00009.safetensors": "97169f8089e1df8252058d377203e591604790fbd57c27400a74b70a73a4de2e",
+      "model-00004-of-00009.safetensors": "52f0595b253745d6419f8cfbed464083a37a4b05bb331c990519eeed1970a57f",
+      "model-00005-of-00009.safetensors": "6d17875ea4cd0ce4f0b0f6152f3e213ff553b06300e90dad6078726cd4215ed4",
+      "model-00006-of-00009.safetensors": "8582489442dddd3e24464390f880c436ba95d732cc7afdccbac26103c1b219f3",
+      "model-00007-of-00009.safetensors": "ac2e5d406dac2314165257d67033693db1205af0dd68be9aa2699e602a2e7286",
+      "model-00008-of-00009.safetensors": "b107d6cf7b8399272c59ad4bb4097ff76ed1152dd0fafa3dc8b8f9bfb6bd11ad",
+      "model-00009-of-00009.safetensors": "5321ca97dd0968a3e2b676b3a42728e9f5327d516bcf0addd4e9cd61c068a1ad"
+    }
+  },
+  "seconds": 67.0060586949985,
+  "judge_model": "openai/gpt-4o-mini",
+  "method": "Oracle SOP context supplied identically to both models. This measures context-following, not retrieval or memorized policy knowledge.",
+  "inference_profile": {
+    "precision": "bfloat16",
+    "device": "cuda4bit"
+  }
+}

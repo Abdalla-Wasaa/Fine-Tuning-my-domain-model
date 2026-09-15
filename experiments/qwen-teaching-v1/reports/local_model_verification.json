@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "observed_at_utc": "2026-09-14T11:05:58.330251+00:00",
+  "network_mode": "HF_HUB_OFFLINE=1; TRANSFORMERS_OFFLINE=1",
+  "weight_sha256": "86521d9825e3f6f22f030f5e16e0af911392f93bb5a4bbeab9e47892b036abe5",
+  "weight_bytes": 1976163472,
+  "sha256_verified": true,
+  "sample_count": 5,
+  "all_disclaimers_present": true,
+  "local_samples_equal_remote_samples": true,
+  "runtime": {
+    "torch": "2.6.0+cpu",
+    "transformers": "4.51.3",
+    "peft": "0.15.2"
+  },
+  "clinical_query_action": "clinical_redirect"
+}

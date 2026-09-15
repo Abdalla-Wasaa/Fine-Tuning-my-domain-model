@@ -1,0 +1,1102 @@
+[
+  {
+    "id": "access-01-1",
+    "question": "A staff account is locked. What should AfyaPlus staff do?",
+    "context": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.",
+    "reference": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only. Staff should verify their identity using the approved help-desk recovery channel, ensure they have the necessary permissions, and then request unlock from the designated recovery channel. They should never share passwords or use another person's account.",
+    "tuned_raw": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer provides a mostly complete response by including the verification of identity and the request for unlock, while also emphasizing the importance of not sharing passwords or using another person's account."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly quotes the SOP, covering all necessary steps for unlocking a staff account."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 313,
+        "completion_tokens": 89,
+        "total_tokens": 402,
+        "cost": 0.00010035,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010035,
+          "upstream_inference_prompt_cost": 4.695e-05,
+          "upstream_inference_completions_cost": 5.34e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270307-k9RLKxsvyOpwaF2V00Pq"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "access-01-2",
+    "question": "Please explain the operational workflow for this situation: a staff account is locked.",
+    "context": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.",
+    "reference": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.\nThe operational workflow for unlocking an account that has been locked involves several steps:\n\n1. **Verify Staff Identity**: Ensure that the user is authorized to perform the action (unlocking) on their behalf. This typically requires authentication through a secure login process using a unique username and password.\n\n2. **Request Unlock**: The user should contact the appropriate support representative or administrator via the designated recovery channel. They will need to provide the necessary credentials to unlock the account.\n\n3. **Access Account**: Once unlocked, the user can proceed to access the account by logging in using the same credentials they used during the lockout period.\n\n4. **Review Account Settings**: After successfully accessing the account, the user should review any settings or permissions associated with the account to ensure everything is working as expected.\n\n5. **Contact Support**: Finally, if there are any issues or questions about the account, the user should reach out to the",
+    "tuned_raw": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP provided, detailing the steps for unlocking a staff account without any omissions or unsafe content."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 0.8,
+        "reason": "The answer provides a detailed workflow that closely aligns with the SOP, but it includes an additional step (Review Account Settings) that is not mentioned in the SOP, which slightly detracts from its completeness."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 469,
+        "completion_tokens": 99,
+        "total_tokens": 568,
+        "cost": 0.00012975,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00012975,
+          "upstream_inference_prompt_cost": 7.035e-05,
+          "upstream_inference_completions_cost": 5.94e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270312-ZBFQDVn3rESsAGGsm5Ts"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "access-04-1",
+    "question": "An employee changes roles. What should AfyaPlus staff do?",
+    "context": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.",
+    "reference": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only. Employees changing roles should follow the approved access process provided by the request manager. Staff should ensure that all necessary permissions have been removed from the old role before applying for new access rights. They should also confirm that the new role meets the requirements of their current job responsibilities. If there is any doubt about the new role's appropriateness, it may be best to consult with the appropriate department or supervisor.",
+    "tuned_raw": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 3,
+        "groundedness": 0.5,
+        "reason": "The answer partially addresses the question by mentioning the need to follow the approved access process and removing unneeded access, but it lacks specific mention of verifying the new role and does not directly cite the SOP."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly quotes the SOP, covering all necessary steps for handling an employee's role change."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 337,
+        "completion_tokens": 97,
+        "total_tokens": 434,
+        "cost": 0.00010875,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010875,
+          "upstream_inference_prompt_cost": 5.055e-05,
+          "upstream_inference_completions_cost": 5.82e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270316-nJFkNIsszv1ev4HLcUkh"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "access-04-2",
+    "question": "Please explain the operational workflow for this situation: an employee changes roles.",
+    "context": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.",
+    "reference": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.\nThe employee changes their role from Manager to Assistant Manager. The request manager has reviewed the employee's application and determined that they meet the criteria for the new role. The change is approved by the management team, and the employee will now be able to manage tasks related to the Assistant Manager position. The request manager ensures that all necessary permissions have been granted to ensure that the new role can perform its duties effectively.",
+    "tuned_raw": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly restates the SOP, providing a complete and safe explanation of the operational workflow."
+      },
+      "base": {
+        "quality": 3,
+        "groundedness": 0.5,
+        "reason": "The answer provides a scenario that partially explains the workflow but includes unnecessary details and does not fully align with the SOP, leading to a lack of completeness."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 340,
+        "completion_tokens": 84,
+        "total_tokens": 424,
+        "cost": 0.0001014,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0001014,
+          "upstream_inference_prompt_cost": 5.1e-05,
+          "upstream_inference_completions_cost": 5.04e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270318-LInf2TROYhGVHfvtIdf7"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "access-21-1",
+    "question": "A personal email is proposed for record sharing. What should AfyaPlus staff do?",
+    "context": "Use the approved secure organizational channel and do not send patient records through personal email.",
+    "reference": "Use the approved secure organizational channel and do not send patient records through personal email.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Use the approved secure organizational channel and do not send patient records through personal email.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Use the approved secure organizational channel and do not send patient records through personal email.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty and does not provide any relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, directly follows the SOP, and provides a clear and safe response."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 65,
+        "total_tokens": 309,
+        "cost": 7.56e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.56e-05,
+          "upstream_inference_prompt_cost": 3.66e-05,
+          "upstream_inference_completions_cost": 3.9e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270320-TbKNvSfnp4UMx8eWznHS"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "access-21-2",
+    "question": "Please explain the operational workflow for this situation: a personal email is proposed for record sharing.",
+    "context": "Use the approved secure organizational channel and do not send patient records through personal email.",
+    "reference": "Use the approved secure organizational channel and do not send patient records through personal email.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.\nThe proposed use of a personal email for record sharing is against the established guidelines as outlined in the Teaching SOP. The SOP explicitly states that \"use the approved secure organizational channel\" and advises against sending patient records via personal email. Therefore, it is inappropriate to propose using a personal email for record sharing under these conditions.",
+    "tuned_raw": "Use the approved secure organizational channel and do not send patient records through personal email.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Use the approved secure organizational channel and do not send patient records through personal email.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP and provides a complete and safe response to the question."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer is mostly complete and accurately references the SOP, but it could be more concise."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 308,
+        "completion_tokens": 70,
+        "total_tokens": 378,
+        "cost": 8.82e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 8.82e-05,
+          "upstream_inference_prompt_cost": 4.62e-05,
+          "upstream_inference_completions_cost": 4.2e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270321-Q755bGA0zFziHec0uECV"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "appointments-09-1",
+    "question": "A clinician cancels a clinic. What should AfyaPlus staff do?",
+    "context": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.",
+    "reference": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty and does not provide any relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, directly quoting the SOP and providing all necessary steps."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 63,
+        "total_tokens": 320,
+        "cost": 7.635e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.635e-05,
+          "upstream_inference_prompt_cost": 3.855e-05,
+          "upstream_inference_completions_cost": 3.78e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270323-f9LqIRYGvstGVh7VkHVR"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "appointments-09-2",
+    "question": "Please explain the operational workflow for this situation: a clinician cancels a clinic.",
+    "context": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.",
+    "reference": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer fully and accurately reflects the operational workflow as outlined in the SOP."
+      },
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty and does not provide any relevant information."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 62,
+        "total_tokens": 320,
+        "cost": 7.59e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.59e-05,
+          "upstream_inference_prompt_cost": 3.87e-05,
+          "upstream_inference_completions_cost": 3.72e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270325-AQ5cGCYxTV3JWGoNQ2W1"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "appointments-19-1",
+    "question": "A patient needs language support. What should AfyaPlus staff do?",
+    "context": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.",
+    "reference": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty, providing no relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly quotes the SOP, providing a clear and safe response."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 250,
+        "completion_tokens": 63,
+        "total_tokens": 313,
+        "cost": 7.53e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.53e-05,
+          "upstream_inference_prompt_cost": 3.75e-05,
+          "upstream_inference_completions_cost": 3.78e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270327-ac3vh8TrYovmqxRyz57b"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "appointments-19-2",
+    "question": "Please explain the operational workflow for this situation: a patient needs language support.",
+    "context": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.",
+    "reference": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly reflects the SOP provided, accurately detailing the operational workflow for providing language support."
+      },
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty, providing no information or relevant workflow."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 68,
+        "total_tokens": 319,
+        "cost": 7.845e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.845e-05,
+          "upstream_inference_prompt_cost": 3.765e-05,
+          "upstream_inference_completions_cost": 4.08e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270329-2USsn5sMXujYsN9xJ1h2"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "escalation-21-1",
+    "question": "An escalation ticket is accidentally closed. What should AfyaPlus staff do?",
+    "context": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.",
+    "reference": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty, providing no relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly quotes the SOP, providing a fully supported response."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 269,
+        "completion_tokens": 62,
+        "total_tokens": 331,
+        "cost": 7.755e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.755e-05,
+          "upstream_inference_prompt_cost": 4.035e-05,
+          "upstream_inference_completions_cost": 3.72e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270330-EkrTzhOzrf0m6hX83sMp"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "escalation-21-2",
+    "question": "Please explain the operational workflow for this situation: an escalation ticket is accidentally closed.",
+    "context": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.",
+    "reference": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.\nAn escalation ticket is accidentally closed when it's no longer relevant or actionable after being escalated. The process involves reopening or linking a corrective ticket, notifying the assigned team, and preserving the audit history until a confirmed resolution is recorded. This ensures that all necessary steps are taken to address the issue effectively.",
+    "tuned_raw": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP and provides a complete explanation of the operational workflow."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer includes the necessary steps from the SOP but adds unnecessary context about the ticket being no longer relevant, which is not part of the SOP."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 80,
+        "total_tokens": 409,
+        "cost": 9.735e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.735e-05,
+          "upstream_inference_prompt_cost": 4.935e-05,
+          "upstream_inference_completions_cost": 4.8e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270333-B6zQMQIRRKLOyZ4Iom5u"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "escalation-10-1",
+    "question": "An escalation has no assigned owner. What should AfyaPlus staff do?",
+    "context": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.",
+    "reference": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty and does not provide any relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, directly follows the SOP, and provides all necessary steps."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 266,
+        "completion_tokens": 63,
+        "total_tokens": 329,
+        "cost": 7.77e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.77e-05,
+          "upstream_inference_prompt_cost": 3.99e-05,
+          "upstream_inference_completions_cost": 3.78e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270334-QZuAw3bFZPIdDnkNvhcl"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "escalation-10-2",
+    "question": "Please explain the operational workflow for this situation: an escalation has no assigned owner.",
+    "context": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.",
+    "reference": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "Answer A fully explains the operational workflow as outlined in the SOP, providing a complete and safe response."
+      },
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "Answer B is empty and does not provide any relevant information or workflow."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 69,
+        "total_tokens": 336,
+        "cost": 8.145e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 8.145e-05,
+          "upstream_inference_prompt_cost": 4.005e-05,
+          "upstream_inference_completions_cost": 4.14e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270336-wOzsnDk3WzlA3P8gXJ4v"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "escalation-18-1",
+    "question": "A patient objects to clinical priority order. What should AfyaPlus staff do?",
+    "context": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.",
+    "reference": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty and does not provide any relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, directly follows the SOP, and provides a clear response to the question."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 270,
+        "completion_tokens": 66,
+        "total_tokens": 336,
+        "cost": 8.01e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 8.01e-05,
+          "upstream_inference_prompt_cost": 4.05e-05,
+          "upstream_inference_completions_cost": 3.96e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270338-rqhAk1czVUFTpKDq2S3O"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "escalation-18-2",
+    "question": "Please explain the operational workflow for this situation: a patient objects to clinical priority order.",
+    "context": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.",
+    "reference": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer fully explains the operational workflow as outlined in the SOP, providing a complete and safe response."
+      },
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty, providing no relevant information or workflow."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 271,
+        "completion_tokens": 68,
+        "total_tokens": 339,
+        "cost": 8.145e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 8.145e-05,
+          "upstream_inference_prompt_cost": 4.065e-05,
+          "upstream_inference_completions_cost": 4.08e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270339-d09Tx3QZqclD1Qr4KYHG"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "registration-09-1",
+    "question": "A patient requests deletion of a record. What should AfyaPlus staff do?",
+    "context": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.",
+    "reference": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty and does not provide any relevant information."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, directly quoting the SOP and providing the correct procedure for handling the request."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 66,
+        "total_tokens": 333,
+        "cost": 7.965e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.965e-05,
+          "upstream_inference_prompt_cost": 4.005e-05,
+          "upstream_inference_completions_cost": 3.96e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270341-ls8JcTfYs2WzVFp7cCJN"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "registration-09-2",
+    "question": "Please explain the operational workflow for this situation: a patient requests deletion of a record.",
+    "context": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.",
+    "reference": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.\nThe patient has requested that their medical record be deleted. The first step is to route the request to the privacy or records lead for review under the applicable retention process. This ensures that the appropriate department or individual is informed about the request and can take necessary actions to ensure compliance with the relevant regulations and policies.",
+    "tuned_raw": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP and provides a complete and safe explanation of the operational workflow."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer is mostly complete and follows the SOP, but it adds unnecessary detail about compliance that is not explicitly stated in the SOP."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 79,
+        "total_tokens": 408,
+        "cost": 9.675e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.675e-05,
+          "upstream_inference_prompt_cost": 4.935e-05,
+          "upstream_inference_completions_cost": 4.74e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270343-rrNN0Z2m1cFCRNimw3vW"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "registration-22-1",
+    "question": "A staff member wants to export the patient list. What should AfyaPlus staff do?",
+    "context": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.",
+    "reference": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is empty, providing no information or guidance."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly quotes the SOP, providing clear and relevant guidance."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 272,
+        "completion_tokens": 62,
+        "total_tokens": 334,
+        "cost": 7.8e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 7.8e-05,
+          "upstream_inference_prompt_cost": 4.08e-05,
+          "upstream_inference_completions_cost": 3.72e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270344-s5fo9xSp0zrNoM6gdxJ1"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "registration-22-2",
+    "question": "Please explain the operational workflow for this situation: a staff member wants to export the patient list.",
+    "context": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.",
+    "reference": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "This model provides non-diagnostic operational guidance only.\nThe staff member should first ensure that they have an approved purpose and authorized export process in place. They then need to route the request to the appropriate records or privacy staff. It is important to avoid using a personal device during this process as it may violate confidentiality guidelines.",
+    "tuned_raw": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer fully aligns with the SOP and provides a complete explanation of the operational workflow."
+      },
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer accurately reflects the SOP and offers a thorough explanation of the operational workflow."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 326,
+        "completion_tokens": 68,
+        "total_tokens": 394,
+        "cost": 8.97e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 8.97e-05,
+          "upstream_inference_prompt_cost": 4.89e-05,
+          "upstream_inference_completions_cost": 4.08e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789270346-ypU3kDhkhbsM2eNLKQY1"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  }
+]

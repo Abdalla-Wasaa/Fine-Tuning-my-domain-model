@@ -1,0 +1,10 @@
+{
+  "provider": "OpenRouter",
+  "model": "openai/gpt-4o-mini",
+  "paired_requests": 20,
+  "prompt_tokens": 5893,
+  "completion_tokens": 1443,
+  "reported_cost_usd": 0.00174975,
+  "source": "sum of usage.cost from saved per-request API receipts",
+  "scope": "completed 20-pair evaluation only; excludes earlier connectivity probes"
+}

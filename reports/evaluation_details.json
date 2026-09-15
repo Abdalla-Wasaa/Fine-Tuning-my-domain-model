@@ -1,0 +1,1102 @@
+[
+  {
+    "id": "access-01-1",
+    "question": "What should AfyaPlus staff in Kenya do when a system is being designed to handle patient information?",
+    "context": "Include effective data-protection measures in the system design and refer the design to the responsible data team.",
+    "reference": "Include effective data-protection measures in the system design and refer the design to the responsible data team.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a system is being designed to handle patient information, AfyaPlus staff in Kenya should include effective data-protection measures in the system design. This involves ensuring that the system is secure, private, and compliant with relevant data protection regulations.\n\nTo achieve this, the design should be referred to the responsible data team for review and approval. This team can ensure that the system meets the necessary standards for data protection and that the measures in place will safeguard patient information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Include effective data-protection measures in the system design and refer the design to the responsible data team.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Include effective data-protection measures in the system design and refer the design to the responsible data team.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and safe, providing a detailed explanation of the necessary steps AfyaPlus staff should take when designing a system to handle patient information, fully aligning with the SOP."
+      },
+      "tuned": {
+        "quality": 2,
+        "groundedness": 0.0,
+        "reason": "The answer is a direct repetition of the SOP without any additional context or explanation, resulting in major omissions."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 92,
+        "total_tokens": 445,
+        "cost": 0.00010815,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010815,
+          "upstream_inference_prompt_cost": 5.295e-05,
+          "upstream_inference_completions_cost": 5.52e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476013-EeOtwizz2CfD39CL1byl"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "access-01-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a system is being designed to handle patient information?",
+    "context": "Include effective data-protection measures in the system design and refer the design to the responsible data team.",
+    "reference": "Include effective data-protection measures in the system design and refer the design to the responsible data team.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "To handle the system design for patient information, staff should include effective data-protection measures in the system design. This involves implementing robust security features to safeguard patient data, such as encryption, secure authentication, and access controls.\n\nAdditionally, the design should be referred to the responsible data team for review and approval to ensure compliance with data protection regulations and AfyaPlus data management policies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Include effective data-protection measures in the system design and refer the design to the responsible data team.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Include effective data-protection measures in the system design and refer the design to the responsible data team.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly quotes the SOP and fully addresses the question."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer elaborates on the SOP with additional details about security features, but it is slightly less concise than the original SOP."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 341,
+        "completion_tokens": 72,
+        "total_tokens": 413,
+        "cost": 9.435e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.435e-05,
+          "upstream_inference_prompt_cost": 5.115e-05,
+          "upstream_inference_completions_cost": 4.32e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476019-cJk0Z8oFEhi8vvBq7SnS"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "access-04-1",
+    "question": "What should AfyaPlus staff in Kenya do when a system enables every registration field by default?",
+    "context": "Review default collection settings so only data necessary for the specific purpose is processed.",
+    "reference": "Review default collection settings so only data necessary for the specific purpose is processed.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a system enables every registration field by default, AfyaPlus staff in Kenya should review the default collection settings to ensure that only the data necessary for the specific purpose is processed. This involves disabling or hiding unnecessary fields to prevent unnecessary data collection.\n\nIn this case, staff should work with the system administrators to configure the system to only collect the required data, thereby reducing data redundancy and improving data quality. This will also help in maintaining patient confidentiality and adhering to data protection policies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Review default collection settings so only data necessary for the specific purpose is processed.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Review default collection settings so only data necessary for the specific purpose is processed.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, directly addresses the question, and is fully supported by the SOP."
+      },
+      "tuned": {
+        "quality": 2,
+        "groundedness": 0.5,
+        "reason": "The answer provides a relevant instruction but lacks detail and context, resulting in major omissions."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 340,
+        "completion_tokens": 70,
+        "total_tokens": 410,
+        "cost": 9.3e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.3e-05,
+          "upstream_inference_prompt_cost": 5.1e-05,
+          "upstream_inference_completions_cost": 4.2e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476022-1r2DuPJZRVx75KaUAa8I"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "access-04-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a system enables every registration field by default?",
+    "context": "Review default collection settings so only data necessary for the specific purpose is processed.",
+    "reference": "Review default collection settings so only data necessary for the specific purpose is processed.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "To handle this situation, staff should review the default collection settings to ensure that only the data necessary for the specific purpose is processed. In this case, since every registration field is enabled by default, staff should disable any fields that are not required for the current purpose.\n\nFor example, if the purpose is to register patients for a specific program, staff should only enable the fields necessary for that program, such as name, date of birth, and contact information. This will help reduce unnecessary data collection and processing, which can improve data quality and reduce storage costs.\n\nStaff should also consider implementing data validation rules to ensure that only valid data is collected and stored. This can include checks for duplicate entries, data format, and range checks.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Review default collection settings so only data necessary for the specific purpose is processed.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Review default collection settings so only data necessary for the specific purpose is processed.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly quotes the SOP and provides a complete response to the question."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer elaborates on the SOP with additional relevant details and examples, but it is slightly less concise than necessary."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 73,
+        "total_tokens": 470,
+        "cost": 0.00010335,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010335,
+          "upstream_inference_prompt_cost": 5.955e-05,
+          "upstream_inference_completions_cost": 4.38e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476025-JznFaKeRGeHnCf95lrT5"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "access-21-1",
+    "question": "What should AfyaPlus staff in Kenya do when a contractor handles patient information?",
+    "context": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.",
+    "reference": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a contractor handles patient information, AfyaPlus staff in Kenya should ensure the contractor follows the relevant security measures. This includes:\n\n1. Ensuring the contractor has signed a data protection agreement that outlines their responsibilities and obligations in handling patient information.\n2. Conducting regular audits and monitoring to ensure the contractor is adhering to the agreed-upon security measures.\n3. Providing training to the contractor on AfyaPlus's data protection policies and procedures.\n4. Ensuring the contractor has the necessary access controls and permissions to handle patient information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer provides a complete and detailed response to the question, outlining specific actions AfyaPlus staff should take when a contractor handles patient information, all of which are supported by the SOP."
+      },
+      "tuned": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is a direct repetition of the SOP without any additional context or actionable steps, making it irrelevant to the question."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 358,
+        "completion_tokens": 96,
+        "total_tokens": 454,
+        "cost": 0.0001113,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0001113,
+          "upstream_inference_prompt_cost": 5.37e-05,
+          "upstream_inference_completions_cost": 5.76e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476030-8XT9iKIb9APuzHG70bI5"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "access-21-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a contractor handles patient information?",
+    "context": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.",
+    "reference": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "According to the guidance, staff should ensure the contractor handling patient information follows the relevant security measures. This implies that the contractor should be aware of and adhere to AfyaPlus's data protection policies and procedures.\n\nTo ensure compliance, staff should:\n\n1. Verify the contractor's understanding of AfyaPlus's data protection policies and procedures.\n2. Ensure the contractor has signed a non-disclosure agreement (NDA) or a data protection agreement that outlines their responsibilities and obligations.\n3. Monitor the contractor's activities to ensure they are handling patient information in accordance with AfyaPlus's policies and procedures.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Ensure people acting under the controller's or processor's authority follow the relevant security measures.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer directly cites the SOP and is relevant to the question."
+      },
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer elaborates on the SOP with specific actions for compliance, fully addressing the question."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 376,
+        "completion_tokens": 67,
+        "total_tokens": 443,
+        "cost": 9.66e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.66e-05,
+          "upstream_inference_prompt_cost": 5.64e-05,
+          "upstream_inference_completions_cost": 4.02e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476033-sMHqrHpdDZaVUuldfPuE"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "appointments-09-1",
+    "question": "What should AfyaPlus staff in Kenya do when a patient asks which facility rules apply during attendance?",
+    "context": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.",
+    "reference": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a patient asks which facility rules apply during attendance, AfyaPlus staff in Kenya should point the patient to the facility's published rules for using its services. This can be done by providing the patient with a copy of the rules or directing them to a location where the rules are displayed.\n\nFor example, the staff can say, \"You can find our facility's rules for using our services on the notice board near the entrance or on our website. Please take a look and let us know if you have any questions.\"\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer provides a complete and safe response by detailing how AfyaPlus staff should direct the patient to the facility's published rules and offers practical examples of how to do so."
+      },
+      "tuned": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer is mostly complete and safe, directly referencing the SOP, but lacks the additional context or examples that would enhance understanding."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 95,
+        "total_tokens": 467,
+        "cost": 0.0001128,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0001128,
+          "upstream_inference_prompt_cost": 5.58e-05,
+          "upstream_inference_completions_cost": 5.7e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476036-izzUJBposc5UVnyz3z9X"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "appointments-09-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a patient asks which facility rules apply during attendance?",
+    "context": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.",
+    "reference": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a patient asks which facility rules apply during attendance, the staff should point them to the facility's published rules for using its services. This can be done by:\n\n1. Providing a copy of the rules or a link to the facility's website where the rules are posted.\n2. Directing the patient to the facility's reception or information desk where they can obtain a copy of the rules.\n3. Explaining the rules verbally and providing a written summary or a pamphlet with the key points.\n\nStaff should clarify any administrative requirements, such as payment methods, appointment scheduling, or registration procedures, without inventing any restrictions. If the patient has any questions or concerns, staff should address them in a clear and transparent manner.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Point the patient to the facility's published rules for using its services and clarify administrative requirements without inventing restrictions.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP by pointing the patient to the facility's published rules and clarifying administrative requirements without inventing restrictions."
+      },
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and safe, providing detailed steps for how to direct the patient to the facility's rules while adhering to the SOP."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 421,
+        "completion_tokens": 88,
+        "total_tokens": 509,
+        "cost": 0.00011595,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00011595,
+          "upstream_inference_prompt_cost": 6.315e-05,
+          "upstream_inference_completions_cost": 5.28e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476040-AH4Y1iihfqkSIhaaxeec"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "appointments-19-1",
+    "question": "What should AfyaPlus staff in Kenya do when a scheduler wants to reuse general consent for a new task?",
+    "context": "Confirm that consent specifically covers the proposed processing purpose before relying on it.",
+    "reference": "Confirm that consent specifically covers the proposed processing purpose before relying on it.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "According to the guidance, AfyaPlus staff in Kenya should confirm that the consent specifically covers the proposed processing purpose before relying on it. This means that before reusing general consent for a new task, the staff should verify that the original consent includes the specific purpose of the new task.\n\nIf the original consent does not cover the new task, the staff should obtain fresh consent that explicitly covers the new purpose. This ensures that the consent is valid and compliant with the requirements.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Confirm that consent specifically covers the proposed processing purpose before relying on it.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Confirm that consent specifically covers the proposed processing purpose before relying on it.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete and directly addresses the question by explaining the need to confirm that consent covers the new task, and it provides additional context about obtaining fresh consent if necessary."
+      },
+      "tuned": {
+        "quality": 2,
+        "groundedness": 0.0,
+        "reason": "The answer is a direct quote from the SOP but lacks any elaboration or context, making it incomplete and not fully addressing the question."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 96,
+        "total_tokens": 435,
+        "cost": 0.00010845,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010845,
+          "upstream_inference_prompt_cost": 5.085e-05,
+          "upstream_inference_completions_cost": 5.76e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476045-v3aOjUeaY8fnKULepxsL"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "appointments-19-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a scheduler wants to reuse general consent for a new task?",
+    "context": "Confirm that consent specifically covers the proposed processing purpose before relying on it.",
+    "reference": "Confirm that consent specifically covers the proposed processing purpose before relying on it.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "According to the guidance, consent should be confirmed to specifically cover the proposed processing purpose before relying on it. In this case, if the scheduler wants to reuse general consent for a new task, they should first verify that the original consent explicitly covers the new task. If it does, then the consent can be relied upon. If not, the scheduler should obtain new consent that specifically covers the new task.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Confirm that consent specifically covers the proposed processing purpose before relying on it.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Confirm that consent specifically covers the proposed processing purpose before relying on it.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly restates the SOP and provides a complete response to the question."
+      },
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer accurately summarizes the SOP and elaborates on the process, providing a thorough and complete response."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 328,
+        "completion_tokens": 71,
+        "total_tokens": 399,
+        "cost": 9.18e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.18e-05,
+          "upstream_inference_prompt_cost": 4.92e-05,
+          "upstream_inference_completions_cost": 4.26e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476047-S62bejtNeLpsUkn5nQMV"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "escalation-21-1",
+    "question": "What should AfyaPlus staff in Kenya do when a breach record omits the impact?",
+    "context": "Record the effects of the breach as part of the controller's incident documentation.",
+    "reference": "Record the effects of the breach as part of the controller's incident documentation.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a breach record omits the impact, AfyaPlus staff in Kenya should update the record to include the effects of the breach as part of the controller's incident documentation. This ensures that the incident is thoroughly documented and that the necessary steps can be taken to prevent similar incidents in the future.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Record the effects of the breach as part of the controller's incident documentation.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Record the effects of the breach as part of the controller's incident documentation.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer provides a complete response by explaining the action AfyaPlus staff should take when a breach record omits the impact, and it aligns well with the SOP."
+      },
+      "tuned": {
+        "quality": 3,
+        "groundedness": 1.0,
+        "reason": "The answer is partially complete as it directly states the action to be taken according to the SOP but lacks additional context or explanation."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 93,
+        "total_tokens": 394,
+        "cost": 0.00010095,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010095,
+          "upstream_inference_prompt_cost": 4.515e-05,
+          "upstream_inference_completions_cost": 5.58e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476049-Mxfg2CbxTDWOQdJcWIUU"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "escalation-21-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a breach record omits the impact?",
+    "context": "Record the effects of the breach as part of the controller's incident documentation.",
+    "reference": "Record the effects of the breach as part of the controller's incident documentation.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "In the event of a breach record omitting the impact at an AfyaPlus facility in Kenya, staff should update the record to include the effects of the breach as part of the controller's incident documentation. This involves revising the existing record to ensure it accurately reflects the consequences of the breach.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Record the effects of the breach as part of the controller's incident documentation.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Record the effects of the breach as part of the controller's incident documentation.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly quotes the SOP and provides a complete response to the question."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer elaborates on the SOP by explaining the need to update the record, but it is slightly less concise than necessary."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 306,
+        "completion_tokens": 75,
+        "total_tokens": 381,
+        "cost": 9.09e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.09e-05,
+          "upstream_inference_prompt_cost": 4.59e-05,
+          "upstream_inference_completions_cost": 4.5e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476051-QxYJZ0GYpSujafDoErSx"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "escalation-10-1",
+    "question": "What should AfyaPlus staff in Kenya do when a suspected harmful unauthorized disclosure is discovered?",
+    "context": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.",
+    "reference": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a suspected harmful unauthorized disclosure is discovered, AfyaPlus staff in Kenya should escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, accurately reflects the SOP, and provides all necessary details."
+      },
+      "tuned": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer is mostly complete and accurately reflects the SOP, but lacks the introductory context that could enhance clarity."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 72,
+        "total_tokens": 411,
+        "cost": 9.405e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.405e-05,
+          "upstream_inference_prompt_cost": 5.085e-05,
+          "upstream_inference_completions_cost": 4.32e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476056-6XWaZoWEUuzI9MdHV8g2"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "escalation-10-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a suspected harmful unauthorized disclosure is discovered?",
+    "context": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.",
+    "reference": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a suspected harmful unauthorized disclosure is discovered at an AfyaPlus facility in Kenya, staff should escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Escalate promptly to the controller's incident team to assess notification to the Data Commissioner without delay and within seventy-two hours of awareness when the statutory threshold applies.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, safe, and directly quotes the SOP, providing a clear and accurate response to the question."
+      },
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, safe, and paraphrases the SOP accurately, providing a clear and appropriate response to the question."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 347,
+        "completion_tokens": 82,
+        "total_tokens": 429,
+        "cost": 0.00010125,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010125,
+          "upstream_inference_prompt_cost": 5.205e-05,
+          "upstream_inference_completions_cost": 4.92e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476060-2TCpr2mtZdgyzEUiwwhz"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "escalation-18-1",
+    "question": "What should AfyaPlus staff in Kenya do when a breach notice lacks a contact for questions?",
+    "context": "Include the data protection officer's details where applicable, or another contact point for further information.",
+    "reference": "Include the data protection officer's details where applicable, or another contact point for further information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "According to the AfyaPlus operational guidance, when a breach notice lacks a contact for questions, staff in Kenya should contact the Data Protection Officer (DPO) at AfyaPlus. The DPO's details are not provided in the guidance, so I would recommend reaching out to the facility team for further information and assistance.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Include the data protection officer's details where applicable, or another contact point for further information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Include the data protection officer's details where applicable, or another contact point for further information.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer provides a specific action for AfyaPlus staff to take when a breach notice lacks a contact, referencing the DPO and suggesting an alternative contact, which aligns with the SOP."
+      },
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly quotes the SOP, providing a complete and safe response that aligns perfectly with the guidance given."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 93,
+        "total_tokens": 410,
+        "cost": 0.00010335,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010335,
+          "upstream_inference_prompt_cost": 4.755e-05,
+          "upstream_inference_completions_cost": 5.58e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476062-ITtEsmLICsgGoFdIj9ms"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "escalation-18-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a breach notice lacks a contact for questions?",
+    "context": "Include the data protection officer's details where applicable, or another contact point for further information.",
+    "reference": "Include the data protection officer's details where applicable, or another contact point for further information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "According to AfyaPlus operational guidance, if a breach notice lacks a contact for questions, staff should:\n\n1. Document the issue and the steps taken to address it.\n2. Escalate the issue to the Data Protection Officer (DPO) or another designated contact point for further guidance.\n3. If the DPO or contact point is unavailable, staff should contact the facility's management or the responsible facility team for assistance.\n\nContact details for the Data Protection Officer (DPO) at AfyaPlus facilities in Kenya:\n\n[Insert DPO contact details here, if available]\n\nAlternatively, staff can contact the facility's management or the responsible facility team for further information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Include the data protection officer's details where applicable, or another contact point for further information.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Include the data protection officer's details where applicable, or another contact point for further information.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly cites the SOP and provides a complete response to the question."
+      },
+      "base": {
+        "quality": 4,
+        "groundedness": 0.8,
+        "reason": "The answer provides a detailed process for handling the situation but includes an unsupported placeholder for DPO contact details."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 71,
+        "total_tokens": 472,
+        "cost": 0.00010275,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010275,
+          "upstream_inference_prompt_cost": 6.015e-05,
+          "upstream_inference_completions_cost": 4.26e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476066-hTVhW6QAsrwTvVaXWOSl"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "registration-09-1",
+    "question": "What should AfyaPlus staff in Kenya do when a patient wants access to their registration record?",
+    "context": "Route the request through the facility's data-access process rather than dismissing the patient's access right.",
+    "reference": "Route the request through the facility's data-access process rather than dismissing the patient's access right.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "When a patient in Kenya wants access to their registration record, AfyaPlus staff should route the request through the facility's data-access process. This means that the staff should not dismiss the patient's access right but rather facilitate the patient's request by following the established procedures for data access.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Route the request through the facility's data-access process rather than dismissing the patient's access right.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Route the request through the facility's data-access process rather than dismissing the patient's access right.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer is complete, safe, and directly follows the SOP provided, explaining the process clearly."
+      },
+      "tuned": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer is mostly complete and safe, directly quoting the SOP, but lacks additional context or explanation that could enhance understanding."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 78,
+        "total_tokens": 388,
+        "cost": 9.33e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.33e-05,
+          "upstream_inference_prompt_cost": 4.65e-05,
+          "upstream_inference_completions_cost": 4.68e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476068-ddwmqHE8pfL6V4B69N2j"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "registration-09-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a patient wants access to their registration record?",
+    "context": "Route the request through the facility's data-access process rather than dismissing the patient's access right.",
+    "reference": "Route the request through the facility's data-access process rather than dismissing the patient's access right.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "To handle the patient's request, staff should route the request through the facility's data-access process. This means that the patient's request for access to their registration record should be directed to the facility's data-access team or the relevant department, rather than dismissing their access right.\n\nThe data-access team or department will then assess the request and ensure that the patient's access rights are respected, while also adhering to AfyaPlus's data-access policies and procedures.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Route the request through the facility's data-access process rather than dismissing the patient's access right.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Route the request through the facility's data-access process rather than dismissing the patient's access right.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP and provides a complete response."
+      },
+      "base": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer elaborates on the SOP while remaining fully aligned with the provided guidance."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 351,
+        "completion_tokens": 63,
+        "total_tokens": 414,
+        "cost": 9.045e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.045e-05,
+          "upstream_inference_prompt_cost": 5.265e-05,
+          "upstream_inference_completions_cost": 3.78e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476070-miWHFMI5StGHgoRaNX6u"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  },
+  {
+    "id": "registration-22-1",
+    "question": "What should AfyaPlus staff in Kenya do when a patient cannot identify whom to contact about registration data?",
+    "context": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.",
+    "reference": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "According to the AfyaPlus operational guidance, when a patient cannot identify whom to contact about registration data, AfyaPlus staff in Kenya should refer the patient to the relevant facility team for assistance. The facility team will be able to provide the necessary contact information and support.\n\nThe responsible controller or processor contact information for AfyaPlus in Kenya is the facility team. They can be contacted for any queries or concerns related to patient registration data.\n\nAnother entity may receive the data, but this will be in accordance with AfyaPlus's data sharing policies and procedures, which are governed by the facility team.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "base": {
+        "quality": 4,
+        "groundedness": 1.0,
+        "reason": "The answer provides a detailed response that aligns with the SOP, including the role of the facility team and mentions data sharing policies."
+      },
+      "tuned": {
+        "quality": 1,
+        "groundedness": 0.0,
+        "reason": "The answer is a direct repetition of the SOP without any additional context or application to the question."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 79,
+        "total_tokens": 456,
+        "cost": 0.00010395,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010395,
+          "upstream_inference_prompt_cost": 5.655e-05,
+          "upstream_inference_completions_cost": 4.74e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476073-Ec4vLPrfoN3AmHa2acYc"
+    },
+    "presentation_order": [
+      "base",
+      "tuned"
+    ]
+  },
+  {
+    "id": "registration-22-2",
+    "question": "At an AfyaPlus facility in Kenya, how should staff handle this: a patient cannot identify whom to contact about registration data?",
+    "context": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.",
+    "reference": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.\n\nThis model provides non-diagnostic operational guidance only.",
+    "base_raw": "For AfyaPlus facilities in Kenya, staff should direct the patient to contact the facility's Data Protection Officer (DPO) or the facility's management team. The contact information for the DPO or facility management can be found on the facility's notice board or through the facility's internal communication channels.\n\nRegarding the handling of registration data, AfyaPlus facilities in Kenya may share patient data with authorized third-party service providers, such as data analytics companies, for the purpose of improving healthcare services. However, any data sharing must comply with AfyaPlus' data protection policies and applicable laws, including the Kenya Data Protection Act.\n\nIf a patient has concerns about their registration data, they can contact the facility's DPO or management team to discuss their concerns and seek clarification on how their data will be handled.\n\nThis model provides non-diagnostic operational guidance only.",
+    "tuned_raw": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.\n\nThis model provides non-diagnostic operational guidance only.",
+    "guarded": {
+      "base": "Please contact the responsible AfyaPlus facility team for the approved operational workflow. Clinical decisions must be handled by qualified clinical staff.\n\nThis model provides non-diagnostic operational guidance only.",
+      "tuned": "Provide the responsible controller or processor contact information and explain whether another entity may receive the data.\n\nThis model provides non-diagnostic operational guidance only."
+    },
+    "judge": {
+      "tuned": {
+        "quality": 5,
+        "groundedness": 1.0,
+        "reason": "The answer directly follows the SOP by providing the necessary contact information and explaining the potential for data sharing."
+      },
+      "base": {
+        "quality": 3,
+        "groundedness": 0.8,
+        "reason": "The answer provides additional context and details about the DPO and data sharing, but it includes unsupported claims about sharing data with third-party service providers and does not explicitly mention the responsible controller or processor."
+      }
+    },
+    "judge_receipt": {
+      "model": "openai/gpt-4o-mini",
+      "usage": {
+        "prompt_tokens": 423,
+        "completion_tokens": 94,
+        "total_tokens": 517,
+        "cost": 0.00011985,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00011985,
+          "upstream_inference_prompt_cost": 6.345e-05,
+          "upstream_inference_completions_cost": 5.64e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "request_id": "gen-1789476075-aMEPo02GHDWuaDDIGZlB"
+    },
+    "presentation_order": [
+      "tuned",
+      "base"
+    ]
+  }
+]
