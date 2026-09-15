@@ -22,20 +22,22 @@ def retrieve(question):
 
 
 class Generator:
-    def __init__(self, model_path, revision=None):
+    def __init__(self, model_path, revision=None, precision="float32", device="cpu"):
         from runtime_resources import require_llama_memory
-        require_llama_memory()
+        require_llama_memory(precision)
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, revision=revision)
+        placement = {'device_map': 'cpu'} if device == 'cpu' else {
+            'device_map': 'auto', 'max_memory': {0: '12GiB', 'cpu': '20GiB'}}
         self.model = AutoModelForCausalLM.from_pretrained(model_path, revision=revision,
-            torch_dtype=torch.float32, device_map='cpu', low_cpu_mem_usage=True)
+            torch_dtype=getattr(torch, precision), low_cpu_mem_usage=True, **placement)
         self.model.eval()
 
     def generate(self, question, context):
         import torch
         prompt = self.tokenizer.apply_chat_template(messages(question, context), tokenize=False, add_generation_prompt=True)
-        inputs = self.tokenizer(prompt, return_tensors='pt', add_special_tokens=False)
+        inputs = self.tokenizer(prompt, return_tensors='pt', add_special_tokens=False).to(self.model.get_input_embeddings().weight.device)
         with torch.inference_mode():
             tokens = self.model.generate(**inputs, max_new_tokens=192, do_sample=False,
                                          pad_token_id=self.tokenizer.eos_token_id)
@@ -56,8 +58,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--model', default=str(ROOT / 'artifacts/merged'))
     parser.add_argument('--question')
+    parser.add_argument('--precision', choices=['float32', 'bfloat16'], default='float32')
+    parser.add_argument('--device', choices=['cpu', 'auto'], default='cpu')
     args = parser.parse_args()
-    generator = Generator(args.model)
+    generator = Generator(args.model, precision=args.precision, device=args.device)
     results = [ask(generator, q) for q in ([args.question] if args.question else SAMPLES)]
     write_json(ROOT / 'reports/sample_responses.json', results)
     for row in results:

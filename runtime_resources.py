@@ -13,7 +13,8 @@ def available_memory_bytes():
     return available
 
 
-def require_llama_memory():
+def require_llama_memory(precision="float32"):
+    required = 40 if precision == "float32" else 22
     available = available_memory_bytes()
-    if available < 40 * 1024**3:
-        raise SystemExit(f'Unquantized LLaMA 8B needs at least 40 GiB available RAM for this float32 pipeline; {available/1024**3:.1f} GiB available. Use a larger CPU machine; do not restart GPU compute just to satisfy this check.')
+    if available < required * 1024**3:
+        raise SystemExit(f'Unquantized LLaMA 8B needs at least {required} GiB available RAM for this {precision} pipeline; {available/1024**3:.1f} GiB available. Use a larger CPU machine; do not restart GPU compute just to satisfy this check.')

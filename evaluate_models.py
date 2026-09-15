@@ -91,6 +91,8 @@ def main():
     parser.add_argument('--reuse-generations', action='store_true', help='Reuse matching cached local outputs after a judge/API failure')
     parser.add_argument('--judge-env', type=Path, help='Explicit local dotenv file; only the selected judge key is read')
     parser.add_argument('--judge-key-var', default='OPENROUTER_API_KEY')
+    parser.add_argument('--precision', choices=['float32', 'bfloat16'], default='float32')
+    parser.add_argument('--device', choices=['cpu', 'auto'], default='cpu')
     args = parser.parse_args()
     if args.judge_env:
         from dotenv import dotenv_values
@@ -108,7 +110,7 @@ def main():
     if len(rows) != 20:
         raise ValueError('The benchmark must contain exactly 20 test rows')
     started = time.monotonic()
-    identity = {'test_sha256': sha256(ROOT / 'data/test.jsonl'), 'merge': merge,
+    identity = {'precision': args.precision, 'device': args.device, 'test_sha256': sha256(ROOT / 'data/test.jsonl'), 'merge': merge,
                 'prompt_code_sha256': sha256(ROOT / 'common.py'),
                 'generation_code_sha256': sha256(ROOT / 'local_inference.py')}
     cache_path = ROOT / 'artifacts/evaluation_generations.json'
@@ -119,7 +121,7 @@ def main():
     else:
         raw = {}
         for name, path, revision in [('base', merge['base_model'], merge['base_revision']), ('tuned', str(args.merged), None)]:
-            generator = Generator(path, revision)
+            generator = Generator(path, revision, precision=args.precision, device=args.device)
             raw[name] = []
             for i, row in enumerate(rows, 1):
                 raw[name].append(generator.generate(row['question'], row['context']))
