@@ -29,11 +29,13 @@ def test_runner_stops_after_success_or_failure(tmp_path, failure, provider):
     trace = tmp_path / 'trace'
     env = {**os.environ, 'PATH': str(commands) + ':' + os.environ['PATH'], 'TRACE': str(trace),
            'FAILURE': failure, 'NEBIUS_INSTANCE_ID': 'test-instance', 'VAST_INSTANCE_ID': '50789605', 'MAX_RUN_SECONDS': '30',
-           'ARTIFACT_URI': 's3://fixture-bucket/run'}
+           'ARTIFACT_URI': 's3://fixture-bucket/run', 'VAST_API_KEY': 'synthetic-test-key'}
     result = subprocess.run(['bash', str(project / f'scripts/train_{provider}.sh')], env=env, capture_output=True, timeout=10)
     assert result.returncode == {'': 0, 'training': 24, 'upload': 23, 'storage_preflight': 25}[failure]
     log = trace.read_text()
     stop = 'nebius compute instance stop --id test-instance' if provider == 'nebius' else 'vastai stop instance 50789605'
     assert stop in log
+    if provider == 'vast':
+        assert stop + ' --api-key synthetic-test-key --raw' in log
     if failure != 'storage_preflight':
         assert log.index('training') < log.index(stop)
