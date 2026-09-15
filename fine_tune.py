@@ -5,6 +5,7 @@ import json
 import time
 from common import ROOT, config, read_jsonl, sha256, write_json
 from training_utils import encode_example, diagnose
+from provenance import validate_provenance, provider_errors
 
 
 def main():
@@ -13,6 +14,9 @@ def main():
     parser.add_argument('--resume', default=None)
     parser.add_argument('--provider', choices=['nebius', 'vast'], default='nebius')
     args = parser.parse_args()
+    blockers = validate_provenance(require_human=True) + provider_errors(args.provider)
+    if blockers:
+        raise SystemExit('Training preflight blocked: ' + '; '.join(blockers[:5]) + f' ({len(blockers)} total)')
     import torch
     if not torch.cuda.is_available():
         raise SystemExit('QLoRA requires a CUDA GPU. Run this script on your GPU instance.')
@@ -30,7 +34,15 @@ def main():
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = 'right'
     encoded = {s: [encode_example(r, tokenizer, cfg['max_length']) for r in read_jsonl(ROOT / f'data/{s}.jsonl')]
-               for s in ('train', 'val')}
+               for s in ('train', 'val', 'test')}
+    token_stats = {}
+    for split, examples in encoded.items():
+        lengths = sorted(len(r['input_ids']) for r in examples)
+        token_stats[split] = {'count': len(lengths), 'min': min(lengths), 'max': max(lengths),
+                              'median': lengths[len(lengths)//2], 'p95': lengths[min(len(lengths)-1, int(len(lengths)*0.95))]}
+    write_json(ROOT / 'reports/token_validation_report.json', {'status':'passed','model':cfg['base_model'],
+        'revision':revision,'max_allowed':cfg['max_length'],'splits':token_stats,
+        'data_sha256':{s:sha256(ROOT/f'data/{s}.jsonl') for s in encoded}})
     dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
     model = AutoModelForCausalLM.from_pretrained(cfg['base_model'], revision=revision,
         quantization_config=BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type='nf4',
@@ -43,6 +55,8 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     manifest = {'status': 'started', 'provider': args.provider, 'config': cfg, 'base_revision': revision,
                 'gpu': torch.cuda.get_device_name(0),
+                'source_manifest_sha256': sha256(ROOT/'data_sources/manifest.json'),
+                'human_review_sha256': sha256(ROOT/'curation/review.csv'),
                 'packages': {p: importlib.metadata.version(p) for p in ['torch', 'transformers', 'peft', 'bitsandbytes']},
                 'data_sha256': {s: sha256(ROOT / f'data/{s}.jsonl') for s in ('train', 'val', 'test')}}
     write_json(output / 'run_manifest.json', manifest)
@@ -59,8 +73,9 @@ def main():
         train_dataset=encoded['train'], eval_dataset=encoded['val'],
         data_collator=DataCollatorForSeq2Seq(tokenizer=tokenizer, padding=True, label_pad_token_id=-100))
     started = time.monotonic()
-    trainer.evaluate()  # Pretraining validation baseline for a meaningful trend.
+    baseline = trainer.evaluate()  # Save explicitly: Trainer resets log history when training starts.
     trainer.train(resume_from_checkpoint=args.resume)
+    trainer.state.log_history.insert(0, {'step':0, 'epoch':0, 'eval_loss':baseline['eval_loss']})
     trainer.save_model(str(output))
     trainer.save_state()
     tokenizer.save_pretrained(output)

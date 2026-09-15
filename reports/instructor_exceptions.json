@@ -1,0 +1,11 @@
+{
+  "provider": {
+    "approved_provider": "vast",
+    "evidence_type": "student_reported_verbal_approval",
+    "reported_by": "Wasaa Abdalla",
+    "reported_at": "2026-09-15",
+    "evidence_reference": "User reported instructor agreement during a class session; exact class date and instructor name were not supplied.",
+    "approval_statement": "Vast.ai was agreed during the class session.",
+    "scope": "Compute provider substitution only; model and dataset requirements remain unchanged."
+  }
+}

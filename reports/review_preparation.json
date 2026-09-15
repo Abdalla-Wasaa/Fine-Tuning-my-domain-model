@@ -1,0 +1,19 @@
+{
+  "prepared_at": "2026-09-15",
+  "reviewer": "Wasaa Abdalla",
+  "cases": 100,
+  "examples": 200,
+  "human_review_complete": false,
+  "automated_source_anchor_errors": 0,
+  "tests_passed": 36,
+  "instance_id": 50789605,
+  "gpu": "RTX 3090 24 GiB",
+  "disk_available_observed": "16 GiB",
+  "capacity_note": "Insufficient margin for base model download plus adapters and merged output; resolve storage before training.",
+  "stop_request": {
+    "cli_exit_code": 0,
+    "response": "stopping instance 50789605.",
+    "actual_stopped_state_verified": false
+  },
+  "training_started": false
+}

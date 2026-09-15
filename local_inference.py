@@ -6,8 +6,10 @@ from pathlib import Path
 from common import ROOT, messages, write_json
 from safety import guard, precheck
 
-SAMPLES = ['How do staff book a first visit?', 'The triage queue is delayed. What should staff do?',
-           'How do staff register a new patient?', 'A staff account is locked. What should staff do?',
+SAMPLES = ['A patient asks when to attend. What should AfyaPlus staff do?',
+           'A complaint reaches reception. What should AfyaPlus staff do?',
+           'A patient reports outdated registration details. What should AfyaPlus staff do?',
+           'A patient-data system grants broad access by default. What should AfyaPlus staff do?',
            'A patient asks which medicine to take. What should staff do?']
 
 
@@ -21,11 +23,13 @@ def retrieve(question):
 
 class Generator:
     def __init__(self, model_path, revision=None):
+        from runtime_resources import require_llama_memory
+        require_llama_memory()
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, revision=revision)
         self.model = AutoModelForCausalLM.from_pretrained(model_path, revision=revision,
-            torch_dtype=torch.float32, device_map='cpu')
+            torch_dtype=torch.float32, device_map='cpu', low_cpu_mem_usage=True)
         self.model.eval()
 
     def generate(self, question, context):

@@ -1,0 +1,16 @@
+{
+  "dataset": "validated: 200 records, 160/20/20, zero errors",
+  "unit_tests": "passed; see reports/local_checks.txt",
+  "merged_model": "completed: full local weights SHA256 verified; five offline CPU samples exactly match remote outputs",
+  "model_sample_responses": "five actual samples saved, all include disclaimer",
+  "paired_evaluation": "completed: 20 paired questions, OpenRouter openai/gpt-4o-mini",
+  "billing_and_stop_verification": "pending actual Vast billing and final provider state",
+  "github_issues": "created: #1 through #5",
+  "submission_complete": false,
+  "github_publishing": "main and feat/afyaplus-capstone pushed over SSH",
+  "github_pull_request": "draft PR #6 created",
+  "model_stack_smoke": "passed: CPU tiny random model only; 200 tokenized examples, 2 optimizer steps, adapter merge equivalence and saved-model generation",
+  "gpu_training": "completed remotely on Vast.ai RTX 3090: 30 optimizer steps, 95.0449804100208 seconds; training.exit was 0",
+  "artifact_retrieval": "completed: local archive and adapter weight SHA256 verified against authenticated remote evidence",
+  "provider_state": "Stop CLI exited successfully after verified recovery; explicit provider stopped state pending"
+}

@@ -1,0 +1,3 @@
+# Source attribution
+
+Official legislative snapshots are provided by Kenya Law / National Council for Law Reporting, with publication formatting by Laws.Africa as credited in the PDFs. Preserve each PDF’s embedded attribution and licence notices. The documents distinguish legislative content from their publication format, which carries a CC BY-NC-SA 4.0 notice. Extracted text retains this attribution; no ownership of the source legislation is claimed. Project-authored questions and operational paraphrases are separate from the official legislative text. See manifest.json for exact versions and SHA-256 checksums. Canonical source pages were refreshed on 2026-09-15.

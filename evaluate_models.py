@@ -64,7 +64,7 @@ def pending():
     """Explicitly empty metrics are an execution manifest, not evaluation evidence."""
     rows = [{k: '' for k in FIELDS} for _ in range(20)]
     for out, item in zip(rows, read_jsonl(ROOT / 'data/test.jsonl')):
-        out.update(id=item['id'], scenario_id=item['scenario_id'], category=item['category'], status='pending_gpu_training_and_judge')
+        out.update(id=item['id'], scenario_id=item['scenario_id'], category=item['category'], status='pending_source_review_llama_training_and_judge')
     return rows
 
 

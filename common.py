@@ -5,10 +5,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DISCLAIMER = 'This model provides non-diagnostic operational guidance only.'
-SYSTEM_PROMPT = ('You are the AfyaPlus operational assistant. Use only the supplied teaching SOP. '
+SYSTEM_PROMPT = ('You are the AfyaPlus operational assistant. Use only the supplied source-derived operational guidance. '
                  'Explain administrative workflows. Never diagnose, prescribe, interpret clinical results, '
                  'assign clinical priority, or bypass identity and access controls. '
-                 'Refer clinical decisions to qualified clinical staff. If the SOP does not answer a question, '
+                 'Refer clinical decisions to qualified clinical staff. If the guidance does not answer a question, '
                  'say so and refer to the responsible facility team. End every response with: ' + DISCLAIMER)
 
 
@@ -24,7 +24,8 @@ def write_json(path, value):
 
 
 def sha256(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    with Path(path).open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
 def config():
@@ -33,4 +34,4 @@ def config():
 
 def messages(question, context):
     return [{'role': 'system', 'content': SYSTEM_PROMPT},
-            {'role': 'user', 'content': f'Teaching SOP excerpt:\n{context}\n\nQuestion: {question}'}]
+            {'role': 'user', 'content': f'Source-derived operational guidance:\n{context}\n\nQuestion: {question}'}]

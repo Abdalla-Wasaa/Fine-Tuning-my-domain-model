@@ -1,13 +1,15 @@
-# Stakeholder recommendation
+# Stakeholder recommendation — replacement run pending
 
-**Recommendation: Proceed only to a supervised operational pilot.** This assistant covers appointment handling, registration, escalation routing and account access. It cannot make clinical decisions.
+To: AfyaPlus Clinical Director
 
-Across 20 held-out questions (10 scenarios), average answer quality changed from 2.15/5 to 5.00/5: +132.6% relative change. Reference wording overlap changed by +582.6%; supported-claim scoring changed by +194.1%. These percentages describe this small, synthetic, context-supplied benchmark, not patient outcomes. The independent automated reviewer can make mistakes.
+**Recommendation: Hold operational deployment and final submission claims until the replacement run is verified.** The proposed assistant supports appointment access, registration, information access and administrative escalation in Kenya. Its 200 examples are linked to official Kenyan source documents, but human review of the operational interpretations is pending. It does not diagnose or make clinical decisions.
 
-Training-only GPU cost is estimated at USD 0.0049 (95.04 seconds at USD 0.1867/hour). The total bill is unverified; setup, idle time, artifact retrieval, storage, network and judge charges are excluded. The USD 10 deposit is a spending limit, not measured cost. The 20-pair review API receipts report USD 0.00175.
+**Quality:** No improvement percentage is available for the required LLaMA 3.1 8B model on this replacement dataset because it has not been trained or evaluated. The previous Qwen experiment and its scores are archived separately and cannot establish this model's quality.
 
-**Next actions:** (1) Have facility workflow owners review and approve the teaching SOP and answers, because the current policy is synthetic. (2) Run a staff-reviewed shadow trial with unseen scenarios and measure blocked answers, because the strict safety filter can reject useful paraphrases and the benchmark is small.
+**Cost:** No replacement training cost has been incurred or measured by this workflow. The earlier $10 deposit is not a usage invoice. Record actual billed compute time and rate after the authorized run, including setup and idle time; account for storage, transfer and judge charges separately.
 
-**Risk and mitigation:** Unsupported instructions could misdirect staff. Limit released responses to supplied SOP sentences, redirect clinical requests, keep a human escalation route, and audit the shadow trial before enabling operational use.
+**Next actions:** (1) Have a named reviewer verify the 100 source-linked scenarios, including current applicability and safe administrative interpretation, because citation matching alone does not validate an answer. (2) Obtain approved model access and provision the required compute before running the complete comparison, because a working smaller model does not demonstrate compliance with this capstone's specified model.
+
+**Risk and mitigation:** Incorrectly applying a source rule could misdirect staff. Require source review, retain a human escalation route, redirect clinical requests, and restrict responses to the supplied operational guidance. Do not enable a live pilot solely on automated judge scores.
 
 This model provides non-diagnostic operational guidance only.

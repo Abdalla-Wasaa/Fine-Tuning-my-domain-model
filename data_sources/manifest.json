@@ -1,0 +1,38 @@
+[
+  {
+    "id": "data_protection_act",
+    "title": "Data Protection Act, 2019",
+    "version": "2022-12-31",
+    "url": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source",
+    "publisher": "Kenya Law / National Council for Law Reporting",
+    "jurisdiction": "Kenya",
+    "pdf": "data_sources/data_protection_act.pdf",
+    "sha256": "39b9f3a6aa21dc16194e3955274150aa746ad9f4bfb892cfc821aeff12f8b57b",
+    "text": "data_sources/data_protection_act.txt",
+    "text_sha256": "41c8f46534826ae6e4cca0720720ae44f3f59c2c744d013027b62c3502dfc635"
+  },
+  {
+    "id": "health_act",
+    "title": "Health Act, 2017",
+    "version": "2026-07-10",
+    "url": "https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source",
+    "publisher": "Kenya Law / National Council for Law Reporting",
+    "jurisdiction": "Kenya",
+    "pdf": "data_sources/health_act.pdf",
+    "sha256": "eb890d6f39134010f5ee798c5f54dd20e6ea6b997ae5af0e81793bc2fe1652e0",
+    "text": "data_sources/health_act.txt",
+    "text_sha256": "2f353fc126c867c15df339fb67ecf562b68ff3b265443853768d84b0f180c3e9"
+  },
+  {
+    "id": "data_protection_general_regulations",
+    "title": "Data Protection (General) Regulations, 2021",
+    "version": "2022-12-31",
+    "url": "https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng@2022-12-31/source",
+    "publisher": "Kenya Law / National Council for Law Reporting",
+    "jurisdiction": "Kenya",
+    "pdf": "data_sources/data_protection_general_regulations.pdf",
+    "sha256": "8bbf3cf6d0e126e31e0f45d4a44a90700b6354ee19b16fbe1187c26fbb9ba122",
+    "text": "data_sources/data_protection_general_regulations.txt",
+    "text_sha256": "e61e5e807e931ee671c0b418c9f47877e5af40655ccd65e211ffb66064386278"
+  }
+]

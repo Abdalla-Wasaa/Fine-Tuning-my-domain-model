@@ -1,203 +1,128 @@
-# AfyaPlus: fine-tune a domain operations model
+# AfyaPlus LLaMA 3.1 8B operational assistant
 
-Independent Week 4 capstone for appointment workflows, triage escalation routing, registration, and system access. The project lives in `wk4_capstone_project/` locally and occupies the root of the dedicated target repository. No classwork files are modified or imported at runtime.
+Week 4 capstone for Kenyan health operations: appointment access, registration, system access, and administrative escalation. Clinical decisions remain with qualified healthcare providers.
 
-**Current state:** real QLoRA training completed on a Vast.ai RTX 3090 (30 steps, 95.04 seconds). The adapter was merged on the instance; five inference samples and 20 paired OpenRouter-judged evaluations are saved. Raw ROUGE-L increased from 0.1465 to 1.0000 and judge quality from 2.15 to 5.00/5 on this synthetic, SOP-supplied benchmark. Both the adapter and full merged weights are retrieved and SHA256-verified. All five offline local inference samples exactly match the remote samples. Final billing and explicit provider-stop confirmation remain outstanding. See [status](reports/status.json), [training diagnosis](reports/training_diagnosis.md), [evaluation](reports/evaluation_report.md), and [memo](memo.md).
+**Submission status: not yet complete.** The replacement corpus contains 200 source-derived examples with 160/20/20 splits, zero structural/citation errors, and 100 clause/page references to official Kenyan sources. Wasaa Abdalla confirmed review and approval of all 100 cases, recorded on 2026-09-15. LLaMA training, merging and evaluation have not run on this corpus. The existing HF_TOKEN successfully accessed the pinned Meta model configuration (HTTP 200 on 2026-09-14), and the current workstation lacks sufficient RAM for the unquantized 8B merge/inference stage. No replacement scores are invented. See `reports/status.json` and `reports/preflight_report.json`.
+
+The earlier completed Qwen experiment is preserved under `experiments/qwen-teaching-v1/`; its metrics and release assets do not qualify as LLaMA results. Its source code is reproducible at commit `3619102f79b0c5fbe33ce5daa067c158a65dc184`.
 
 > This model provides non-diagnostic operational guidance only.
 
-## Architecture
-
-Curated JSONL → source validation → grouped 160/20/20 split → completion-only QLoRA → adapter and run provenance → exact-base CPU merge → local inference with SOP retrieval and conservative safety gate → paired base/tuned evaluation with an independent judge → report and memo.
-
-The supplied SOP is synthetic teaching material, not an approved AfyaPlus policy. Each of 100 scenarios has two paraphrases kept in the same split. Evaluation provides the relevant SOP directly to both models: it measures contextual instruction following, not retrieval accuracy. The 20 test questions are only ten independent scenarios. See [curation note](data_curation_note.md).
-
 ## Project structure
 
-```text
-curated_dataset.jsonl        Source dataset placed in project root
-policies.json               Versioned synthetic teaching SOP and source IDs
-data_prep.py                Format, validate and split data
-data/{train,val,test}.jsonl  160 / 20 / 20 formatted chat examples
-configs/train.json          Training hyperparameters
-configs/hyperparameters.md  Model choice and rationale
-fine_tune.py                Single-GPU Nebius/Vast QLoRA training
-training_utils.py           Completion token masking and loss diagnosis
-merge_model.py              Merge exact base revision in CPU float32
-local_inference.py          Local generation, retrieval and five sample queries
-safety.py                   Input routing and fail-closed output gate
-evaluate_models.py          Paired 20-question benchmark and LLM judging
-report_results.py           Comparison analysis and measured stakeholder memo
-comparison_results.csv      Completed metrics on 20 paired questions
-reports/                    Validation, execution evidence and analysis
-scripts/train_nebius.sh     Time limit, durable upload and provider stop
-scripts/record_cost.py      Actual billed compute cost calculation
-scripts/verify_submission.py Evidence completeness gate
-tests/                      Offline correctness and safety checks
-artifacts/                  Ignored adapter and merged weight storage
-```
+- `data/{train,val,test}.jsonl`: formatted 160/20/20 chat records; all paraphrases of a scenario stay in one split.
+- `curated_dataset.jsonl`, `policies.json`: source-derived operational questions and interpretations.
+- `data_sources/`: source PDFs, extracted text, versioned URLs and checksums.
+- `curation/source_cases.tsv`, `curation/review.csv`: clause-level provenance and named human-review ledger.
+- `data_prep.py`, `provenance.py`: formatting, validation, source integrity and review checks.
+- `fine_tune.py`, `configs/train.json`: pinned LLaMA 3.1 8B QLoRA configuration.
+- `merge_model.py`: float32 CPU merge into weight shards; rejects mismatched historical adapters.
+- `local_inference.py`, `safety.py`: local generation and conservative operational safety filter.
+- `evaluate_models.py`: 20 paired comparisons with ROUGE-L, independent judge and groundedness.
+- `comparison_results.csv`: explicit pending rows until the replacement evaluation completes.
+- `report_results.py`, `memo.md`: measured recommendation generated only from a completed comparison.
+- `scripts/`: preflight, provider-stop wrappers, billing recording and final verification.
+- `experiments/qwen-teaching-v1/`: clearly separated historical evidence.
 
-## Reproduction
+## Sources and manual review
+
+The source snapshots are the [Data Protection Act](https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31/source), [Health Act](https://new.kenyalaw.org/akn/ke/act/2017/21/eng@2026-07-10/source), and [Data Protection (General) Regulations](https://new.kenyalaw.org/akn/ke/act/ln/2021/263/eng%402022-12-31/source), published by Kenya Law. Embedded attribution and licensing notices are preserved. The PDFs/text are review snapshots, not a guarantee of current legal interpretation.
+
+Each example links to a clause, physical PDF page and exact anchor. The answers are AI-assisted operational paraphrases, not verbatim published FAQs or facility-approved SOPs. Automated anchor matching cannot establish that every interpretation is correct. The rubric's manual-verification requirement remains mandatory: a named human must check both questions and the answer against the source, assess current applicability, and record `approved` or `rejected`, reviewer, date (`YYYY-MM-DD`) and notes in `curation/review.csv`. Do not automatically approve the sheet or claim clinician review that did not occur. Changes to questions, guidance or source citations invalidate the review hash.
+
+`python curation/build_candidate.py` reproduces the draft candidate under `curation/replacement/`; it does not overwrite the root human-review ledger. Edits to source cases require rebuilding and deliberately updating the root corpus and ledger before review. Read `data_curation_note.md` for scope and gaps.
+
+## How to reproduce
 
 ### 1. Environment setup
 
-Use Python 3.11 or 3.12. Training needs a CUDA-capable Nebius or Vast.ai GPU with compatible NVIDIA drivers; local merging and inference use CPU. Reserve approximately 8 GB available RAM and 8 GB disk for the 0.5B model, adapter, checkpoints, and merged weights; actual usage varies. Verify capacity before reserving a paid instance.
+Use Linux and Python 3.11/3.12. Training targets a CUDA GPU with at least 24 GiB VRAM. For the current float32 merge and CPU inference, use at least 40 GiB **available** RAM (a 64 GiB machine is recommended) and 80 GiB free disk. The 7.6 GiB workstation used for the earlier Qwen run is insufficient for this path. These are planning requirements, not a measured LLaMA benchmark.
 
 ```bash
 git clone https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model.git wk4_capstone_project
 cd wk4_capstone_project
+git switch feat/afyaplus-capstone  # until the completed capstone PR is merged
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-The base is [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct), selected for manageable local inference and an openly downloadable instruct baseline. The configuration pins an immutable Hub revision, which the training run verifies and records. The pinned environment was executed successfully on the Vast.ai RTX 3090; package versions are recorded in reports/training_run.json.
+Obtain approved access to [Meta LLaMA 3.1 8B Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) on your Hugging Face account and export `HF_TOKEN` securely. Never commit credentials. The pinned revision is recorded in `configs/train.json`; all training, merging and base inference must use it.
 
 ### 2. Data preparation
 
-Place the curated dataset in the project root as `curated_dataset.jsonl` (already included), then run:
+Place the curated dataset in the project root as `curated_dataset.jsonl` (included), complete the human review, then run:
 
 ```bash
 python data_prep.py
 python -m pytest -q
+python scripts/preflight.py --provider nebius --check-model-access
 ```
 
-Preparation enforces 200 records, four categories, 25 scenario groups per category, two paraphrases per group, source alignment, no duplicate normalized questions, and basic identifier screening. Output: `data/` and `reports/validation_report.json`, with zero errors and hashes. Exact tokenizer length checks occur before training; overlong records fail instead of being truncated. Synthetic records still require human policy-owner approval before real use.
+The preflight can read only `HF_TOKEN` from an explicitly supplied local file using `--hf-env /path/to/local.env`. A structural validation pass does not mean human review passed. Training also performs exact tokenizer checks for all splits and saves minimum, median, 95th percentile and maximum lengths in `reports/token_validation_report.json`; no truncation is allowed.
 
 ### 3. Fine-tuning on Nebius inside tmux
 
-Use a dedicated instance, authenticated Nebius CLI with get/stop permissions for that instance, `tmux`, GNU `timeout`, and an AWS CLI configured for your durable S3-compatible artifact store (including its endpoint). Ensure the boot disk persists on stop. Install dependencies and download the base model before the bounded training window. Training details and loss diagnosis thresholds are in [hyperparameters](configs/hyperparameters.md).
+Before starting paid compute, resolve source review, model access and memory/storage requirements. Configure the Nebius CLI with permissions for the dedicated instance and an S3-compatible durable artifact destination. Install the pinned requirements and obtain the base weights. Derive the time limit from the actual rate and available credits; the existing $10 deposit is not evidence of the remaining balance.
 
 ```bash
 tmux new -s afyaplus-training
 source .venv/bin/activate
-export NEBIUS_INSTANCE_ID='your-dedicated-instance-id'
-export MAX_RUN_SECONDS='1800' # example only: derive this from your approved budget and rate
-export ARTIFACT_URI='s3://your-bucket/afyaplus-capstone/run-001'
-bash scripts/train_nebius.sh
+export NEBIUS_INSTANCE_ID='your-instance-id'
+export MAX_RUN_SECONDS='1800'  # choose from the verified budget/rate
+export ARTIFACT_URI='s3://your-bucket/afyaplus-capstone/llama-run-001'
+bash scripts/train_nebius.sh  # executes python fine_tune.py
 ```
 
-The wrapper executes `python fine_tune.py`, archives the adapter plus reports to durable storage, and immediately requests a provider-level stop. Exit/error traps and a separate watchdog also attempt stop after failure or the time limit. Upload is included in that limit. If upload fails, recover the adapter from the retained disk; do not retrain blindly. These are best-effort controls: API outages or VM/process failures can defeat them. Monitor from a second machine and verify the provider reports STOPPED. [Nebius stop command](https://docs.nebius.com/cli/reference/compute/instance/stop).
+`fine_tune.py` refuses unreviewed data. Hyperparameters and rationale are in `configs/hyperparameters.md`. The wrapper saves/uploads the adapter and reports, then requests a provider-level stop; failure traps and a watchdog also attempt stop. Verify the stopped state from the console or a separate authenticated workstation. Do not leave GPU compute running for CPU merge/evaluation. Storage and transfer can still be charged.
 
-From a separate authenticated workstation after the stop request:
+Wasaa Abdalla reports that the instructor verbally agreed to Vast.ai during class. This student-reported provider exception is recorded in `reports/instructor_exceptions.json`; it is not written instructor confirmation or a model exception. Configure `VAST_INSTANCE_ID` and use `scripts/train_vast.sh`. No new cloud instance is created by these scripts.
 
-```bash
-nebius compute instance get --id "$NEBIUS_INSTANCE_ID" --format json | python scripts/sanitize_provider.py > reports/provider_stop_verification.json
-```
+### 4. Download adapter, merge and run locally
 
-Check that the returned state is STOPPED; if it is still running, immediately run `nebius compute instance stop --id "$NEBIUS_INSTANCE_ID"` or stop it in the console. Do not rely on guest shutdown alone. Storage may still be billed. No infrastructure is provisioned by these scripts.
-
-Successful training saves `artifacts/adapter/trainer_state.json`, adapter weights/tokenizer, run manifest, `reports/trainer_state.json`, `reports/training_run.json`, and `reports/loss_curve.png`. The manifest records the exact base revision, data hashes, package versions, GPU, best checkpoint, duration, and evidence-based loss diagnosis. Run the merge and evaluation locally after stopping GPU compute.
-
-### 4. Download adapter, merge and sample
+On the sufficiently provisioned CPU machine:
 
 ```bash
 mkdir -p artifacts
 aws s3 cp "$ARTIFACT_URI/adapter-and-reports.tar.gz" artifacts/adapter-and-reports.tar.gz
 tar -xzf artifacts/adapter-and-reports.tar.gz
+python scripts/preflight.py --stage merge --provider nebius
 python merge_model.py
 python local_inference.py
 ```
 
-Create `artifacts/` first on a fresh workstation. The archive comes from your own trusted run. Merging uses float32 CPU weights and the exact saved base revision, not four-bit weights. Five actual generated responses (including raw text and gate actions) are saved to `reports/sample_responses.json`. Every user-visible response ends in the mandatory disclaimer.
+The archive must come from your trusted completed LLaMA run and contain `artifacts/adapter/`. Use an empty merge output directory to avoid stale shards. Hashes are streamed to avoid reading multi-gigabyte weights into memory. Five sample responses are written with the mandatory disclaimer. The safety gate releases only supported guidance sentences; it can reject useful paraphrases. Clinical requests are redirected. This is not clinical validation or a guarantee of retrieval quality.
 
-The safety gate releases only sentences found verbatim in the supplied SOP, redirects recognized clinical/emergency requests, and otherwise returns a safe referral. This is intentionally strict and may reject useful model paraphrases. Raw outputs are diagnostic evaluation artifacts and must not be shown as safe user guidance. Lexical retrieval is a baseline with no accuracy guarantee; it needs separate validation.
+### 5. Evaluation and memo
 
-### 5. Evaluation and stakeholder report
-
-Configure a separate, capable judge through exported environment variables. Secrets are read from exported variables or an explicitly supplied local `.env` path; they are never written to results. The judge uses the standard chat-completions HTTP format; its endpoint must support JSON-object responses.
-
-```bash
-export JUDGE_BASE_URL='https://your-provider.example/v1'
-export JUDGE_MODEL='your-independent-judge-model'
-read -rs -p 'Judge API key: ' JUDGE_API_KEY
-export JUDGE_API_KEY
-python evaluate_models.py
-```
-
-This performs 40 local generations and 20 paired judge requests. It saves all responses, presentation order, reviewer reasons and usage receipts. Output: `comparison_results.csv`, `reports/evaluation_report.md`, and `memo.md`. Both models receive identical prompts, oracle context and greedy decoding. Candidate order alternates. Raw ROUGE-L excludes the disclaimer. Quality uses a 1–5 anchored rubric; groundedness estimates the fraction of SOP-supported claims. Guarded ROUGE and intervention rates are separate. An API failure leaves partial evidence in `reports/evaluation_progress.json` and prevents a completed comparison claim; rerun after resolving the error. Automated judge scores need human spot checks.
-
-Record actual billed duration (including setup/idle time) and actual contracted price, then regenerate the memo:
-
-```bash
-python scripts/record_cost.py --billed-seconds ACTUAL_SECONDS --hourly-rate-usd ACTUAL_RATE --billing-reference YOUR_USAGE_REFERENCE
-python report_results.py
-python scripts/verify_submission.py
-```
-
-Do not substitute training seconds for billed uptime. The calculator excludes storage, network, and reviewer API charges. Relative change is `(tuned - base) / base × 100`; it is undefined when the baseline is zero. The final gate must pass before claiming a complete submission.
-
-## Git workflow and evidence
-
-See [CONTRIBUTING](CONTRIBUTING.md). Use issue-linked semantic commits and a feature PR into main. Issues #1–#5 and draft PR #6 now exist after the token permissions were updated. Keep PRs draft while live evidence is outstanding. Never commit `.claude/`, `CLAUDE.md`, `AGENTS.md`, credentials or binary weights. Save weights to durable artifact storage and commit run hashes and retrieval instructions. Local tests and CI do not constitute proof of a GPU run or improved model quality.
-
-For an optional CPU library compatibility test, run `python scripts/smoke_model_stack.py`. It downloads only the base tokenizer and trains a tiny random model for two steps. Its report is explicitly excluded from capstone training evidence.
-
-The CPU compatibility smoke test passed with PyTorch 2.6.0+cpu, Transformers 4.51.3, and PEFT 0.15.2. All 200 examples tokenized successfully (maximum 190 tokens), two tiny-model optimizer steps completed, adapter merge preserved logits within tolerance, and the saved model reloaded and generated. See `reports/model_stack_smoke.json`; this is not the required CUDA run.
-
-## Vast.ai and OpenRouter setup
-
-The selected provider is now Vast.ai, replacing the originally requested Nebius run. Report the actual provider in training evidence; this is a documented platform substitution. The actual run used instance 50789605, RTX 3090 with 24 GB VRAM. Confirm the current instance, full hourly price, storage/transfer charges and SSH port in the console. The user has a USD 10 balance; this is a ceiling, not a target spend.
-
-`fine_tune.py --provider vast` uses the same QLoRA configuration and records Vast.ai in its manifest. Once the SSH connection, stop permissions and durable artifact destination are configured, run inside tmux:
-
-```bash
-export VAST_INSTANCE_ID='50789605' # confirm this is the current dedicated instance
-export MAX_RUN_SECONDS='1800' # example; calculate from the verified rate and remaining budget
-export ARTIFACT_URI='s3://your-bucket/afyaplus-capstone/run-001'
-bash scripts/train_vast.sh
-```
-
-This optional automatic wrapper requires `vastai`, `aws`, and configured stop/upload credentials. It follows the same tested failure cleanup and time limit as the Nebius wrapper. Do not run the Nebius wrapper on Vast.ai. From a separately authenticated workstation, save final provider evidence:
-
-```bash
-vastai show instance 50789605 --raw | python scripts/sanitize_provider.py > reports/provider_stop_verification.json
-```
-
-The evidence checker requires `actual_status: stopped`; an intended stop, frozen or crashed container does not qualify. Stopped instances retain disk data and incur storage charges. Retrieve and verify artifacts before considering destruction, which permanently deletes data. See [Vast.ai lifecycle documentation](https://docs.vast.ai/guides/instances/manage-instances).
-
-The independent evaluation judge can be your existing OpenRouter model:
+Use the same merged artifact and held-out test files. Configure an independent judge:
 
 ```bash
 export JUDGE_BASE_URL='https://openrouter.ai/api/v1'
 export JUDGE_MODEL='openai/gpt-4o-mini'
-read -rsp 'OpenRouter API key: ' JUDGE_API_KEY
-printf '\n'
-export JUDGE_API_KEY
+# Export JUDGE_API_KEY securely, or supply a local dotenv file below.
+python evaluate_models.py --judge-env /path/to/local.env --judge-key-var OPENROUTER_API_KEY
 ```
 
-The correct model name uses the letter `o` in `4o`. It is independent of the Qwen model being fine-tuned. The evaluator makes 20 paired judge requests after model artifacts are available; charges are separate from Vast.ai. If the key already exists in a local `.env`, provide only its path and variable name for configuration, never its value in chat. See [OpenRouter API setup](https://openrouter.ai/docs/quickstart). To use an existing local credential explicitly, run `python evaluate_models.py --judge-env /path/to/local/.env --judge-key-var OPENROUTER_API_KEY`. This defaults the judge to OpenRouter and `openai/gpt-4o-mini`; keep the file outside Git.
+The evaluator makes 40 local generations and 20 paired judge requests. It saves `comparison_results.csv`, per-question responses and reasons, the three largest/smallest changes, and the memo. Both models receive the same source-derived operational guidance; this evaluates context following, not retrieval accuracy or clinical competence. Twenty questions represent ten independent scenarios. ROUGE excludes the disclaimer; safety intervention rates are separate.
 
-### Recovering the completed Vast.ai run
+To keep judge credentials on a separate workstation, run `python evaluate_models.py --generate-only` on the inference machine, retrieve `artifacts/evaluation_generations.json` and the merge manifest, then use `--reuse-generations` with local judge credentials. Cache hashes must match model, data and generation code. Never reuse historical Qwen outputs for this corpus.
 
-The initial SSH transfer was incomplete. Do not extract a partial archive. When the same instance is running and its ports have been confirmed, this direct-TLS helper downloads and verifies the adapter against its remote SHA256:
+Record actual billed compute time/rate from the provider usage record, including setup and idle time:
 
 ```bash
-python scripts/download_vast_artifacts.py --host 188.116.34.4 --ssh-port 21147 --https-port 30553 --instance-id 50789605
+python scripts/record_cost.py --billed-seconds ACTUAL_SECONDS --hourly-rate-usd ACTUAL_RATE --billing-reference YOUR_USAGE_REFERENCE
+nebius compute instance get --id "$NEBIUS_INSTANCE_ID" --format json | python scripts/sanitize_provider.py > reports/provider_stop_verification.json
+python report_results.py
+python scripts/verify_submission.py
 ```
 
-It trusts only the server certificate obtained through the existing verified SSH connection, sends credentials only to the direct instance IP, refuses redirects, and verifies both size and SHA256 before replacing the destination. The helper uses 64 KiB parallel ranges and resumes by comparing chunk hashes obtained through SSH. A final whole-file SHA256 check is mandatory. The adapter is the priority; `--include-base` optionally retrieves the cached public base model too. Stop GPU compute after verified retrieval; merge and evaluate locally. Port assignments must be rechecked after a restart.
+The cost calculator excludes storage, network and judge charges; identify those separately. Do not substitute optimizer time for billed uptime. The final gate checks model identity, source/review hashes, exact tokenizer evidence, artifact hashes, 20 completed paired evaluations, five samples, cost and stopped-state evidence. Even a passing gate needs human provenance review.
 
-If the judge API fails after local generation, `python evaluate_models.py --reuse-generations` can reuse the saved generations only when the model manifest, test hash and prompt/generation code hashes still match. It requests fresh judge scores and does not reuse partial score results.
+## Submission and Git workflow
 
-### Recorded execution
+Use issue-linked semantic commits and PR review as documented in `CONTRIBUTING.md`. PR #6 remains draft while the replacement run is blocked. When all rubric evidence is complete, merge into `main` so the submitted root repository link exposes the deliverables. Publish trained artifacts separately with checksums; never commit model weights, `.env`, `.claude/`, `CLAUDE.md` or `AGENTS.md`.
 
-The actual run used an isolated `/workspace/capstone-env`, the pinned requirements, and `timeout 1200 python fine_tune.py --provider vast` inside tmux. A separate provider-stop watchdog bounded the instance lifetime. Because no S3 destination was configured, artifacts were retained on the instance disk and retrieved over authenticated SSH/direct pinned HTTPS. CPU merging and all 40 generations completed on that instance while the public base-model download on the workstation was stalled. Only the resulting text comparisons were sent from the workstation to OpenRouter; the credential remained local. `--reuse-generations` checks the model manifest, dataset and source-code hashes before scoring these saved responses.
+This model provides non-diagnostic operational guidance only.
 
-For the same split-compute workflow without putting judge credentials on the instance, run `OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python evaluate_models.py --generate-only` after merging, followed by `python local_inference.py`. Retrieve `artifacts/evaluation_generations.json`, `artifacts/merged/merge_manifest.json`, and `reports/sample_responses.json`. Then run `python evaluate_models.py --reuse-generations --judge-env /path/to/local/.env` on the workstation. The cache validates the exact model, test data, and generation source hashes.
-
-### Download the preserved trained adapter
-
-The verified adapter is preserved as a [GitHub prerelease](https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/tag/v0.1.0-capstone). Binary weights remain outside Git history.
-
-```bash
-gh release download v0.1.0-capstone --repo Abdalla-Wasaa/Fine-Tuning-my-domain-model --pattern 'afyaplus-adapter-v0.1.0.tar.gz' --pattern SHA256SUMS
-sha256sum -c SHA256SUMS
-tar -xzf afyaplus-adapter-v0.1.0.tar.gz
-python merge_model.py
-python local_inference.py
-```
-
-Merging downloads the pinned public base model and needs a working Hugging Face connection. The original remote merge is evidenced by the hashes in `reports/evaluation_run.json`; the workstation copy now matches that checksum and passes offline inference; see `reports/local_model_verification.json`.
-
-For interrupted direct SSH recovery of existing merged weights, use `rsync -z --append-verify --inplace` to a `.part` destination. Check the complete file against `artifacts/merged/merge_manifest.json` before renaming it to `model.safetensors`. Retrieve the tokenizer/configuration files from the same merged directory. Partial files are not valid model artifacts.
+Dataset reviewer: Wasaa Abdalla. Read [the review pack](curation/REVIEW_PACK.md) and enter actual decisions and dates in [the review ledger](curation/review.csv). Assignment does not establish completed review.

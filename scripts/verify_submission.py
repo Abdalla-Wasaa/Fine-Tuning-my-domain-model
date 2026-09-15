@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common import ROOT, DISCLAIMER, read_jsonl, sha256
+from provenance import validate_provenance, provider_errors
 
 
 def stopped(status):
@@ -20,9 +21,9 @@ def stopped(status):
 
 
 def check(root=ROOT):
-    errors = []
+    errors = validate_provenance(root, require_human=True)
     required = ['reports/validation_report.json', 'reports/trainer_state.json', 'reports/loss_curve.png',
-                'reports/training_run.json', 'artifacts/adapter/adapter_model.safetensors',
+                'reports/training_run.json', 'reports/token_validation_report.json', 'artifacts/adapter/adapter_model.safetensors',
                 'artifacts/adapter/run_manifest.json', 'artifacts/merged/merge_manifest.json',
                 'reports/sample_responses.json', 'reports/evaluation_run.json',
                 'reports/evaluation_details.json', 'reports/evaluation_report.md',
@@ -57,11 +58,27 @@ def check(root=ROOT):
         errors.append('Dataset validation contains errors')
     training = read('reports/training_run.json')
     if training is not None:
+        if training.get('config', {}).get('base_model') != 'meta-llama/Llama-3.1-8B-Instruct':
+            errors.append('Rubric requires LLaMA 3.1 8B Instruct; historical Qwen results do not qualify')
+        errors.extend(provider_errors(training.get('provider'), root))
+        for file, key in [('data_sources/manifest.json','source_manifest_sha256'),('curation/review.csv','human_review_sha256')]:
+            if (root/file).exists() and training.get(key) != sha256(root/file):
+                errors.append('Training provenance mismatch: '+file)
         if training.get('status') != 'completed' or training.get('training_seconds', 0) <= 0:
             errors.append('Successful timed training evidence required')
         for split in ('train', 'val', 'test'):
             if training.get('data_sha256', {}).get(split) != sha256(root / f'data/{split}.jsonl'):
                 errors.append(f'Training {split} hash mismatch')
+    tokens = read('reports/token_validation_report.json')
+    if tokens is not None:
+        if tokens.get('status') != 'passed' or tokens.get('model') != 'meta-llama/Llama-3.1-8B-Instruct':
+            errors.append('Actual LLaMA tokenizer validation required')
+        for split in ('train','val','test'):
+            if tokens.get('data_sha256',{}).get(split) != sha256(root/f'data/{split}.jsonl'):
+                errors.append('Token validation data mismatch: '+split)
+            stats = tokens.get('splits',{}).get(split,{})
+            if not 0 < stats.get('min',0) <= stats.get('max',0) <= tokens.get('max_allowed',0):
+                errors.append('Invalid token range: '+split)
     state = read('reports/trainer_state.json')
     if state and (state.get('global_step', 0) <= 0 or not any('eval_loss' in r for r in state.get('log_history', []))):
         errors.append('Trainer state lacks optimizer steps or validation loss')

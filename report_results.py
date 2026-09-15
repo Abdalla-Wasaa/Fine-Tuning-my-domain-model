@@ -60,13 +60,15 @@ def generate_report():
     recommendation = 'Proceed only to a supervised operational pilot' if tuned > base and averages['groundedness'][1] >= 0.9 else 'Hold deployment and improve the prototype'
     (ROOT / 'memo.md').write_text(f'''# Stakeholder recommendation
 
+To: AfyaPlus Clinical Director
+
 **Recommendation: {recommendation}.** This assistant covers appointment handling, registration, escalation routing and account access. It cannot make clinical decisions.
 
-Across 20 held-out questions (10 scenarios), average answer quality changed from {base:.2f}/5 to {tuned:.2f}/5: {relative(base,tuned)} relative change. Reference wording overlap changed by {relative(*averages['rouge_l'])}; supported-claim scoring changed by {relative(*averages['groundedness'])}. These percentages describe this small, synthetic, context-supplied benchmark, not patient outcomes. The independent automated reviewer can make mistakes.
+Across 20 held-out questions (10 scenarios), average answer quality changed from {base:.2f}/5 to {tuned:.2f}/5: {relative(base,tuned)} relative change. Reference wording overlap changed by {relative(*averages['rouge_l'])}; supported-claim scoring changed by {relative(*averages['groundedness'])}. These percentages describe this small, source-derived, context-supplied benchmark, not patient outcomes. The independent automated reviewer can make mistakes.
 
 {cost_text}
 
-**Next actions:** (1) Have facility workflow owners review and approve the teaching SOP and answers, because the current policy is synthetic. (2) Run a staff-reviewed shadow trial with unseen scenarios and measure blocked answers, because the strict safety filter can reject useful paraphrases and the benchmark is small.
+**Next actions:** (1) Have facility workflow owners review and approve the source-derived guidance and answers, because source-derived guidance still needs facility approval. (2) Run a staff-reviewed shadow trial with unseen scenarios and measure blocked answers, because the strict safety filter can reject useful paraphrases and the benchmark is small.
 
 **Risk and mitigation:** Unsupported instructions could misdirect staff. Limit released responses to supplied SOP sentences, redirect clinical requests, keep a human escalation route, and audit the shadow trial before enabling operational use.
 

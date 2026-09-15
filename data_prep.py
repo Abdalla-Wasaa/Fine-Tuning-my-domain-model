@@ -6,6 +6,7 @@ import random
 import re
 from pathlib import Path
 from common import ROOT, DISCLAIMER, messages, read_jsonl, sha256, write_json
+from provenance import validate_provenance
 
 
 def validate(rows, policies):
@@ -55,10 +56,13 @@ def prepare(source=ROOT / 'curated_dataset.jsonl', output=ROOT / 'data', report=
     try:
         rows = read_jsonl(source)
         errors = validate(rows, policies)
+        errors.extend(validate_provenance())
     except (ValueError, TypeError) as exc:
         rows, errors = [], [f'Invalid JSONL: {exc}']
     result = {'records': len(rows), 'errors': errors, 'error_count': len(errors),
               'source_sha256': sha256(source), 'policy_sha256': sha256(ROOT / 'policies.json'),
+              'manual_review_complete': not validate_provenance(require_human=True),
+              'source_documents': 3, 'source_anchor_checks': 100,
               'seed': 42, 'token_check': 'Exact tokenizer length enforced before training; no truncation permitted.'}
     if errors:
         write_json(report, result)

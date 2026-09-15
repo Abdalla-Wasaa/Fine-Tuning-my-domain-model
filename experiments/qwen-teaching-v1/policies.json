@@ -1,0 +1,606 @@
+{
+  "status": "Synthetic teaching SOP; not an approved real-world AfyaPlus policy. Owner review required before deployment.",
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "appointments-01",
+      "category": "appointments",
+      "scenario": "Book a first visit",
+      "guidance": "Ask registration to verify the patient record, confirm facility and service with the patient, check an available slot, and send confirmation through the approved channel."
+    },
+    {
+      "id": "appointments-02",
+      "category": "appointments",
+      "scenario": "Move an existing visit",
+      "guidance": "Verify the patient and booking, confirm the replacement slot before releasing the original, update the booking, and send the revised confirmation."
+    },
+    {
+      "id": "appointments-03",
+      "category": "appointments",
+      "scenario": "Cancel a visit",
+      "guidance": "Verify the patient and booking, record the cancellation without clinical details, release the slot, and confirm cancellation through the approved channel."
+    },
+    {
+      "id": "appointments-04",
+      "category": "appointments",
+      "scenario": "Handle a missed visit",
+      "guidance": "Check the booking status, offer available replacement slots without blame, and refer any clinical urgency question to the triage nurse."
+    },
+    {
+      "id": "appointments-05",
+      "category": "appointments",
+      "scenario": "No appointment slots remain",
+      "guidance": "Offer the approved waiting list with consent or another available date; ask the facility team about alternatives and do not promise an extra slot."
+    },
+    {
+      "id": "appointments-06",
+      "category": "appointments",
+      "scenario": "Two bookings exist for one patient",
+      "guidance": "Verify both bookings and patient preference before cancelling any duplicate; preserve the intended visit and record the correction."
+    },
+    {
+      "id": "appointments-07",
+      "category": "appointments",
+      "scenario": "Confirmation was not received",
+      "guidance": "Check the booking status and verified contact channel, resend the confirmation if booked, and avoid creating a second booking."
+    },
+    {
+      "id": "appointments-08",
+      "category": "appointments",
+      "scenario": "A patient arrives late",
+      "guidance": "Tell reception the arrival time and ask the clinic team whether the slot can still be used; offer rebooking if required without promising acceptance."
+    },
+    {
+      "id": "appointments-09",
+      "category": "appointments",
+      "scenario": "A clinician cancels a clinic",
+      "guidance": "Ask the scheduling lead for approved alternatives, contact affected patients through verified channels, and record each accepted replacement."
+    },
+    {
+      "id": "appointments-10",
+      "category": "appointments",
+      "scenario": "A patient requests a different facility",
+      "guidance": "Check availability and service at the requested facility, confirm the choice, and update the appointment only after the replacement is accepted."
+    },
+    {
+      "id": "appointments-11",
+      "category": "appointments",
+      "scenario": "A patient has no smartphone",
+      "guidance": "Offer assisted booking through reception, verify the record, and provide confirmation through an accessible approved channel."
+    },
+    {
+      "id": "appointments-12",
+      "category": "appointments",
+      "scenario": "A relative wants to change a booking",
+      "guidance": "Verify the relative is authorized before disclosing or changing the booking; otherwise arrange direct contact with the patient."
+    },
+    {
+      "id": "appointments-13",
+      "category": "appointments",
+      "scenario": "A patient requests a reminder",
+      "guidance": "Confirm consent and the verified contact channel, enable the approved reminder option, and avoid including sensitive clinical details."
+    },
+    {
+      "id": "appointments-14",
+      "category": "appointments",
+      "scenario": "A patient opts out of reminders",
+      "guidance": "Record the communication preference and disable optional reminders through the approved process; agree how essential booking information will be shared."
+    },
+    {
+      "id": "appointments-15",
+      "category": "appointments",
+      "scenario": "A patient requests a specific clinician",
+      "guidance": "Check that clinician's actual availability and offer available alternatives; do not guarantee a named clinician before confirmation."
+    },
+    {
+      "id": "appointments-16",
+      "category": "appointments",
+      "scenario": "A walk-in asks for a routine visit",
+      "guidance": "Direct the person to reception for registration and available slots; clinical urgency is assessed by the triage nurse."
+    },
+    {
+      "id": "appointments-17",
+      "category": "appointments",
+      "scenario": "The booking portal is unavailable",
+      "guidance": "Use the approved downtime log with minimum information, alert support, and reconcile entries once service returns to prevent duplicate bookings."
+    },
+    {
+      "id": "appointments-18",
+      "category": "appointments",
+      "scenario": "A slot appears twice in the calendar",
+      "guidance": "Pause confirmation for the affected slot, ask the scheduling lead to resolve the conflict, and tell the patient when an update will be provided."
+    },
+    {
+      "id": "appointments-19",
+      "category": "appointments",
+      "scenario": "A patient needs language support",
+      "guidance": "Record the preferred language with consent and ask the facility team to arrange approved interpretation for the appointment."
+    },
+    {
+      "id": "appointments-20",
+      "category": "appointments",
+      "scenario": "A patient needs accessible entry",
+      "guidance": "Ask about access requirements without requesting a diagnosis and coordinate the available assistance with the facility team before confirming arrangements."
+    },
+    {
+      "id": "appointments-21",
+      "category": "appointments",
+      "scenario": "A patient cannot identify the needed service",
+      "guidance": "Refer service selection involving symptoms to the triage nurse; reception can explain available administrative booking options."
+    },
+    {
+      "id": "appointments-22",
+      "category": "appointments",
+      "scenario": "A patient asks how long the visit will take",
+      "guidance": "Share only the facility's confirmed scheduling information and explain that actual waiting time can change; do not invent a duration."
+    },
+    {
+      "id": "appointments-23",
+      "category": "appointments",
+      "scenario": "A patient disputes a cancellation",
+      "guidance": "Check the audit record, preserve the complaint, and route it to the scheduling lead while helping the patient find an available visit."
+    },
+    {
+      "id": "appointments-24",
+      "category": "appointments",
+      "scenario": "A patient requests a booking receipt",
+      "guidance": "Verify identity and send the booking confirmation through an approved channel; direct payment receipt requests to billing."
+    },
+    {
+      "id": "appointments-25",
+      "category": "appointments",
+      "scenario": "A waiting-list slot becomes available",
+      "guidance": "Contact the next eligible person using the approved list order, confirm acceptance, and update the list without promising unconfirmed capacity."
+    },
+    {
+      "id": "escalation-01",
+      "category": "escalation",
+      "scenario": "The triage queue is delayed",
+      "guidance": "Notify the triage nurse or shift lead, record the time and operational delay, and request an update; reception must not assign clinical priority."
+    },
+    {
+      "id": "escalation-02",
+      "category": "escalation",
+      "scenario": "A person reports immediate danger",
+      "guidance": "Alert the on-site clinical emergency team immediately or direct a remote person to local emergency services; do not delay escalation for registration or payment."
+    },
+    {
+      "id": "escalation-03",
+      "category": "escalation",
+      "scenario": "A patient asks reception to assess severity",
+      "guidance": "Explain that clinical priority is assigned by a qualified clinician and connect the patient to the triage nurse without offering a diagnosis."
+    },
+    {
+      "id": "escalation-04",
+      "category": "escalation",
+      "scenario": "The triage nurse does not acknowledge a message",
+      "guidance": "Use the facility escalation chain to contact the shift lead, document attempts and times, and continue seeking a confirmed clinical handoff."
+    },
+    {
+      "id": "escalation-05",
+      "category": "escalation",
+      "scenario": "A patient leaves before triage",
+      "guidance": "Notify the triage nurse, record the departure factually, and let the clinical team decide follow-up; do not record a clinical assessment at reception."
+    },
+    {
+      "id": "escalation-06",
+      "category": "escalation",
+      "scenario": "A referral handoff is incomplete",
+      "guidance": "Contact the sending team for the missing operational handoff information through an approved channel and ask the responsible clinician to review the referral."
+    },
+    {
+      "id": "escalation-07",
+      "category": "escalation",
+      "scenario": "A patient asks to skip the triage queue",
+      "guidance": "Explain that a clinician determines priority, inform the triage nurse of the request, and do not change clinical order independently."
+    },
+    {
+      "id": "escalation-08",
+      "category": "escalation",
+      "scenario": "A patient's situation changes while waiting",
+      "guidance": "Notify the triage nurse promptly for reassessment and record the notification time; reception must not interpret symptoms."
+    },
+    {
+      "id": "escalation-09",
+      "category": "escalation",
+      "scenario": "A clinical team requests a patient location",
+      "guidance": "Verify the requesting staff role and share only the minimum location information through the approved internal channel."
+    },
+    {
+      "id": "escalation-10",
+      "category": "escalation",
+      "scenario": "An escalation has no assigned owner",
+      "guidance": "Ask the shift lead to assign a responsible clinician or team, record the owner, and obtain acknowledgement of the handoff."
+    },
+    {
+      "id": "escalation-11",
+      "category": "escalation",
+      "scenario": "A shift ends during an open escalation",
+      "guidance": "Include the unresolved case, contact attempts, and responsible team in a secure handover; obtain acknowledgement from the incoming shift."
+    },
+    {
+      "id": "escalation-12",
+      "category": "escalation",
+      "scenario": "A family member asks for triage details",
+      "guidance": "Verify authorization before sharing information and refer clinical explanations to the responsible clinician."
+    },
+    {
+      "id": "escalation-13",
+      "category": "escalation",
+      "scenario": "A triage notification was sent to the wrong team",
+      "guidance": "Notify the correct team through the approved channel, record the correction, and follow the privacy incident process if information was misdirected."
+    },
+    {
+      "id": "escalation-14",
+      "category": "escalation",
+      "scenario": "A patient asks for a diagnosis at the desk",
+      "guidance": "Explain that reception cannot diagnose and arrange contact with a qualified clinician for assessment."
+    },
+    {
+      "id": "escalation-15",
+      "category": "escalation",
+      "scenario": "A patient asks which medicine to take",
+      "guidance": "Do not recommend medicines or doses; connect the patient to an authorized clinician or pharmacist for clinical advice."
+    },
+    {
+      "id": "escalation-16",
+      "category": "escalation",
+      "scenario": "A patient asks staff to interpret a test result",
+      "guidance": "Route the request to the responsible clinician and provide only the verified administrative review status."
+    },
+    {
+      "id": "escalation-17",
+      "category": "escalation",
+      "scenario": "An emergency contact is unreachable",
+      "guidance": "Inform the responsible clinician or shift lead and document contact attempts; the clinical team decides further action."
+    },
+    {
+      "id": "escalation-18",
+      "category": "escalation",
+      "scenario": "A patient objects to clinical priority order",
+      "guidance": "Explain that priority is determined by the clinical team, route the concern to the triage nurse, and record the complaint respectfully."
+    },
+    {
+      "id": "escalation-19",
+      "category": "escalation",
+      "scenario": "An incident occurs in the waiting area",
+      "guidance": "Alert the appropriate clinical or site safety team, record factual operational details, and follow the facility incident reporting process."
+    },
+    {
+      "id": "escalation-20",
+      "category": "escalation",
+      "scenario": "A transfer destination has not confirmed acceptance",
+      "guidance": "Ask the responsible clinical team to obtain acceptance and a named receiving contact; do not mark the handoff complete without confirmation."
+    },
+    {
+      "id": "escalation-21",
+      "category": "escalation",
+      "scenario": "An escalation ticket is accidentally closed",
+      "guidance": "Reopen or link a corrective ticket, notify the assigned team, and preserve the audit history until a confirmed resolution is recorded."
+    },
+    {
+      "id": "escalation-22",
+      "category": "escalation",
+      "scenario": "A patient requests an update on escalation",
+      "guidance": "Verify identity, share only confirmed operational status, and ask the responsible team for an update without promising a clinical outcome."
+    },
+    {
+      "id": "escalation-23",
+      "category": "escalation",
+      "scenario": "A queue dashboard disagrees with the handover",
+      "guidance": "Ask the shift lead to reconcile the records, preserve the discrepancy, and avoid changing clinical priority based only on the dashboard."
+    },
+    {
+      "id": "escalation-24",
+      "category": "escalation",
+      "scenario": "A staff member requests a private messaging handoff",
+      "guidance": "Use the approved secure clinical channel instead of a personal account and share only information needed by the receiving team."
+    },
+    {
+      "id": "escalation-25",
+      "category": "escalation",
+      "scenario": "A triage complaint needs follow-up",
+      "guidance": "Record the operational concern with minimum personal information, send it to the shift lead, and give the patient the approved complaint reference."
+    },
+    {
+      "id": "registration-01",
+      "category": "registration",
+      "scenario": "Register a new patient",
+      "guidance": "Use the approved registration process, verify available identity information privately, search for an existing record, and create a new record only after duplicate checks."
+    },
+    {
+      "id": "registration-02",
+      "category": "registration",
+      "scenario": "The patient has no identity document",
+      "guidance": "Ask the registration lead for the approved alternative verification process; do not invent an identifier or delay an urgent clinical handoff."
+    },
+    {
+      "id": "registration-03",
+      "category": "registration",
+      "scenario": "Two records may belong to the same person",
+      "guidance": "Flag the possible duplicate for authorized records staff, preserve both records, and do not merge them at reception."
+    },
+    {
+      "id": "registration-04",
+      "category": "registration",
+      "scenario": "The patient's name is misspelled",
+      "guidance": "Verify the correction through the approved identity process and refer protected identity-field changes to authorized records staff with an audit trail."
+    },
+    {
+      "id": "registration-05",
+      "category": "registration",
+      "scenario": "The patient has changed phone number",
+      "guidance": "Verify identity before updating contact information, confirm the new channel, and record the change through the approved workflow."
+    },
+    {
+      "id": "registration-06",
+      "category": "registration",
+      "scenario": "The patient has changed address",
+      "guidance": "Verify identity, update only the permitted contact fields, and confirm the correction privately through the approved registration process."
+    },
+    {
+      "id": "registration-07",
+      "category": "registration",
+      "scenario": "A child arrives with a caregiver",
+      "guidance": "Follow the approved guardian verification and consent process and ask the registration lead when authority is unclear."
+    },
+    {
+      "id": "registration-08",
+      "category": "registration",
+      "scenario": "A patient wants to use a preferred name",
+      "guidance": "Record the preferred name in the supported field while preserving verified identity information; ask records staff if the system lacks the field."
+    },
+    {
+      "id": "registration-09",
+      "category": "registration",
+      "scenario": "A patient requests deletion of a record",
+      "guidance": "Route the request to the privacy or records lead for review under the applicable retention process; do not delete records at reception."
+    },
+    {
+      "id": "registration-10",
+      "category": "registration",
+      "scenario": "A patient requests a copy of records",
+      "guidance": "Verify identity, record the request, and route it to the authorized records team using the approved disclosure process."
+    },
+    {
+      "id": "registration-11",
+      "category": "registration",
+      "scenario": "A relative requests a patient's address",
+      "guidance": "Verify authorization and purpose before any disclosure; otherwise decline to share and refer the request to the privacy lead."
+    },
+    {
+      "id": "registration-12",
+      "category": "registration",
+      "scenario": "An insurance number is missing",
+      "guidance": "Record the administrative gap and refer coverage questions to billing; do not invent membership details or promise coverage."
+    },
+    {
+      "id": "registration-13",
+      "category": "registration",
+      "scenario": "A patient disputes demographic information",
+      "guidance": "Check identity privately, record the disputed field, and route protected corrections to records staff while preserving the audit trail."
+    },
+    {
+      "id": "registration-14",
+      "category": "registration",
+      "scenario": "A patient does not consent to optional messages",
+      "guidance": "Record the preference and avoid optional messages; explain the approved channel for essential service communication."
+    },
+    {
+      "id": "registration-15",
+      "category": "registration",
+      "scenario": "A shared phone is listed as a contact",
+      "guidance": "Confirm the patient's communication preferences privately and avoid sending sensitive information to a shared device without appropriate authorization."
+    },
+    {
+      "id": "registration-16",
+      "category": "registration",
+      "scenario": "A registration form is incomplete",
+      "guidance": "Ask only for required missing information and seek the registration lead's guidance on exceptions; clinical urgency goes to the triage nurse."
+    },
+    {
+      "id": "registration-17",
+      "category": "registration",
+      "scenario": "A patient cannot read the form",
+      "guidance": "Offer approved accessible assistance or interpretation, check understanding, and follow the consent process without answering on the patient's behalf."
+    },
+    {
+      "id": "registration-18",
+      "category": "registration",
+      "scenario": "A date of birth is uncertain",
+      "guidance": "Ask the registration lead for the approved handling of uncertain identity information and do not invent an exact date."
+    },
+    {
+      "id": "registration-19",
+      "category": "registration",
+      "scenario": "A record contains another person's information",
+      "guidance": "Stop routine edits, alert the records and privacy leads, and preserve evidence through the approved incident process."
+    },
+    {
+      "id": "registration-20",
+      "category": "registration",
+      "scenario": "A patient arrives during registration downtime",
+      "guidance": "Use the approved secure downtime form with minimum data, notify support, and reconcile records when the system returns."
+    },
+    {
+      "id": "registration-21",
+      "category": "registration",
+      "scenario": "A patient requests a different emergency contact",
+      "guidance": "Verify identity, record the authorized contact change, and confirm permissions for sharing information with that contact."
+    },
+    {
+      "id": "registration-22",
+      "category": "registration",
+      "scenario": "A staff member wants to export the patient list",
+      "guidance": "Require an approved purpose and authorized export process; route the request to records or privacy staff and do not use a personal device."
+    },
+    {
+      "id": "registration-23",
+      "category": "registration",
+      "scenario": "A patient asks why a field is collected",
+      "guidance": "Explain the approved purpose of the field and whether it is required; ask the privacy lead when the purpose is unclear."
+    },
+    {
+      "id": "registration-24",
+      "category": "registration",
+      "scenario": "A registration receipt shows an incorrect identifier",
+      "guidance": "Verify the record, ask authorized records staff to correct the issue, and replace the receipt through the approved process without altering audit history."
+    },
+    {
+      "id": "registration-25",
+      "category": "registration",
+      "scenario": "A language preference is missing",
+      "guidance": "Ask the patient which language they prefer, record it in the approved field, and request interpretation when needed."
+    },
+    {
+      "id": "access-01",
+      "category": "access",
+      "scenario": "A staff account is locked",
+      "guidance": "Use the approved help-desk recovery channel, verify staff identity, and request unlock; never share passwords or use another person's account."
+    },
+    {
+      "id": "access-02",
+      "category": "access",
+      "scenario": "A staff member forgot a password",
+      "guidance": "Use the approved password reset process after identity verification and never request or transmit the existing password."
+    },
+    {
+      "id": "access-03",
+      "category": "access",
+      "scenario": "A new employee needs access",
+      "guidance": "Ask the manager to approve role-based access through the help desk and grant only the permissions required for the job."
+    },
+    {
+      "id": "access-04",
+      "category": "access",
+      "scenario": "An employee changes roles",
+      "guidance": "Request manager-approved permission changes, remove unneeded access, and verify the new role through the approved access process."
+    },
+    {
+      "id": "access-05",
+      "category": "access",
+      "scenario": "An employee leaves the organization",
+      "guidance": "Notify the authorized access administrator through the offboarding process so accounts and sessions are revoked promptly."
+    },
+    {
+      "id": "access-06",
+      "category": "access",
+      "scenario": "A staff member lost an authentication device",
+      "guidance": "Report the loss to the help desk or security team, verify identity, and follow approved factor recovery and session revocation procedures."
+    },
+    {
+      "id": "access-07",
+      "category": "access",
+      "scenario": "A login code is requested by phone",
+      "guidance": "Do not share the code; report the request through the security channel and use only the approved sign-in process."
+    },
+    {
+      "id": "access-08",
+      "category": "access",
+      "scenario": "A colleague asks to borrow an account",
+      "guidance": "Decline account sharing and direct the colleague to the help desk for their own authorized access."
+    },
+    {
+      "id": "access-09",
+      "category": "access",
+      "scenario": "A user sees permission denied",
+      "guidance": "Check the requested task with the manager and ask the help desk to review role permissions; do not bypass access controls."
+    },
+    {
+      "id": "access-10",
+      "category": "access",
+      "scenario": "A suspicious login alert appears",
+      "guidance": "Report it to the security team using the approved channel and follow their account containment instructions."
+    },
+    {
+      "id": "access-11",
+      "category": "access",
+      "scenario": "A staff member receives a suspicious link",
+      "guidance": "Avoid opening the link or entering credentials and report the message through the approved security channel."
+    },
+    {
+      "id": "access-12",
+      "category": "access",
+      "scenario": "A workstation is left unlocked",
+      "guidance": "Secure the workstation using the approved lock action and notify the responsible staff member without browsing patient records."
+    },
+    {
+      "id": "access-13",
+      "category": "access",
+      "scenario": "A shared workstation changes users",
+      "guidance": "Sign out fully and have the next staff member sign in with their own account; do not leave a previous session active."
+    },
+    {
+      "id": "access-14",
+      "category": "access",
+      "scenario": "The system is unavailable for all staff",
+      "guidance": "Notify the help desk, record the outage reference, and use the approved downtime workflow while protecting patient information."
+    },
+    {
+      "id": "access-15",
+      "category": "access",
+      "scenario": "A single browser session fails",
+      "guidance": "Use the approved troubleshooting steps and contact support if the issue persists; do not disable security settings or expose patient data in screenshots."
+    },
+    {
+      "id": "access-16",
+      "category": "access",
+      "scenario": "Support requests a screenshot",
+      "guidance": "Remove patient details and credentials before sending a screenshot through the approved support channel."
+    },
+    {
+      "id": "access-17",
+      "category": "access",
+      "scenario": "A vendor requests remote access",
+      "guidance": "Require an authorized, time-limited support session approved by the access owner and do not share staff credentials."
+    },
+    {
+      "id": "access-18",
+      "category": "access",
+      "scenario": "A temporary worker needs access",
+      "guidance": "Request manager-approved time-limited permissions with an expiry and use an individual account."
+    },
+    {
+      "id": "access-19",
+      "category": "access",
+      "scenario": "A manager asks for administrator privileges",
+      "guidance": "Route the request for documented approval and least-privilege review; managerial status alone does not authorize administrator access."
+    },
+    {
+      "id": "access-20",
+      "category": "access",
+      "scenario": "A staff member wants to install a browser extension",
+      "guidance": "Ask the IT team to approve the extension before installation on a workstation used for patient information."
+    },
+    {
+      "id": "access-21",
+      "category": "access",
+      "scenario": "A personal email is proposed for record sharing",
+      "guidance": "Use the approved secure organizational channel and do not send patient records through personal email."
+    },
+    {
+      "id": "access-22",
+      "category": "access",
+      "scenario": "A user requests deletion of an audit event",
+      "guidance": "Preserve the audit event and route any correction request to the authorized security or records team."
+    },
+    {
+      "id": "access-23",
+      "category": "access",
+      "scenario": "An account remains active after offboarding",
+      "guidance": "Escalate to the access administrator or security team, record the ticket, and request confirmation that access has been revoked."
+    },
+    {
+      "id": "access-24",
+      "category": "access",
+      "scenario": "A role gives access to the wrong clinic",
+      "guidance": "Report the excess access to the help desk, avoid viewing unrelated records, and request correction of the role scope."
+    },
+    {
+      "id": "access-25",
+      "category": "access",
+      "scenario": "A user asks to disable multifactor authentication",
+      "guidance": "Use the approved recovery process with identity verification and do not bypass or disable the control informally."
+    }
+  ]
+}

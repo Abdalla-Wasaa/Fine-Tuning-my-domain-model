@@ -1,13 +1,13 @@
-# Training design and rationale
+# LLaMA 3.1 8B training design
 
-- Base: Qwen/Qwen2.5-0.5B-Instruct, an Apache-2.0 instruct model small enough for CPU merging and inference. It is a teaching baseline, not a clinical model. See its [model card](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct).
-- The configured Hub revision is pinned to an immutable commit and verified before training and saved in run_manifest.json. Merging and baseline inference use that exact revision. For reruns set configs/train.json revision to the recorded SHA.
-- QLoRA: NF4 four-bit weights, double quantization, BF16 compute when supported (FP16 otherwise), paged AdamW. This reduces trainable-memory needs while retaining a frozen base. See [PEFT quantization guidance](https://huggingface.co/docs/peft/developer_guides/quantization).
-- Rank 16, alpha 32, dropout 0.05, attention and MLP projection targets: modest adapter capacity with regularization on a small dataset.
-- Three epochs, learning rate 1e-4, cosine schedule, warmup 10%, weight decay 0.01: conservative initial settings, selected before looking at test results. They are a reasoned starting point, not empirically optimized settings.
-- Batch 2 × accumulation 8 = effective batch 16 on one GPU. With 160 training rows, this yields 10 optimizer steps per epoch, 30 total. Log each step; evaluate/save each epoch and select minimum validation loss.
-- Context 1024 tokens, no packing or truncation. Full chat tokenization must have the generation prompt as an exact prefix; labels mask system/user tokens with -100. Padding labels are also -100. Only completion tokens contribute to training loss.
-- Seed 42, deterministic split, greedy inference. GPU kernels can still introduce small numeric differences. Version pins and artifact hashes support auditing.
-- Diagnosis uses recorded loss trends: validation rise >5% with falling training loss flags possible overfit; <2% validation improvement flags possible underfit/optimization problems. These are transparent heuristics, not definitive statistical diagnoses. Always inspect the curve and held-out outputs.
+The required model is `meta-llama/Llama-3.1-8B-Instruct`, pinned to revision `0e9e39f249a16976918f6564b8830bc894c89659`. Download access requires the user's approved Hugging Face account. No model licence acceptance is performed by the scripts.
 
-Uses the standard [Transformers 4.51.3 Trainer](https://huggingface.co/docs/transformers/v4.51.3/en/main_classes/trainer), so no TRL version-dependent trainer wrapper is needed.
+- Four-bit NF4 with double quantization and BF16 compute when available (FP16 otherwise) reduces frozen-weight memory. Target a CUDA GPU with 24 GiB VRAM or more; actual capacity must be checked on the selected host.
+- LoRA rank 16, alpha 32 and dropout 0.05 apply to attention and MLP projections. This provides modest adaptation capacity without updating the full model.
+- Batch size 1 and accumulation 16 retain an effective batch of 16 while reducing peak activation memory compared with the earlier Qwen experiment.
+- Three epochs over 160 examples produce 30 optimizer steps. Learning rate 1e-4, cosine decay, 10% warmup and weight decay 0.01 are starting choices, not tuned outcomes. Validation chooses the best epoch checkpoint.
+- Maximum sequence length 1024, completion-only loss, no packing or truncation, and gradient checkpointing bound memory. Exact lengths for all three splits are recorded before training; test data is tokenized for length checking only, never used for optimization or checkpoint selection.
+- Seed 42 fixes data splitting and training seeds. Kernels may still cause numerical variation.
+- Training logs each optimizer step and evaluates each epoch. The pretraining validation loss is explicitly restored into the saved history so the loss plot includes step zero. The diagnosis heuristic flags a validation rebound with falling training loss as possible overfit and less than 2% validation improvement as possible underfit. These are heuristics, not evidence of clinical safety.
+
+The float32 CPU merge/inference path needs at least 40 GiB available RAM; use a machine with 64 GiB installed and at least 80 GiB free disk for base weights, environment and merged shards. A small-memory workstation cannot run this path. The prior Qwen setup and measured results are archived under `experiments/qwen-teaching-v1/`.
