@@ -1,132 +1,141 @@
 {
   "release_tag": "v0.2.0-capstone",
   "release_id": 388910428,
+  "draft": false,
+  "published_at": "2026-09-15T13:09:04Z",
+  "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/tag/v0.2.0-capstone",
   "assets": [
     {
-      "name": "LICENSE",
-      "size": 7627,
-      "digest": "sha256:64e1b2889b7892e6bbe7a7ed5bfe6ff793c61f9d584345f8f41cf9f5cb30a369",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/LICENSE"
-    },
-    {
-      "name": "README.md",
-      "size": 582,
-      "digest": "sha256:868b8a1b6f78d68b403f241d3b165f1653a944ddb2f4b1fb2e92c73fea132e95",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/README.md"
-    },
-    {
-      "name": "USE_POLICY.md",
-      "size": 4691,
-      "digest": "sha256:a568f2ebc73cec3fd74ba2afd992d4e945a8c7a9d851f9b66163aac834b7b859",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/USE_POLICY.md"
+      "name": "afyaplus-llama-adapter-v0.2.0.tar.gz",
+      "size": 156957211,
+      "digest": "sha256:408dc38b032580ccfbd7d4898b24f9defcc554b8b16430b94d3c842bbf90d25e",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/afyaplus-llama-adapter-v0.2.0.tar.gz"
     },
     {
       "name": "config.json",
       "size": 874,
       "digest": "sha256:fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/config.json"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/config.json"
     },
     {
       "name": "generation_config.json",
       "size": 184,
       "digest": "sha256:f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/generation_config.json"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/generation_config.json"
+    },
+    {
+      "name": "LICENSE",
+      "size": 7627,
+      "digest": "sha256:64e1b2889b7892e6bbe7a7ed5bfe6ff793c61f9d584345f8f41cf9f5cb30a369",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/LICENSE"
     },
     {
       "name": "merge_manifest.json",
       "size": 1322,
       "digest": "sha256:0e3b0bc271798f7b9da563bcb6701568bf98c9e078c4505c472f8562cc4a16f7",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/merge_manifest.json"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/merge_manifest.json"
     },
     {
       "name": "model-00001-of-00009.safetensors",
       "size": 1973455376,
       "digest": "sha256:5cd00ae23909c03dafcb23779b2d5118405aa99eebbaa007db6cdeadcf97bca8",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00001-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00001-of-00009.safetensors"
     },
     {
       "name": "model-00002-of-00009.safetensors",
       "size": 1895895336,
       "digest": "sha256:39fc0be324b5583330cc0d50672325471766a1701360d7afe3a6fc1b0329b02a",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00002-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00002-of-00009.safetensors"
     },
     {
       "name": "model-00003-of-00009.safetensors",
       "size": 1979798040,
       "digest": "sha256:97169f8089e1df8252058d377203e591604790fbd57c27400a74b70a73a4de2e",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00003-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00003-of-00009.safetensors"
     },
     {
       "name": "model-00004-of-00009.safetensors",
       "size": 1946227368,
       "digest": "sha256:52f0595b253745d6419f8cfbed464083a37a4b05bb331c990519eeed1970a57f",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00004-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00004-of-00009.safetensors"
     },
     {
       "name": "model-00005-of-00009.safetensors",
       "size": 1979798064,
       "digest": "sha256:6d17875ea4cd0ce4f0b0f6152f3e213ff553b06300e90dad6078726cd4215ed4",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00005-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00005-of-00009.safetensors"
     },
     {
       "name": "model-00006-of-00009.safetensors",
       "size": 1946227368,
       "digest": "sha256:8582489442dddd3e24464390f880c436ba95d732cc7afdccbac26103c1b219f3",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00006-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00006-of-00009.safetensors"
     },
     {
       "name": "model-00007-of-00009.safetensors",
       "size": 1979798064,
       "digest": "sha256:ac2e5d406dac2314165257d67033693db1205af0dd68be9aa2699e602a2e7286",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00007-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00007-of-00009.safetensors"
     },
     {
       "name": "model-00008-of-00009.safetensors",
       "size": 1308683424,
       "digest": "sha256:b107d6cf7b8399272c59ad4bb4097ff76ed1152dd0fafa3dc8b8f9bfb6bd11ad",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00008-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00008-of-00009.safetensors"
     },
     {
       "name": "model-00009-of-00009.safetensors",
       "size": 1050673280,
       "digest": "sha256:5321ca97dd0968a3e2b676b3a42728e9f5327d516bcf0addd4e9cd61c068a1ad",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model-00009-of-00009.safetensors"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model-00009-of-00009.safetensors"
     },
     {
       "name": "model.safetensors.index.json",
       "size": 23950,
       "digest": "sha256:b4cb280d78275bc6f30d4fec01827aa9ceab9a488d44f41621fba956e2394dad",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/model.safetensors.index.json"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/model.safetensors.index.json"
     },
     {
-      "name": "special_tokens_map.json",
-      "size": 439,
-      "digest": "sha256:208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/special_tokens_map.json"
+      "name": "MODEL_CARD.md",
+      "size": 1248,
+      "digest": "sha256:784e5eb03cc2e920baa4d39553e7facf705965ab3f0516dbeda73b9c7eb2c835",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/MODEL_CARD.md"
     },
     {
-      "name": "tokenizer.json",
-      "size": 17209920,
-      "digest": "sha256:6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/tokenizer.json"
-    },
-    {
-      "name": "tokenizer_config.json",
-      "size": 55406,
-      "digest": "sha256:cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/tokenizer_config.json"
-    },
-    {
-      "name": "afyaplus-llama-adapter-v0.2.0.tar.gz",
-      "size": 156957211,
-      "digest": "sha256:408dc38b032580ccfbd7d4898b24f9defcc554b8b16430b94d3c842bbf90d25e",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/afyaplus-llama-adapter-v0.2.0.tar.gz"
+      "name": "README.md",
+      "size": 582,
+      "digest": "sha256:868b8a1b6f78d68b403f241d3b165f1653a944ddb2f4b1fb2e92c73fea132e95",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/README.md"
     },
     {
       "name": "SHA256SUMS",
       "size": 1831,
       "digest": "sha256:796f76f9bd35af3f2d100fe2005cc12dc367b7f9ea611a5e5cdf677d8bc3b892",
-      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/untagged-e624161ca923020c99e9/SHA256SUMS"
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/SHA256SUMS"
+    },
+    {
+      "name": "special_tokens_map.json",
+      "size": 439,
+      "digest": "sha256:208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/special_tokens_map.json"
+    },
+    {
+      "name": "tokenizer.json",
+      "size": 17209920,
+      "digest": "sha256:6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/tokenizer.json"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "size": 55406,
+      "digest": "sha256:cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/tokenizer_config.json"
+    },
+    {
+      "name": "USE_POLICY.md",
+      "size": 4691,
+      "digest": "sha256:a568f2ebc73cec3fd74ba2afd992d4e945a8c7a9d851f9b66163aac834b7b859",
+      "url": "https://github.com/Abdalla-Wasaa/Fine-Tuning-my-domain-model/releases/download/v0.2.0-capstone/USE_POLICY.md"
     }
   ]
 }

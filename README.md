@@ -2,7 +2,7 @@
 
 Week 4 capstone for Kenyan health operations: appointment access, registration, system access, and administrative escalation. Clinical decisions remain with qualified healthcare providers.
 
-**Execution status:** LLaMA 3.1 8B training, BF16 merging, five inference samples, and the 20-question independent evaluation are complete. The 200 source-derived examples have reviewed provenance and 160/20/20 splits. ROUGE-L improved from 0.3257 to 1.0000; judge quality declined from 4.55 to 3.85, with inconsistent groundedness rationales documented in the report. The stakeholder recommendation is to hold deployment. Artifact publication and final provider-stop evidence are being finalized; see `reports/status.json`.
+**Execution status:** LLaMA 3.1 8B training, BF16 merging, five inference samples, and the 20-question independent evaluation are complete. The 200 source-derived examples have reviewed provenance and 160/20/20 splits. ROUGE-L improved from 0.3257 to 1.0000; judge quality declined from 4.55 to 3.85, with inconsistent groundedness rationales documented in the report. The stakeholder recommendation is to hold deployment. The model release is published and the provider confirms the instance is stopped. Submission evidence is complete; see `reports/status.json`.
 
 The earlier completed Qwen experiment is preserved under `experiments/qwen-teaching-v1/`; its metrics and release assets do not qualify as LLaMA results. Its source code is reproducible at commit `3619102f79b0c5fbe33ce5daa067c158a65dc184`.
 

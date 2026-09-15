@@ -1,5 +1,5 @@
 {
-  "submission_complete": false,
+  "submission_complete": true,
   "model": "meta-llama/Llama-3.1-8B-Instruct",
   "dataset": "200 source-derived examples, 160/20/20 splits; structural/citation checks pass",
   "human_review": "100 cases approved by Wasaa Abdalla; recorded 2026-09-15",
@@ -10,8 +10,8 @@
   "compute_provider": "Vast.ai: student-reported verbal instructor approval recorded",
   "billing_and_stop": "Verified: provider cur_state stopped; itemized instance charges USD 2.884 at recorded snapshot",
   "historical_experiment": "experiments/qwen-teaching-v1/; scores do not apply to the replacement corpus",
-  "github_pull_request": "PR #6 remains draft until actual rubric-aligned evidence is complete",
+  "github_pull_request": "PR #6 ready for integration; see GitHub for merge status",
   "dataset_reviewer": "Wasaa Abdalla; review complete",
   "sources_refreshed_at": "2026-09-15",
-  "artifact_publication": "All artifacts uploaded and checksum verified; release publication pending"
+  "artifact_publication": "Published v0.2.0-capstone; all uploaded digests verified against GitHub API"
 }
